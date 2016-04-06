@@ -1355,6 +1355,8 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
     } ])
     .controller("mainCtrl", ['$scope', '$state', '$stateParams', '$http', '$window', 'dataService', function ($scope, $state, $stateParams, $http, $window, dataService) {
 
+        alert("angularjs working!");
+            
         $scope.showSearchbar = 1;
         var NORMAL_MODE = 1;
         var PLAYLIST_MODE = 2;
