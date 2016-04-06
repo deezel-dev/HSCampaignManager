@@ -1,6 +1,6 @@
 <?php
-$db_host = '191.236.32.153';
-$db_name = 'flix_academy';
-$db_user = 'webuser';
-$db_password = 'salty_fl!x_p@ssw0rds_@#flk%sj)($';
+$db_host = 'tcp:deezel-dev.cloudapp.net';
+$db_name = 'PropheticMinistries';
+$db_user = 'web_user';
+$db_password = 'p@$$w0rd';
 ?>
