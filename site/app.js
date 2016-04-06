@@ -1121,7 +1121,7 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
 
     } ])
     .controller("indexCtrl", ['$scope', '$window', 'dataService', function ($scope, $window, dataService) {
-        alert("indexCntrl");
+
         $scope.isUser = false;
         $scope.profileId = -1;
         $scope.rootUrl = $window.location.protocol + "//" + $window.location.host;
@@ -1354,8 +1354,6 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
 
     } ])
     .controller("mainCtrl", ['$scope', '$state', '$stateParams', '$http', '$window', 'dataService', function ($scope, $state, $stateParams, $http, $window, dataService) {
-
-        alert("angularjs working!");
             
         $scope.showSearchbar = 1;
         var NORMAL_MODE = 1;
