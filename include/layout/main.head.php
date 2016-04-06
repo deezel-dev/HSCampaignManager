@@ -1,13 +1,21 @@
-<title>FlixAcademy</title>
+<title>HectorSantosMinistries</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name='description' content='FlixAcademy.com: Structured, searchable database of quality videos with Educational value, and Lesson Plans, Study Guides, and Quizzes, crowdsourced by and for Teachers and Parents' />
-<meta name='keywords' content='FlixAcademy,Flix,Academy,Structured,searchable,database,videos,Educational,Lesson Plans,homeschool,Study Guides,Quizzes,crowdsourced,Teachers,Parents' />
-<meta name="p:domain_verify" content="1b238361b6ad6b11088540bcefc8b148"/>
-<meta property='og:site_name' content='FlixAcademy' />
-<meta property='og:title' content='FlixAcademy' />
-<meta property='og:description' content='FlixAcademy.com: Structured, searchable database of quality videos with Educational value, and Lesson Plans, Study Guides, and Quizzes, crowdsourced by and for Teachers and Parents' />
+<meta name='description' content='HectorSantosMinistries.com: We are a company of people on the pursuit of God!!!  We believe that in order to live a successful Christian life, you must:
+-Know how to hear the voice of God...
+-Live with an ear heaven-ward...
+-Understand 5-Fold Kingdom Government and how it functions...
+-Have a Kingdom mindset to see the region transormed for Jesus Christ...'/>
+<meta name='keywords' content='prophet,prophecy,kingdom,ministry' />
+<!--<meta name="p:domain_verify" content="1b238361b6ad6b11088540bcefc8b148"/> -->
+<meta property='og:site_name' content='HectorSantosMinistries' />
+<meta property='og:title' content='HectorSantosMinistries' />
+<meta property='og:description' content='HectorSantosMinistries.com: We are a company of people on the pursuit of God!!!  We believe that in order to live a successful Christian life, you must:
+-Know how to hear the voice of God...
+-Live with an ear heaven-ward...
+-Understand 5-Fold Kingdom Government and how it functions...
+-Have a Kingdom mindset to see the region transormed for Jesus Christ...' />
 <meta property='og:image' content='/public/images/logo.png' />
-<meta property='og:url' content='http://www.flixacademy.com/' />
+<meta property='og:url' content='http://www.HectorSantosMinistries.com/' />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link href="/public/css/bootstrap.min.css" rel='stylesheet' type='text/css' />
 <link href="/public/css/bootstrap-bootswatch-yeti.min.css" rel='stylesheet' type='text/css' />
