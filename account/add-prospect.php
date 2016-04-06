@@ -42,8 +42,6 @@ function addUser($email) {
     
 }
 
-
-
 function padSql($subject){
     return str_replace ("'","''",$subject);
   }

@@ -27,12 +27,12 @@ class Database {
         public $serverName;
         public $connectionOptions;
         
-        function __construct($host, $user, $pwrd, $database, $connectionOptions){
-        
+        function __construct($host, $connectionOptions){
+            //cut from signature - , $user, $pwrd, $database
+            //$this->user = $user;
+            //$this->pwrd = $pwrd;
+            //$this->database = $database;
             $this->host = $host;
-            $this->user = $user;
-            $this->pwrd = $pwrd;
-            $this->database = $database;
             $this->connectionOptions = $connectionOptions;
             
             ini_set('display_errors',1);

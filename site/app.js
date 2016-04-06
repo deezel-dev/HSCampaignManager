@@ -1322,7 +1322,7 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
             } else if ($scope.signMeUpEmail.length < 1) {
                 alert("invalid email");
             } else {
-
+/*
                         $http.post("/include/db_api.php?action=signUp&email=" + $scope.signMeUpEmail, {
                                 email: $scope.signMeUpEmail
                             })
@@ -1331,7 +1331,18 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
                                     $scope.signMeUpEmail = "";
                                 }).error(function (data, status, headers, config) {
 
-                                });
+                                });*/
+                                
+                    $http.post("/account/add-prospect.php", {
+                    email: $scope.signMeUpEmail
+                    })
+                    .success(function (data, status, headers, config) {
+                        alert("Thank you for signing up.  An email will be send to you soon.");
+                        $scope.signMeUpEmail = "";
+                    }).error(function (data, status, headers, config) {
+
+                    });
+
 
                 /*
                 
