@@ -1,10 +1,10 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . "/include/db-config.php";
 
-$GLOBALS['DB_HOST'] = $db_host; //'tcp:deezel-dev.cloudapp.net'
-$GLOBALS['DB_USER'] = $db_name; //'PropheticMinistries'
-$GLOBALS['DB_PASSWORD'] = $db_user; //'web_user'
-$GLOBALS['DB_NAME'] = $db_password; //'p@$$w0rd'
+$GLOBALS['DB_HOST'] = 'tcp:deezel-dev.cloudapp.net';
+$GLOBALS['DB_USER'] = 'PropheticMinistries';
+$GLOBALS['DB_PASSWORD'] = 'web_user';
+$GLOBALS['DB_NAME'] = 'p@$$w0rd';
 
 /*
 foreach ($_SERVER as $key => $value) {
