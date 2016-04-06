@@ -1,0 +1,14 @@
+#grad1 {
+    background: -webkit-linear-gradient(black, #222); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(black, #222); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(black, #222); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(black, #222); /* Standard syntax (must be last) */
+}
+
+#grad2 {
+    background: -webkit-linear-gradient(black, #aaa); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(black, #aaa); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(black, #aaa); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(black, #aaa); /* Standard syntax (must be last) */
+}
+

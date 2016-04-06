@@ -1,0 +1,86 @@
+.row-table.row-table-xs {
+    display: table !important;
+}
+.row-table.row-table-xs > [class*="col-"] {
+    float: none !important;
+    display: table-cell !important;
+    vertical-align: middle;
+}
+.row-table.row-table-xs > [class*="col-"].td-top {
+    vertical-align: top !important;
+}
+.row-table.row-table-xs > [class*="col-"].td-bottom {
+    vertical-align: bottom !important;
+}
+
+@media (min-width: 768px) {
+    .row-table {
+        display: table !important;
+    }
+    .row-table > [class*="col-"] {
+        float: none !important;
+        display: table-cell !important;
+        vertical-align: middle;
+    }
+    .row-table > [class*="col-"].td-top {
+        vertical-align: top !important;
+    }
+    .row-table > [class*="col-"].td-bottom {
+        vertical-align: bottom !important;
+    }
+}
+
+
+
+.flix-font {
+    font-family: "Arvo", "Verdana", "Arial", "sans-serif" !important;
+}
+
+.col-centered {
+    float: none;
+    margin: 0 auto;
+}
+
+.required-text {
+    color: #AA0000;
+}
+
+.even-result-row {
+    background-color: #EEEEEE;
+}
+
+.odd-result-row {
+
+}
+
+.navbar-brand,
+#serviceDescription *,
+#serviceDescriptionSmall *,
+#btnFindFlix {
+    font-family: "Arvo", "Verdana", "Arial", "sans-serif" !important;
+}
+
+#btnFindFlix {
+    font-weight: bold;
+}
+#logoRow {
+    margin-top: 50px;
+    margin-bottom: 40px;
+}
+#logoColumn {
+    text-align: center;
+}
+#logoColumn img {
+    width: 100%;
+    max-width: 250px;
+}
+#searchFormMargin {
+    height: 20px;
+}
+#txtAgeMinimum {
+    text-align: right;
+}
+
+#megatronWelcome {
+    margin-top: 1.5em;
+}

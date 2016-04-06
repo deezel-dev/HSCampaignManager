@@ -1,0 +1,121 @@
+<div ng-show="showMovies" class="container" data-ng-controller="listCtrl">
+   <div id="resultsHeader" class="row" ng-show="movies.length > -1">
+      <div class="col-xs-12">
+         <h2>{{(movies|filter:filterList).length}} FLIX FOUND</h2>
+      </div>
+   </div>
+   <div class="row" ng-show="movies.length > 0">
+      <!-- panel panel-default-->
+      <div ng-repeat="m in filteredMovies = ( movies | filter:filterList)">
+        
+          <!-- large device view -->
+        <div class="visible-lg visible-md">
+            <div class="col-lg-2 col-md-3" style="padding-top: 10px; padding-bottom: 10px; margin:5px; max-height: 450px;">
+            
+                 <div align="center">
+               <!-- cover art as div background -->
+               <div ng-mouseover="showMovieOptions=true" ng-mouseleave="showMovieOptions=false">
+                  <img style="width: 200px; height: 300px;-webkit-box-shadow: 0px 0px 12px 0px rgba(100, 100, 100, 0.45); -moz-box-shadow: 0px 0px 12px 0px rgba(100, 100, 100, 0.45); box-shadow: 0px 0px 12px 0px rgba(100, 100, 100, 0.45);" src="{{getMovieImage(m)}}" />
+                  <!-- dim background to show movie content on mouseover -->
+                  <!-- SHOW MINI MOVIE BOTTOM <div ng-mouseover="setShowMovieOptions(true,m,$event)" ng-mouseleave="setShowMovieOptions(true,m,$event)" ng-show="showMovieOptions" ng-init="showMovieOptions=false" style="position: absolute;top:10px;left:15px;color: #fff;background-color: rgba(0, 0, 0, 0.7);background-size: 100%;background-repeat: no-repeat;width: 200px; height: 300px;"> -->
+                  <div align="center" style="">
+                   <div ng-show="!showMovieOptions && m.product_image.length==0" id="titleDiv" style="position: absolute;top:18px;left:15px;color: #fff;background-size: 100%;background-repeat: no-repeat;width: 200px; height: 300px;">
+                           <!--ng-click="openMovie(m)"-->
+                           <a ui-sref="flix_main_movie({movie: m})" style="color: #fff;" href="#" tooltip="{{getTooltip(m)}}">
+                              <h4 style="margin-top: 0; padding-top: 0; font-weight: bold;">
+                                 {{m.title}}
+                              </h4>
+                           </a>
+                        </div>
+                      </div>
+                   <div ng-show="showMovieOptions" ng-init="showMovieOptions=false" style="position: absolute;top:10px;left:15px;color: #fff;background-color: rgba(0, 0, 0, 0.7);background-size: 100%;background-repeat: no-repeat;width: 200px; height: 300px;">
+                     <!-- center align everything in view-->
+                     <div align="center" style="padding: 2px;">
+                        <!-- title - onClick to movieLandingPage  -->
+                        <div id="titleDiv" align="top" style="margin-top: 8px;">
+                           <!--ng-click="openMovie(m)"-->
+                           <a ui-sref="flix_main_movie({movie: m})" style="color: #fff;" href="#" tooltip="{{getTooltip(m)}}">
+                              <h4 style="margin-top: 0; padding-top: 0; font-weight: bold;">
+                                 {{m.title}}
+                              </h4>
+                           </a>
+                        </div>
+                        <!-- details - length | rating | grade    -->
+                        <!-- description - tooltip                -->
+                        <!-- voting | playlist                    -->
+                        <!-- Create Remix                         -->
+
+                         <div ng-click="openMovie(m)" ng-hide="0" style="padding: 10px;">                        
+                           <small>
+                               <div style="padding: 5px;">{{m.length}}&nbsp;minutes</div>
+                               <div style="padding: 5px;">Rating:&nbsp;{{m.rating}}</div>
+                               <div style="padding: 5px;">FlixGrade:&nbsp;{{m.grade}}</div> 
+                           </small>
+                        </div>
+
+                        <div ng-hide="0" style="padding: 10px;">
+                           <div>
+                              <span tooltip="Thumbs Down Vote" class="visible-md-inline visible-lg-inline"><img src="/public/images/btn_thumbsdown_red.png" ng-click="rateMovie(0,m)" align="top" height="35" width="35" hspace="8" alt="thumbs down" /></span>
+                              <span tooltip="Thumbs Up Vote" class="visible-md-inline visible-lg-inline"><img src="/public/images/btn_thumbsup_green.png" ng-click="rateMovie(1,m)" align="top" height="35" width="35" hspace="8" alt="thumbs up" /></span>
+                              <span tooltip="Add '{{m.title}}' to your playlist" class="visible-md-inline visible-lg-inline"><img src="/public/images/btn_add_playlist.png" ng-click="addMovieToPlaylist(m)" align="top" height="35" width="35" hspace="8" alt="add to playlist" /></span>
+                           </div>
+                            <div ng-click="openMovie(m)">&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;<br>
+                            </div>
+                           <div ng-hide="0" style="position: absolute;bottom: 0">
+
+                               <!--ui-sref="flix_remix_submission({movie: m, topic:selectedTopCategory, flix_remix_id:-1})" -->
+                               
+                               <a href="" ng-click="openRemix(m,-1)" style="color: #fff;">
+                                    Create a FlixREMIX and Earn Rewards!
+                                </a>
+
+                              <!--<a  style="color: #fff" ng-click="submitRemix(m)"><b>Create a FlixREMIX and Earn Rewards!</b></a>-->
+                           </div>
+                           <div ng-hide="1" >
+                              <!--ng-hide="m.remixes == null || m.remixes.length == 0"-->
+                              <font size="-1" color="#AA4444;"><b><u>Remixes:</u></b></font>&nbsp;&nbsp;
+                              <div  class="visible-xs-block visible-sm-inline visible-md-inline visible-lg-inline" style="font-size: 1.0em; text-align: left;" ng-repeat="r in m.remixes track by $index">
+                                 <a href="//<?php echo($_SERVER['HTTP_HOST']) ?>/flix/flix_remix_submission.php?remix_id={{r.flix_remix_id}}" target="_blank">{{r.lesson_name}}
+                                 </a>&nbsp;|&nbsp;
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            </div>
+        </div>
+
+          <!--  mobile view -->
+         <div class="visible-sm visible-xs">
+             <!-- ui-sref="flix_main_movie-->
+            <div class="col-sm-4 col-xs-4" style="padding: 10px; margin-top:5px; margin-bottom: 5px;max-height: 150px;">
+                <div align="center">
+                    <a ui-sref="flix_main_movie({movie: m})">
+                        <img src="{{getMovieImage(m)}}"style="width: 100px; height: 150px;-webkit-box-shadow: 0px 0px 12px 0px rgba(100, 100, 100, 0.45); -moz-box-shadow: 0px 0px 12px 0px rgba(100, 100, 100, 0.45); box-shadow: 0px 0px 12px 0px rgba(100, 100, 100, 0.45);"/>
+                    </a>
+
+                <div align="center" style="">
+                   <div ng-show="!showMovieOptions && m.product_image.length==0" id="titleDiv" style="position: absolute;top:18px;left:12px;color: #fff;background-size: 100%;background-repeat: no-repeat;width: 100px; height: 150px;">
+                           <!--ng-click="openMovie(m)"-->
+                           <a ui-sref="flix_main_movie({movie: m})" style="color: #fff;" href="#" tooltip="{{getTooltip(m)}}">
+                              <font color="#fff" size="2dp"><p style="margin-top: 0; font-weight: bold;">
+                                 {{m.title}}
+                              </p>
+                             </font>
+                           </a>
+                        </div>
+                      </div>
+
+
+                </div> 
+                           
+            </div>
+         </div>
+
+         </div>
+
+    </div>
+</div>

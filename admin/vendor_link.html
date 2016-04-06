@@ -1,0 +1,43 @@
+  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html ng-app="app">
+  <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Flix Admin Console</title>
+  </head>
+  <body>
+  <!-- main container -->
+  <div id="container">
+  <div data-ng-controller="vendorCtrl" style="overflow:scroll; height:800px;">
+
+                <!--<br>
+                <button ng-click="loadVendors()" align="center" style="width:100%;">GET DATA</button>-->
+                   
+                <br />
+
+                    <div data-ng-repeat="vendor in vendors">
+
+                          <!--var vendor = data.data.vendors[i];
+                          var vendor_id =    vendor.vendor_id;
+                          var vendor_name =  vendor.vendor_name;
+                          var vendor_link =  vendor.vendor_link;
+                          var vendor_logo =  vendor.vendor_logo;
+                          var vendor_search_url =  vendor.vendor_search_url;
+                          var vendor_active =  vendor.active ;-->
+
+                         <a  ng-click="searchVendor(vendor.vendor_search_url)" href="javascript:void(0)" target="_blank">{{vendor.vendor_name}}</a>
+                        <br />
+                        <img ng-model="vendorLogo" style='width:100px;height:50px;vertical-align:center;margin-right:15px;' data-ng-src="{{vendor.vendor_logo}}">
+                        <br />
+                        <br />
+                        <input type="text" style="top-margin:10px;" data-ng-model="vendorProductLink">
+                        
+                        <button ng-click="linkVendor(vendor, vendorProductLink)">Link</button>
+
+                        
+                        <hr />
+                    </div>
+                </div>
+
+  </div>
+  </body>
+  </html>

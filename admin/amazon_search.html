@@ -1,0 +1,71 @@
+  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html ng-app="app">
+  <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Flix Admin Console</title>
+  </head>
+  <body>
+  <!-- main container -->
+  <div id="container">
+  <div data-ng-controller="amazonCtrl">
+ 
+                      
+      <br>
+                <input type="text" style="top-margin:30px;width:25%;" data-ng-model="search">
+                <div id="buttons" style="display:inline-block;width:70%;">
+                    <button ng-click="getAmazonCustomData(search)" style="display:inline-block;width:48%">SEARCH</button>
+                    <button ng-click="getAmazonData()" style="display: inline-block;width:48%">SEARCH LOADED</button>
+                </div>  
+                   
+                <br>
+      
+        <HR COLOR="red" SIZE="3">
+            
+      <div style="overflow:scroll; height:800px;">
+      
+                    <div style="width:550px" data-ng-repeat="amazon in amazons">
+
+                        <img ng-model="coverArt" ng-click="sendImage(amazon.image_url)" 
+                             style='width:150px;height:200px;vertical-align:center;margin-right:15px;' 
+                             data-ng-src="{{amazon.image_url;}}" style="float:left;">
+                        
+                        <div id="buttons" style="display: inline-block;">
+                             <button ng-click="linkAmazon(amazon.amazon_url,5)" align="right" style="width:100%;">LINK TO AMAZON INSTANT</button>
+                            <br />
+                            <br />
+                             <button ng-click="linkAmazon(amazon.amazon_url,14)" align="right" style="width:100%;">LINK TO AMAZON PRODUCT</button>
+                            <br />
+                            <br />
+                            <a ng-href="{{amazon.amazon_url}}" target="_blank"> {{amazon.amazon_id}}</a>
+                            <br />
+                        </div>   
+                        
+                        <br><br>
+                        
+                                               
+                        <b><u>Product Group:</b></u>
+                                &nbsp;&nbsp;<p style="display: inline-block;">{{amazon.product_group}}</p>
+                        
+                        <br>
+                        <b><u><a href="" ng-click="sendActors(amazon.actor)">Actors:</a></b></u>
+                                &nbsp;&nbsp;<p style="display: inline-block;">{{amazon.actor}}</p>
+                        <br>                        
+                        <b><u><a href="" ng-click="sendDirectors(amazon.director)">Directors:</a></b></u>
+                                &nbsp;&nbsp;<p style="display: inline-block;">{{amazon.director}}</p>
+                        <br>
+                        <b><u><a href="" ng-click="sendRating(amazon.audiencerating)">Rating:</a></b></u>
+                                &nbsp;&nbsp;<p style="display: inline-block;">{{amazon.audiencerating}}</p>
+                        <br>
+                        <b><u><a href="" ng-click="sendContent(amazon.editorialreview)">Description:</a></b></u>
+                                &nbsp;&nbsp;<p style="display: inline-block;">
+                        <p>{{amazon.editorialreview}}</p>                        
+                        <br />
+                        
+                        <HR COLOR="black" SIZE="3">
+                        
+                    </div>
+                </div>
+            </div>
+  </div>
+  </body>
+  </html>

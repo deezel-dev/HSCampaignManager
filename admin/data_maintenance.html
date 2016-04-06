@@ -1,0 +1,68 @@
+
+  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html ng-app="app">
+            <head>
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+            <title>Flix Admin Console</title>
+            </head>
+            <body>
+            <div class="mainContainer" >
+
+              <div data-ng-controller="dataMaintenanceCtrl">
+
+              <div class="container-fluid" style="margin-top: -21px;">
+                <div class="row row-table" style="background-color: #EEEEEE; padding-top: 20px; padding-bottom: 20px;">
+                    
+                  <div align="center">
+                      <b><u><font size="+2" color="black">TOPIC MAINTENANCE</font></u></b>
+                  </div>
+                  
+
+                    <div class="col-sm-3">
+                        <label>Parent Topic</label><br />                    
+                        <select class="form-control" name="selSub" ng-model="selectedParentID"> 
+                            <option ng-repeat="flixSubject in flixSubjects" value="{{flixSubject.subject_id}}">{{flixSubject.subject_name}}</option> 
+                        </select>
+                    </div>
+                    <!--
+                    <div class="col-sm-3">
+                        <label>Subject Filter</label><br />
+                        <select class="form-control" name="selSub" ng-model="selectedSubject" ng-change="flixSearch = {subjects: selectedSubject}"> 
+                            <option ng-repeat="flixSubject in flixSubjects" value="{{flixSubject.subject_name}}">{{flixSubject.subject_name}}</option>
+                        </select>
+                    </div>
+                    -->
+                    <div class="col-sm-3">
+                        <label>Topic Title</label><br />
+                        <input class="form-control" type="text" ng-model="newTopic">
+                    </div>
+                    <div class="col-sm-2 td-bottom">
+                        <div class="col-xs-12 visible-xs-block" style="margin-top: 10px;"></div>
+                        <button type="button"
+                                class="btn btn-danger btn-block"
+                                ng-click="btnSaveTopic()"
+                                id="btnFindFlix">
+                            Save | Update
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <u><b><font color="white">EXISTING TOPICS</font></b></u>
+            <div style="overflow:scroll; height:700px;">
+
+            <ul style="margin-right: 10px;" ng-repeat="flixSubject in flixSubjects" ng-if="flixSubject.subject_name!='NEW PARENT TOPIC'">
+               <li><u><b><font color="white">{{flixSubject.subject_name}}</font></li></u></b>
+                    <ul style="margin-right: 10px;" ng-repeat="subtopic in flixSubject.SubTopics">
+                        <li><font color="white">{{subtopic.subject_name}}</font></li>
+                    </ul>
+                <br />
+            </ul>
+                </div>
+            </div>
+
+                </div>
+
+            </body>
+</html>

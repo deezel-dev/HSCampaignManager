@@ -1,0 +1,126 @@
+<div>
+   <div data-ng-controller="searchBarCtrl" class="container-fluid" style="margin-top: -21px;">
+      <div class="row" style="background-color: #EEEEEE; padding-top: 20px; padding-bottom: 20px;">
+         
+          <!-- 
+
+          <div class="col-sm-2">
+          <div class="col-sm-6">
+            <br />
+            <div class="col-xs-12 visible-xs-block" style="margin-top: 10px;"></div>
+            <button type="button"
+               class="btn btn-primary btn-block"
+               ng-click="btnShowList()" 
+               id="btnListView">
+                    List
+            </button>
+         </div>
+          <div class="col-sm-6">
+            <br />
+            <div class="col-xs-12 visible-xs-block" style="margin-top: 10px;"></div>
+            <button type="button"
+               class="btn btn-primary btn-block"
+               ng-click="btnShowGrid()" 
+               id="btnGridView">
+                    Grid
+            </button>
+         </div>
+         </div>
+
+          -->
+          
+          <div class="col-sm-3">
+            <label>Topic</label><br />
+            <select class="form-control"
+               ng-model="selectedTopCategory"
+               ng-options="e.name for e in topCategories track by e.id"
+               ng-change="setPayload()"></select>
+            <!--$event-->
+         </div>
+
+
+          <!--
+         <div class="col-sm-3">
+            <label>Vendor</label><br />
+            <select class="form-control"
+               ng-model="selectedVendor"
+               ng-options="e.name for e in vendors track by e.id"
+               ng-change="setPayload()">
+            </select>
+         </div>
+          -->
+
+
+         <div class="col-sm-4">
+            <div class="row">
+               <div class="col-xs-4">
+                  <label>Minutes</label>
+                  <select class="form-control" ng-model="minimumLength" ng-change="setPayload()">
+                     <option value="0">0</option>
+                     <option value="5">5</option>
+                     <option value="10">10</option>
+                     <option value="15">15</option>
+                     <option value="30">30</option>
+                     <option value="45">45</option>
+                     <option value="60">60</option>
+                  </select>
+               </div>
+               <div class="col-xs-4">
+                  <label>to</label>
+                  <select class="form-control" ng-model="maximumLength" ng-change="setPayload()">
+                     <option value="10">10</option>
+                     <option value="30">30</option>
+                     <option value="60">60</option>
+                     <option value="90">90</option>
+                     <option value="120">120</option>
+                     <option value="600">Any</option>
+                  </select>
+               </div>
+               <div class="col-xs-4">
+                  <label>Ages</label>
+                  <select class="form-control" ng-model="minimumAge" ng-change="setPayload()">
+                     <option value="1">1</option>
+                     <option value="2">2</option>
+                     <option value="3">3</option>
+                     <option value="4">4</option>
+                     <option value="5">5</option>
+                     <option value="6">6</option>
+                     <option value="7">7</option>
+                     <option value="8">8</option>
+                     <option value="9">9</option>
+                     <option value="10">10</option>
+                     <option value="11">11</option>
+                     <option value="12">12</option>
+                     <option value="13">13</option>
+                     <option value="14">14</option>
+                     <option value="15">15</option>
+                     <option value="16">16</option>
+                     <option value="17">17</option>
+                     <option value="18">18+</option>
+                  </select>
+               </div>
+            </div>
+         </div>
+
+         <div class="col-sm-3">
+            <label>Movie Title</label><br />
+                <input id="txtMovieFilter" placeholder="Type movie title" type="text" ng-model="movieTitleFilter" ng-change="setPayload()" class="form-control" />
+         </div>
+      
+      
+          
+          <div class="col-sm-2">
+            <label>Talk To Us! Suggest Something</label><br />
+            <div class="col-xs-12 visible-xs-block" style="margin-top: 10px;"></div>
+            <button type="button"
+               class="btn btn-danger btn-block"
+               ng-click="btnMakeSuggestion()" 
+               id="btnListView">
+                    Make a suggestion
+            </button>
+         </div>
+
+
+      </div>
+   </div>
+</div>

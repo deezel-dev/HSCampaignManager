@@ -1,0 +1,16 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html ng-app="app">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <title>Flix Admin Console</title>
+   </head>
+   <body>
+        <!-- main container -->
+        <div ng-repeat="topic in topics">
+            <div class="col-sm-4">                        
+                <input ng-model="chkTopic[$index]" type="checkbox" ng-change="updateTopic(topic, chkTopic[$index])"/> <!-- value="{{getTopicValue(movieIndex, topic)}}" -->
+                <font color="white">{{topic.subject_name}}</font>
+            </div>
+        </div>
+   </body>
+</html>

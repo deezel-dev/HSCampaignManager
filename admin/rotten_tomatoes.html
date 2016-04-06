@@ -1,0 +1,83 @@
+  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html ng-app="app">
+  <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Flix Admin Console</title>
+  </head>
+  <body>
+  <!-- main container -->
+  <div id="container">
+  <div data-ng-controller="rottenTomatoeCtrl">
+                
+      <br>
+                <input type="text" style="top-margin:30px;width:25%;" data-ng-model="search">
+                <div id="buttons" style="display:inline-block;width:70%;">
+                    <button ng-click="getCustomData(search)" style="display:inline-block;width:48%">SEARCH</button>
+                    <button ng-click="getData()" style="display: inline-block;width:48%">SEARCH LOADED</button>
+                </div>  
+                   
+                <br>
+      
+        <HR COLOR="red" SIZE="3">
+      
+            <div style="overflow:scroll; height:800px;">
+
+                    <div style="width:550px" data-ng-repeat="movie in movies">
+                        
+                        
+                        <div >
+                            <img ng-model="coverArt" ng-click="sendImage('http://image.tmdb.org/t/p/w500' + tmdb.poster_path)"
+                             style='width:50px;height:80px;vertical-align:left;margin-right:15px;' 
+                             data-ng-src="{{movie.posters.detailed}}">
+                            <font size="4" color="red"><b><p style="display:inline-block;">{{movie.title}}</p></b></font>
+                        </div>
+                        
+                        
+                        
+                        
+                        <br>
+                        
+                        <div style="display:inline-block;width:75%;">
+                            
+                            <b><u><a href="" ng-click="sendRuntime(runtime)">critics_rating:</a></b></u>
+                                    &nbsp;&nbsp;<p style="display:inline-block;" data-ng-model = "runtime">{{movie.ratings.critics_rating}}</p>
+                                  
+                            <b><u><a href="" ng-click="sendRuntime(runtime)">critics_score:</a></b></u>
+                                    &nbsp;&nbsp;<p style="display:inline-block;" data-ng-model = "runtime">{{movie.ratings.critics_score}}</p>
+                                 
+                            <br>
+                            <b><u><a href="" ng-click="sendRuntime(runtime)">audience_rating:</a></b></u>
+                                    &nbsp;&nbsp;<p style="display:inline-block;" data-ng-model = "runtime">{{movie.ratings.audience_rating}}</p>
+                                 
+                            <b><u><a href="" ng-click="sendRuntime(runtime)">audience_score:</a></b></u>
+                                    &nbsp;&nbsp;<p style="display:inline-block;" data-ng-model = "runtime">{{movie.ratings.audience_score}}</p>
+                                                       
+                            <br>
+                            <b><u><a href="" ng-click="sendRuntime(runtime)">runtime:</a></b></u>
+                                &nbsp;&nbsp;<p style="display:inline-block;" data-ng-model = "runtime">{{movie.runtime}}</p>
+                                                   
+                            <b><u><a href="" ng-click="send_IMDB(imdb_id)">year:</a></b></u>
+                                    &nbsp;&nbsp;<p style="display: inline-block;">{{movie.year}}</p>
+                            
+                            <b><u><a href="" ng-click="sendReleaseDate(release_date)">Rating:</a></b></u>
+                                    &nbsp;&nbsp;<p style="display: inline-block;">{{movie.mpaa_rating}}</p>
+                            <br>
+                            <b><u><a href="" ng-click="sendContent(movie.synopsis)">Description:</a></b></u>
+                                    &nbsp;&nbsp;<p data-ng-model = "overview" style="display: inline-block;">{{movie.synopsis}}</p>                        
+                            <br />   
+                        </div>
+                        
+                        
+                        <div style="clear: both;"></div>
+                        
+                        
+                            <HR COLOR="black" SIZE="3">
+                        
+                    </div>
+      
+
+                </div>
+        </div>
+  </div>
+  </body>
+  </html>

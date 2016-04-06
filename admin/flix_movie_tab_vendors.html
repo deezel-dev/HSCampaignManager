@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html ng-app="app">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <title>Flix Admin Console</title>
+   </head>
+   <body>
+      <!-- main container -->
+        <div ng-repeat="vendor in vendors" ng-init="vendorIndex=$index">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <div class="row">
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-10">   
+                        <a align ="left" href="{{vendor.vendor_search_url}}{{movie.title}}" target="_blank" alt="{{vendor.vendor_name}}">{{vendor.vendor_name}}</a>                     
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-2"> 
+                        <a align ="right" href="{{vendorLink[vendorIndex]}}" target="_blank">link</a>                     
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                        <input class="form-control" ng-model="vendorLink[vendorIndex]" type="text" > 
+                    </div>
+                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"> 
+
+                        <button style="margin-left: -25px;" type="button"
+                            class="btn btn-danger"
+                            ng-click="deleteVendor(vendor, vendorIndex)"
+                            id="btnSaveVendors">
+                                x
+                        </button>
+                    </div>   
+                </div>
+                </div>
+            </div>
+        <br />
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="padding-top: 20px;">
+            <div class="col-xs-12 visible-xs-block"></div>
+            <button type="button"
+                class="btn btn-primary btn-block"
+                ng-click="saveVendors()"
+                id="btnSaveVendors">
+            SAVE VENDORS
+            </button>
+        </div>
+   </body>
+</html>

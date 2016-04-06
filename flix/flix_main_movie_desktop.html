@@ -1,0 +1,91 @@
+<div> <!-- flixMovieViewCtrl data-ng-controller="movieViewCtrl" -->
+
+    <!-- Movie Section -->
+   <div class="row" style="padding: 10px;width: 100%;background-color: rgba(255, 255, 255, 1.0)">
+      <div class="col-sm-2">
+         <div style="width: 100%; -webkit-box-shadow: 0px 0px 12px 0px rgba(100, 100, 100, 0.45); -moz-box-shadow: 0px 0px 12px 0px rgba(100, 100, 100, 0.45); box-shadow: 0px 0px 12px 0px rgba(100, 100, 100, 0.45);">
+            <img ng-show="movie.product_image != null && movie.product_image.length > 0" src="{{movie.product_image}}" style="width: 100%;" />
+            <img ng-show="movie.product_image == null || movie.product_image.length == 0" src="/public/images/FlixAcademyCoverArt.png" style="width: 100%;" />
+         </div>
+      </div>
+      <div class="col-sm-7">
+         <h5 ng-click="" class="visible-xs-block" style="margin-top: 0; padding-top: 0; line-height: 1.2em; color: #AA4444; font-weight: bold;">
+         {{movie.title}}
+         </h4>
+         <h4 ng-click="" class="visible-sm-block" style="margin-top: 0; padding-top: 0; line-height: 1.2em; color: #AA4444; font-weight: bold;">
+            {{movie.title}}
+         </h4>
+         <h3 ng-click="" class="visible-md-block visible-lg-block" style="margin-top: 0; padding-top: 0; line-height: 1.2em; color: #AA4444; font-weight: bold;">
+         {{movie.title}}
+         </h4>
+         <small class="visible-xs-block visible-sm-inline visible-md-inline visible-lg-inline">
+            <span class="visible-xs-block visible-sm-inline visible-md-inline visible-lg-inline">{{movie.length}}&nbsp;minutes</span>
+            <span class="visible-sm-inline visible-md-inline visible-lg-inline">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+            <span class="visible-xs-block visible-sm-inline visible-md-inline visible-lg-inline">Rating:&nbsp;{{movie.rating}}</span>
+            <span class="visible-sm-inline visible-md-inline visible-lg-inline">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+            <span class="visible-xs-block visible-sm-inline visible-md-inline visible-lg-inline">FlixGrade:&nbsp;{{movie.grade}}</span> 
+            <div class="visible-sm-inline visible-md-inline visible-lg-inline">
+               <span tooltip="Thumbs Down Vote" class="visible-md-inline visible-lg-inline"><img src="/public/images/btn_thumbsdown_red.png" ng-click="rateMovie(0,movie)" align="top" height="35" width="35" hspace="8" alt="thumbs down" /></span>
+               <span tooltip="Thumbs Up Vote" class="visible-md-inline visible-lg-inline"><img src="/public/images/btn_thumbsup_green.png" ng-click="rateMovie(1,movie)" align="top" height="35" width="35" hspace="8" alt="thumbs up" /></span>
+               <span tooltip="Add '{{movie.title}}' to your playlist" class="visible-md-inline visible-lg-inline"><img src="/public/images/btn_add_playlist.png" ng-click="addMovieToPlaylist(movie)" align="top" height="35" width="35" hspace="8" alt="add to playlist" /></span>
+            </div>
+         </small>
+         <p class="visible-sm-block visible-md-block visible-lg-block" ng-show="movie.description != null && movie.description != ''" style="margin-top: 10px;">
+            {{movie.description}}
+         </p>
+         <br>
+            <a href="" ng-click="openRemix(movie,-1)" style="margin-top: 10px;color: #AA4444; ">
+                Create a FlixREMIX and Earn Rewards!
+            </a>
+         <br>
+         <div ng-hide="movie.remixes == null || movie.remixes.length == 0" >
+            <!---->
+            <font size="-1" color="#AA4444;"><b><u>Remixes:</u></b></font>&nbsp;&nbsp;
+            <div  class="visible-xs-block visible-sm-inline visible-md-inline visible-lg-inline" style="font-size: 1.0em; text-align: left;" ng-repeat="r in movie.remixes track by $index">
+               <a href="" ng-click="openRemix(movie, r.flix_remix_id)" target="_blank">{{r.lesson_name}}
+               </a>&nbsp;|&nbsp;
+            </div>
+         </div>
+      </div>
+      <div class="col-xs-2 col-sm-2">
+         <div class="row" style="font-size: 1.2em; text-align: center;" ng-repeat="v in movie.vendors track by $index">
+            <a href="{{v.vendor_product_link}}" target="_blank">
+            <span ng-show="v.vendor_logo == null">{{v.vendor_name}}</span>
+            <img ng-show="v.vendor_logo != null" src="{{v.vendor_logo}}" alt="{{v.vendor_name}}" style="display: inline-block; width: 100%; margin-top: 15px;" />
+            </a>
+         </div>
+      </div>
+   </div>
+
+    <div>
+        <a href="#" style="padding: 10px;padding-left: 10px;" ng-click="showFeedback=!showFeedback"><font color=#777;>Provide Feedback</font></a>
+    </div>
+
+
+   <div ng-show ="showFeedback" class="container-fluid" style="padding-top: 5px;">
+      <div class="row" style="background-color: #EEEEEE; padding-top: 20px; padding-bottom: 20px;">
+         <div class="col-sm-4">
+            <label>Feedback Type</label>
+
+            <select class='form-control' data-ng-model='feedback_type' data-ng-options='item as item.name for item in feedback_types' ng-change="feedback=''"></select>
+         </div>
+         <div class="col-sm-4">
+            <label>Feedback</label><br />
+            <input id="txtFeedback" placeholder="{{feedback_type.name}}" type="text" ng-model="feedback" class="form-control" />
+         </div>
+         <div class="col-sm-4">
+            </br>
+            <div class="col-xs-12 visible-xs-block" style="margin-top: 10px;"></div>
+            <button type="button"
+               class="btn btn-default btn-block"
+               ng-click="btnSendFeeback(feedback)"
+               id="btnSendFeeback">
+            Send Feedback
+            </button>
+         </div>
+      </div>
+   </div>
+
+
+
+</div>

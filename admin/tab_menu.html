@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="css/tabmenu.css">
+	<title>Flix Academy Tabs</title>
+</head>
+    
+<body>
+    
+	<section class="tab_menu" ng-controller="TabsCtrl">
+        
+        <ul class="tab_menu">
+            <li ng-repeat="tab in tabs" ng-class="{active:isSelected(tab.url)}">                            
+              <a href ng-click="selectTab(tab)">{{tab.title}}</a>
+            </li>
+        </ul>
+        
+<br />
+        
+	<div ng-show="isSelected('flix_movies.html')">
+		<div ng-include="'flix_movies.html'"></div>
+	</div>
+				
+	<div ng-show="isSelected('flix_suggestions.html')">
+		<div ng-include="'flix_suggestions.html'"></div>
+	</div>
+				
+	<div ng-show="isSelected('amazon_search.html')">
+		<div ng-include="'amazon_search.html'"></div>
+	</div>
+				
+	<div ng-show="isSelected('vendor_link.html')">
+		<div ng-include="'vendor_link.html'"></div>
+	</div>
+				
+	<div ng-show="isSelected('tmdb.html')">
+		<div ng-include="'tmdb.html'"></div>
+	</div>
+				
+	<div ng-show="isSelected('omdb_search.html')">
+		<div ng-include="'omdb_search.html'"></div>
+	</div>
+				
+	<div ng-show="isSelected('google_api.html')">
+		<div ng-include="'google_api.html'"></div>
+	</div>
+				
+	<div ng-show="isSelected('rotten_tomatoes.html')">
+		<div ng-include="'rotten_tomatoes.html'"></div>
+	</div>
+				
+	<div ng-show="isSelected('youtube_api.html')">
+		<div ng-include="'youtube_api.html'"></div>
+	</div>
+
+	<div ng-show="isSelected('topic_maintenance.html')">
+		<div ng-include="'topic_maintenance.html'"></div>
+	</div>
+        
+      
+</section>	
+</body>
+</html> 

@@ -1,0 +1,43 @@
+  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html ng-app="app">
+            <head>
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+            <title>Flix Admin Console</title>
+            </head>
+            <body>
+            <div class="mainContainer" >
+
+              <div data-ng-controller="topicMaintenanceCtrl">
+                  <br />
+                  <br />
+                  <br />
+                <table width="100%">
+                    <tr>
+                        <td width="33%" valign="top">                            
+
+                          <div> 
+                              <select name="selSub" ng-model="selectedParentID" ng-change=""> 
+                                  <option ng-repeat="flixSubject in flixSubjects" value="{{flixSubject.subject_id}}">{{flixSubject.subject_name}}</option> 
+                              </select>
+                          </div>
+
+                        </td>
+
+                        <td width="33%" valign="top">
+                            <div>
+                              <input type="text" style="top-margin:10px;" data-ng-model="newTopic"> 
+                          </div>
+                        </td>            
+                
+                        <td width="33%" valign="top">
+                            <button ng-click="btnSaveTopic()">SAVE/UPDATE</button>
+                        </td>                
+
+                    </tr>
+                </table>
+
+                </div>
+            </div>
+
+            </body>
+</html>

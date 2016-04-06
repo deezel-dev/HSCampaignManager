@@ -1,0 +1,93 @@
+  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html ng-app="app">
+  <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Flix Admin Console</title>
+  </head>
+  <body>
+<!-- main container -->
+      <div id="container" ng-controller="omdb_searchCtrl">
+         <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+               <input class="form-control" type="text" data-ng-model="search">
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+               <div class="col-xs-12 visible-xs-block" style="margin-top: 10px;"></div>
+               <button type="button"
+                  class="btn btn-primary btn-block"
+                  ng-click="searchCustom()"
+                  id="btnFindImages">
+               CUSTOM SEARCH
+               </button>  
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+               <div class="col-xs-12 visible-xs-block" style="margin-top: 10px;"></div>
+               <button type="button"
+                  class="btn btn-primary btn-block"
+                  ng-click="searchMovie()"
+                  id="btnFindImages">
+               SEARCH OMDB
+               </button>  
+            </div>
+         </div>
+         <br />
+         <div class="row" style="color: #fff;overflow:scroll; height:600px;">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+               <div data-ng-repeat="movie in omdbs">
+                 
+                   
+                    <h1 ng-model="movieTitle" ng-click="select(movie)" align='center'>{{movie.Title}}</h1>
+                    
+                    <br>
+
+                    <div id="image" align="center">
+                        <img style='width:150px;height:200px;' data-ng-src="http://img.omdbapi.com/?i={{movie.imdbID}}&apikey=18deef75">
+                    </div>
+
+                    <br>
+                    <br>
+                    
+                    <b><u><a href="" ng-click="sendYear(movie.Year)">Year:</a></b></u>&nbsp;&nbsp;<p style="display: inline-block;">{{movie.Year}}</p>
+                    <br /><b><u><a href="" ng-click="sendReleased(movie.Released)">Released:</a></b></u>&nbsp;&nbsp;<p style="display: inline-block;">{{movie.Released}}</p>
+                    <br /><b><u><a href="" ng-click="sendRating(movie.Rated)">Rated:</a></b></u>&nbsp;&nbsp;<p style="display: inline-block;">{{movie.Rated}}</p>  
+                    <br /><b><u><a href="" ng-click="sendRuntime(movie.Runtime)">Runtime:</a></b></u>&nbsp;&nbsp;<p style="display: inline-block;">{{movie.Runtime}}</p>
+                    <br /><b><u><a href="" ng-click="sendGenre(movie.Genre)">Genre:</a></b></u>&nbsp;&nbsp;<p style="display: inline-block;">{{movie.Genre}}</p>
+                    <br /><b><u><a href="" ng-click="sendDirector(movie.Director)">Director:</a></b></u>&nbsp;&nbsp;<p style="display: inline-block;">{{movie.Director}}</p>
+                    <br /><b><u><a href="" ng-click="sendWriter(movie.Writer)">Writer:</a></b></u>&nbsp;&nbsp;<p style="display: inline-block;">{{movie.Writer}}</p>
+                    <br /><b><u><a href="" ng-click="sendActors(movie.Actors)">Actors:</a></b></u>&nbsp;&nbsp;<p style="display: inline-block;">{{movie.Actors}}</p>
+                    <br /><b><u><a href="" ng-click="sendLanguage(movie.Language)">Language:</a></b></u>&nbsp;&nbsp;<p style="display: inline-block;">{{movie.Language}}</p>
+                    <br /><b><u><a href="" ng-click="sendCountry(movie.Country)">Country:</a></b></u>&nbsp;&nbsp;<p style="display: inline-block;">{{movie.Country}}</p>
+                    
+                    <br /><b><u><a href="" ng-click="sendPlot(movie.Plot)">Plot:</a></b></u>&nbsp;&nbsp;<p style="display: inline-block;">{{movie.Plot}}</p>
+
+                    <br /><b><u><a href="" ng-click="sendAwards(movie.Awards)">Awards:</a></b></u>&nbsp;&nbsp;<p style="display: inline-block;">{{movie.Awards}}</p><input type="text" ng-model="movie.Awards" ng-show="awardsChecked"/>
+                    <!-- <br /><b><u><a href="" ng-model="posterChecked" ng-click="posterChecked=!posterChecked">Poster:</a></b></u>&nbsp;&nbsp;<p style="display: inline-block;" ng-hide="posterChecked">{{movie.Poster}}</p><input type="text" ng-model="movie.Poster" ng-show="posterChecked"/> -->
+                    <br /><b><u>Metascore:</b></u>&nbsp;&nbsp;{{movie.Metascore}}
+                    <br /><b><u>IMDB Rating:</b></u>&nbsp;&nbsp;{{movie.imdbRating}}
+                    <br /><b><u>IMDB Votes:</b></u>&nbsp;&nbsp;{{movie.imdbVotes}}
+                    <br /><b><u><a href="" ng-model="imdbidChecked" ng-click="imdbidChecked=!imdbidChecked">IMDB ID:</a></b></u>&nbsp;&nbsp;<a ng-href="{{makeIMDBUrl(movie.imdbID)}}" target="_blank" ng-hide="imdbidChecked">{{movie.imdbID}}</a><input type="text" ng-model="movie.imdbID" ng-show="imdbidChecked"/><!-- ng-click="load_iFrame(movie.imdbID)" -->
+                    <br /><b><u><a href="" ng-model="typeChecked" ng-click="typeChecked=!typeChecked">Type:</a></b></u>&nbsp;&nbsp;<p style="display: inline-block;" ng-hide="typeChecked">{{movie.Type}}</p><input type="text" ng-model="movie.Type" ng-show="typeChecked"/>
+                    <br /><b><u>FlixID:</b></u>&nbsp;&nbsp;{{movie.flix_id}}
+                    <br /><b><u>SuggestionID:</b></u>&nbsp;&nbsp;<p style="display: inline-block;" ng-model="movieSuggestionID">{{movie.suggestion_id}}</p> 
+                    <br /><b><u><a href="" ng-model="suggestedByChecked" ng-click="suggestedByChecked=!suggestedByChecked">Suggested By:</a></b></u>&nbsp;&nbsp;<p style="display: inline-block;" ng-hide="suggestedByChecked">{{movie.SuggestedBy}}</p><input type="text" ng-model="movie.SuggestedBy" ng-show="suggestedByChecked"/>
+
+                    <br /><br />
+                    <p align='center'><b><u>TOMATO RESULTS</u></b></p>
+
+                    <b><u>Tomato Meter:</b></u>&nbsp;&nbsp;{{movie.tomatoMeter}}
+                    <b><u>Tomato Image:</b></u>&nbsp;&nbsp;{{movie.tomatoImage}}
+                    <b><u>Tomato Reviews:</b></u>&nbsp;&nbsp;{{movie.tomatoReviews}}
+                    <br /><b><u>Tomato Fresh:</b></u>&nbsp;&nbsp;{{movie.tomatoFresh}}
+                    &nbsp;&nbsp;<b><u>Tomato Rotten:</b></u>&nbsp;&nbsp;{{movie.tomatoRotten}}
+                    <b><u>Tomato Meter:</b></u>&nbsp;&nbsp;{{movie.tomatoUserMeter}}
+                    <!--&nbsp;&nbsp;<b><u>Tomato UserRating:</b></u>&nbsp;&nbsp;{{movie.tomatoUserRating}}-->
+                    <br /><br /><b><u>Tomato Consensus:</b></u>&nbsp;&nbsp;{{movie.tomatoConsensus}}
+
+                    <HR COLOR="red" SIZE="6">
+                    
+               </div>
+            </div>
+         </div>
+      </div>
+  </body>
+  </html>
