@@ -19,7 +19,7 @@ if (isset($_GET["action"]) && in_array($_GET["action"], $possible_url)){
 
   function getDatabase(){
     $serverName = "tcp:deezel-dev.cloudapp.net";
-    $connectionOptions = array("Database"=>'PropheticMinitries',
+    $connectionOptions = array("Database"=>'PropheticMinistries',
                                "UID"=>'web_user', "PWD"=>'p@$$w0rd');
     
     $data = new Database($serverName, $connectionOptions);
