@@ -1,6 +1,7 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . "/include/db-config.php";
 
+/*
 foreach ($_SERVER as $key => $value) {
     if (strpos($key, "MYSQLCONNSTR_") !== 0) {
         continue;
@@ -13,7 +14,7 @@ foreach ($_SERVER as $key => $value) {
  
     
     break;
-}
+}*/
 
 class Database {
 
@@ -26,7 +27,7 @@ class Database {
         public $serverName;
         public $connectionOptions;
         
-        function __construct($$host, $user, $pwrd, $database, $connectionOptions){
+        function __construct($host, $user, $pwrd, $database, $connectionOptions){
         
             $this->host = $host;
             $this->user = $user;
