@@ -26,12 +26,6 @@
                 <?php } ?>
                 
                 
-
-                <?php
-                // <li><a href="http://flixacademy.weebly.com/about.html">About</a></li>
-                // <li><a href="http://flixacademy.weebly.com/testimonials.html">Testimonials</a></li>
-                // <li><a href="http://flixacademy.weebly.com/contact.html">Contact</a></li>
-                ?>
                 
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Follow Us <span class="caret"></span></a>
