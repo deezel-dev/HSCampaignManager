@@ -1323,7 +1323,7 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
                 alert("invalid email");
             } else {
 
-                        $http.post("/account/add-prospect.php", {
+                        $http.post("/include/db_api.php?action=signUp&email=" + $scope.signMeUpEmail, {
                                 email: $scope.signMeUpEmail
                             })
                                 .success(function (data, status, headers, config) {
