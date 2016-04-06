@@ -21,7 +21,7 @@
                 
                 
                 <?php if (isset($_SESSION[SESSION_PROFILE_ID])) { ?>                
-                    <li><a ui-sref="flix_main({mode: 2})">My Playlist</a></li>
+                    <li><a ui-sref="main({mode: 2})">My Playlist</a></li>
                    <!--  <li <?php //if ($_SERVER['PHP_SELF'] == "/flix/search.php?playlist=true") echo "class=\"active\"" ?>><a href="/flix/search.php?playlist=true">My Playlist</a></li>-->
                 <?php } ?>
                 
