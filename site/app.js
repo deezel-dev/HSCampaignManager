@@ -1323,7 +1323,19 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
                 alert("invalid email");
             } else {
 
-                $http.post("/admin/api/flix_academy_api.php?action=isMember&api_token=flixteam2014&email=" + $scope.signMeUpEmail)
+                        $http.post("/account/add-prospect.php", {
+                                email: $scope.signMeUpEmail
+                            })
+                                .success(function (data, status, headers, config) {
+                                    alert("Thank you for signing up.  An email will be send to you soon.");
+                                    $scope.signMeUpEmail = "";
+                                }).error(function (data, status, headers, config) {
+
+                                });
+
+                /*
+                
+                $http.post("/include/db_api.php?action=signUp&email=" + $scope.signMeUpEmail)
                     .success(function (data, status, headers, config) {
                         var isMember = data.isMember;
 
@@ -1347,6 +1359,8 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
                     }).error(function (data, status, headers, config) {
 
                     });
+                
+                */
 
             }
 
