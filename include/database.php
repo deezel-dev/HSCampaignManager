@@ -179,7 +179,7 @@ class Database {
     
 }
 
-  function getDatabase(){
+  function getDatabaseX(){
     $serverName = $GLOBALS['DB_HOST'];
     $connectionOptions = array("Database"=>$GLOBALS['DB_NAME'],
                                "UID"=>$GLOBALS['DB_USER'], "PWD"=>$GLOBALS['DB_PASSWORD']);
@@ -191,13 +191,12 @@ class Database {
   
   
 
-  function getDatabaseX(){
-    $serverName = 'tcp:deezel-dev.cloudapp.net';
+  function getDatabase(){
+    $serverName = "tcp:deezel-dev.cloudapp.net";
     $connectionOptions = array("Database"=>'PropheticMinistries',
                                "UID"=>'web_user', "PWD"=>'p@$$w0rd');
     
     $data = new Database($serverName, $connectionOptions);
-    //$data = new Database('deezel-dev.cloudapp.net', 'webuser', 'P@ssw0rd928', 'OneWord');
     return  $data;
   }
 
