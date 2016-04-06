@@ -1,5 +1,5 @@
 <div ng-controller="mainCtrl">
-    <div>MAIN</div>
+
    <div ng-show="0">
       <!--<?php //require $_SERVER['DOCUMENT_ROOT'] . "/site/flix_main_searchbar.html" ?> -->
    </div>
