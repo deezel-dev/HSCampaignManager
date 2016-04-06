@@ -1,14 +1,14 @@
 var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
     .config(['$urlRouterProvider', '$stateProvider', function ($urlRouterProvider, $stateProvider) {
 
-        $urlRouterProvider.otherwise('/flix_main');
+        $urlRouterProvider.otherwise('/main');
 
         $stateProvider
 
         // INDEX STATES AND NESTED VIEWS ========================================
             .state('main', {
                 url: '/main',
-                templateUrl: '/flix/main.php',
+                templateUrl: '/site/main.php',
                 params: {
                     mode: 1
                 }
@@ -18,7 +18,7 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
         // INDEX STATES AND NESTED VIEWS ========================================
         .state('flix_main_movie', {
             url: '/flix_main_movie',
-            templateUrl: '/flix/flix_main_movie.php',
+            templateUrl: '/site/flix_main_movie.php',
             controller: 'movieViewCtrl',
             params: {
                 movie: null
@@ -29,7 +29,7 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
         // INDEX STATES AND NESTED VIEWS ========================================
         .state('flix_remix_submission', {
             url: '/flix_remix_submission',
-            templateUrl: '/flix/flix_remix_submission.html',
+            templateUrl: '/site/flix_remix_submission.html',
             controller: 'flixRemixCtrl',
             params: {
                 movie: null,
