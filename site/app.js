@@ -1121,7 +1121,7 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
 
     } ])
     .controller("indexCtrl", ['$scope', '$window', 'dataService', function ($scope, $window, dataService) {
-
+        alert("indexCntrl");
         $scope.isUser = false;
         $scope.profileId = -1;
         $scope.rootUrl = $window.location.protocol + "//" + $window.location.host;
