@@ -14,7 +14,7 @@
     </div>
 
    <div>
-      <?php require $_SERVER['DOCUMENT_ROOT'] . "/flix/flix_main_prospect_page.html" ?>
+      <?php //require $_SERVER['DOCUMENT_ROOT'] . "/flix/flix_main_prospect_page.html" ?>
    </div>
 
    <div ng-show="1">
@@ -24,6 +24,6 @@
       <?php //require $_SERVER['DOCUMENT_ROOT'] . "/flix/flix_main_logo.html" ?>
    </div>
    <div ng-show="1">
-      <?php //require $_SERVER['DOCUMENT_ROOT'] . "/flix/flix_main_footer.html" ?>
+      <?php require $_SERVER['DOCUMENT_ROOT'] . "/site/footer.html" ?>
    </div>
 </div>
