@@ -27,8 +27,8 @@ function addUser($email) {
             
     }
     
-    $sql = "INSERT INTO profile_prospects(email, ip_address, date_added)
-            VALUES ('" . padSql($email) ."','" .$qipAddress . "', NOW())";    
+    $sql = "INSERT INTO prospects(email, ip_address)
+            VALUES ('" . padSql($email) ."','" .$qipAddress . "')";    
       
     $data = getDatabase();
     
