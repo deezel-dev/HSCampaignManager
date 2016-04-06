@@ -1,4 +1,4 @@
-var app = angular.module('flix_app', ['ui.router', 'ui.bootstrap'])
+var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
     .config(['$urlRouterProvider', '$stateProvider', function ($urlRouterProvider, $stateProvider) {
 
         $urlRouterProvider.otherwise('/flix_main');
@@ -6,9 +6,9 @@ var app = angular.module('flix_app', ['ui.router', 'ui.bootstrap'])
         $stateProvider
 
         // INDEX STATES AND NESTED VIEWS ========================================
-            .state('flix_main', {
-                url: '/flix_main',
-                templateUrl: '/flix/flix_main.php',
+            .state('main', {
+                url: '/main',
+                templateUrl: '/flix/main.php',
                 params: {
                     mode: 1
                 }

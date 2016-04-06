@@ -11,11 +11,8 @@
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-left">
 
-                <li><a ui-sref="flix_main({mode: 1})">Find Flix</a></li> 
-                <!--<li><a ui-sref="flix_main_submit_movie">Submit Flix</a></li>                
-                <li><a ui-sref="flix_main_submit_topic">Submit Topic</a></li>
-                -->
-
+                <li><a ui-sref="flix_main({mode: 1})">Home</a></li> 
+                
                 <?php if (isset($_SESSION[SESSION_PROFILE_ID])) { ?>                
                     <li><a ui-sref="flix_main({mode: 2})">My Playlist</a></li>
                    <!--  <li <?php //if ($_SERVER['PHP_SELF'] == "/flix/search.php?playlist=true") echo "class=\"active\"" ?>><a href="/flix/search.php?playlist=true">My Playlist</a></li>-->
