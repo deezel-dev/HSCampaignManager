@@ -1,6 +1,11 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . "/include/db-config.php";
 
+$GLOBALS['DB_HOST'] = $db_host; //'tcp:deezel-dev.cloudapp.net'
+$GLOBALS['DB_USER'] = $db_name; //'PropheticMinistries'
+$GLOBALS['DB_PASSWORD'] = $db_user; //'web_user'
+$GLOBALS['DB_NAME'] = $db_password; //'p@$$w0rd'
+
 /*
 foreach ($_SERVER as $key => $value) {
     if (strpos($key, "MYSQLCONNSTR_") !== 0) {
@@ -175,6 +180,18 @@ class Database {
 }
 
   function getDatabase(){
+    $serverName = $GLOBALS['DB_HOST'];
+    $connectionOptions = array("Database"=>$GLOBALS['DB_NAME'],
+                               "UID"=>$GLOBALS['DB_USER'], "PWD"=>$GLOBALS['DB_PASSWORD']);
+    
+    $data = new Database($serverName, $connectionOptions);
+    //$data = new Database('deezel-dev.cloudapp.net', 'webuser', 'P@ssw0rd928', 'OneWord');
+    return  $data;
+  }
+  
+  
+
+  function getDatabaseX(){
     $serverName = $GLOBALS['DB_HOST'];
     $connectionOptions = array("Database"=>$GLOBALS['DB_NAME'],
                                "UID"=>$GLOBALS['DB_USER'], "PWD"=>$GLOBALS['DB_PASSWORD']);
