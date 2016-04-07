@@ -16,13 +16,9 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
 
 
         // INDEX STATES AND NESTED VIEWS ========================================
-        .state('flix_main_movie', {
-            url: '/flix_main_movie',
-            templateUrl: '/site/flix_main_movie.php',
-            controller: 'movieViewCtrl',
-            params: {
-                movie: null
-            }
+        .state('about_us', {
+            url: '/about_us',
+            templateUrl: '/site/about_us.html'
         })
 
 

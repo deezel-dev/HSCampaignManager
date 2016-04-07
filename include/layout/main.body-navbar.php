@@ -12,7 +12,7 @@
             <ul class="nav navbar-nav navbar-left">
 
                 <li><a ui-sref="main({mode: 1})">Home</a></li> 
-                <li><a href="">About Us</a></li>
+                <li><a ui-sref="about_us">About Us</a></li> 
                 <li><a href="">Training</a></li>
                 <li><a href="">Links</a></li>
                 <li><a href="">Itinerary</a></li>
