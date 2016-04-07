@@ -589,6 +589,7 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
     })
     .controller("dreamsCtrl", ['$scope', '$window', 'dataService', function ($scope, $window, dataService) {
 
+/*
         $scope.isUser = false;
         $scope.profileId = -1;
         $scope.showSuggestion = false;
@@ -611,7 +612,7 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
         $scope.getDreams = function (){
 
         }
-
+*/
         $scope.btnSubmitDream = function(){
             alert("start");
             $http.post("/db/add-dream.php", {
@@ -629,7 +630,7 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
                 
                 alert("finished");
 
-        }
+        };
 
 
 
