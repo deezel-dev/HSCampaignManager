@@ -603,7 +603,7 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
             "&dream=" + $scope.dream_dream_desc;
             
             //alert(url.replace(" ","%20"));
-            $http.post(url)
+            $http.post(url, null)
                     .success(function (data, status, headers, config) {
                         alert("Thank you for sharing your dream with us.");
                         
