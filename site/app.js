@@ -620,19 +620,14 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
 */
         $scope.btnSubmitDream = function(){
             
-            var url = "/include/db_api.php?action=addDream";
-            url+="&name=" + $scope.dream_user_name.replace(" ","%20");
-            url+="&email=" + $scope.dream_user_name.replace(" ","%20");
-            url+="&dateOfDream=" + $scope.dream_user_name.replace(" ","%20");
-            url+="&dream=" + $scope.dream_user_name.replace(" ","%20");
+            var url = "/include/db_api.php?action=addDream" + 
+            "&name=" + $scope.dream_user_name.replace(" ","%20") +
+            "&email=" + $scope.dream_user_name.replace(" ","%20") +
+            "&dateOfDream=" + $scope.dream_user_name.replace(" ","%20")+
+            "&dream=" + $scope.dream_user_name.replace(" ","%20")+
             alert(url);
             
-            $http.post(url, {
-                name: $scope.dream_user_name,
-                email: $scope.dream_email, 
-                date_of_dream: $scope.dream_date, 
-                dream: $scope.dream_dream_desc
-                })
+            $http.post(url)
                     .success(function (data, status, headers, config) {
                         alert("Thank you for sharing your dream with us.");
                         
