@@ -4,7 +4,7 @@
       <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12" style="margin-top:-10px">         
         <div>
           <h1><b>Dreams</b></h1>
-          <h3>What are Prophetic Dreams? Definition</h3>
+          <h3>What are Prophetic Dreams?</h3>
           <p><b>Definition: </b>
           A Prophetic dream, also referred to as a precognitive dream, are dreams of events or incidents before they happen. A study showed that 42% of people felt they had had a dream about something that later came true. So despite what the sceptics may say many people have experienced prophetic dreams and believe that their dream can predict the future.</p>
 
@@ -22,8 +22,9 @@
                 <input id="txtEmail" placeholder="Enter your email " type="email" ng-model="dreams_email" class="form-control" />
                 <input id="txtUserName" placeholder="Enter your name (only if you want to) " type="text" ng-model="dreams_user_naame" class="form-control" />
                 <input id="txtDateOfDream" placeholder="Enter the date of the dream" type="date" ng-model="dreams_date" class="form-control" />
-                <input id="txtDream" placeholder="Enter your email " type="email" ng-model="dreams_dream_desc" class="form-control" />
-
+                <textarea id="txtDream" rows="4" cols="50" placeholder="Enter your Dream" ng-model="dreams_dream_desc" class="form-control">
+                </textarea>
+                
                 <button type="button"
                   class="btn btn-primary btn-block"
                   ng-click="btn-submit-a-dream()"
@@ -36,14 +37,12 @@
       
       </div>
 
-      <div class="col-lg-3 col-md-3 visible-lg-block visible-md-block text-left">
+      <div class="col-lg-4 col-md-4 visible-lg-block visible-md-block text-left">
         
-        <p><b>Prophetic Dreas</b></p>
+        <p><b>Prophetic Dreams</b></p>
         These are dreams submitted by fellow believers.  Let us know your dreams!       
         
         <br>
-        <br>
-        
         <div > <!-- ng-repeat="dream in dreams" -->
           <br><b>Dream1</b>
           <br>I dreamed.....
