@@ -620,6 +620,11 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
 */
         $scope.btnSubmitDream = function(){
             
+            alert(scope.dream_user_name);
+            alert($scope.dream_email);
+            alert($scope.dream_date);
+            alert($scope.dream_dream_desc);
+            
             var url = "/include/db_api.php?action=addDream" + 
             "&name=" + $scope.dream_user_name.replace(" ","%20") +
             "&email=" + $scope.dream_email.replace(" ","%20") +
@@ -653,7 +658,7 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
                 
                 alert("finished");
 
-        };
+        }
 
 
 
