@@ -622,7 +622,7 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
                 })
                     .success(function (data, status, headers, config) {
                         alert("Thank you for sharing your dream with us.");
-                        $scope.signMeUpEmail = "";
+                        
                     }).error(function (data, status, headers, config) {
 
                 });
