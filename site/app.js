@@ -21,6 +21,12 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
             templateUrl: '/site/about_us.html'
         })
 
+        // INDEX STATES AND NESTED VIEWS ========================================
+        .state('dreams', {
+            url: '/dreams',
+            templateUrl: '/site/dreams.html'
+        })
+
 
         // INDEX STATES AND NESTED VIEWS ========================================
         .state('flix_remix_submission', {
