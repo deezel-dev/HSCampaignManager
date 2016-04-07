@@ -598,10 +598,10 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
         $scope.btnSubmitDream = function(){
             
             $http.post("/db/add-dream.php", {
-                name: $scope.dream_user_name,
-                email: $scope.dream_email, 
+                name: 'dee',
+                email: 'd@d.com', 
                 date_of_dream: '2016-04-07', 
-                dream: $scope.dream_dream_desc
+                dream: 'my dream'
                 })
                     .success(function (data, status, headers, config) {
                         alert("Thank you for sharing your dream with us.");
