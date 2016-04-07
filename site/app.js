@@ -612,12 +612,12 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
 
         }
 
-        $scope.btnSubmitDream = function(name, email, dateOfDream, dream){
+        $scope.btnSubmitDream = function(_name, _email, _dateOfDream, _dream){
             $http.post("/db/add-dream.php", {
-                name: name,
-                email: email,
-                date_of_dream: dateOfDream,
-                dream: dream
+                name: _name,
+                email: _email,
+                date_of_dream: _dateOfDream,
+                dream: _dream
                 })
                     .success(function (data, status, headers, config) {
                         alert("Thank you for sharing your dream with us.");
