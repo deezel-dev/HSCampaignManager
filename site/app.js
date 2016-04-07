@@ -596,6 +596,21 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
         //alert("dreamsCtrl");
         
         $scope.btnSubmitDream = function(){
+            
+            $http.post("/db/add-dream.php", {
+                name: $scope.dream_user_name,
+                email: $scope.dream_email, 
+                date_of_dream: '2016-04-07', 
+                dream: $scope.dream_dream_desc
+                })
+                    .success(function (data, status, headers, config) {
+                        alert("Thank you for sharing your dream with us.");
+                        
+                    }).error(function (data, status, headers, config) {
+                        alert(status);
+                });
+            
+            /*
             var url = "http://propheticministries.azurewebsites.net/include/db_api.php?action=addDream" + 
             "&name=" + $scope.dream_user_name +
             "&email=" + $scope.dream_email +
@@ -610,6 +625,7 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
                     }).error(function (data, status, headers, config) {
                         alert(status);
                 });
+                */
             
         }
 
