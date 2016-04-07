@@ -596,10 +596,24 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
         alert("dreamsCtrl");
         
         $scope.btnSubmitDream = function(){
-            alert($scope.dream_user_name);
-            alert($scope.dream_email);
-            alert($scope.dream_date);
-            alert($scope.dream_dream_desc);
+            /*var url = "/include/db_api.php?action=addDream" + 
+            "&name=" + $scope.dream_user_name.replace(" ","%20") +
+            "&email=" + $scope.dream_email.replace(" ","%20") +
+            "&dateOfDream=" + $scope.dream_date.replace(" ","%20")+
+            "&dream=" + $scope.dream_dream_desc.replace(" ","%20");
+            alert(url);*/
+            $http.post("/db/add-dream.php", {
+                name: $scope.dream_user_name,
+                email: $scope.dream_email, 
+                date_of_dream: $scope.dream_date, 
+                dream: $scope.dream_dream_desc
+                })
+                    .success(function (data, status, headers, config) {
+                        alert("Thank you for sharing your dream with us.");
+                        
+                    }).error(function (data, status, headers, config) {
+                        alert(status);
+                });
         }
 
 /*
