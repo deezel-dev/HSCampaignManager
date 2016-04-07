@@ -626,6 +626,8 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
                     }).error(function (data, status, headers, config) {
                         alert(status);
                 });
+                
+                alert("finished");
 
         }
 
