@@ -52,14 +52,9 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
         dataService.rootPath = "";
         dataService.listMode = 1;
 
-        dataService.topicListLoaded = false;
-        dataService.vendorListLoaded = false;
-        dataService.movieListLoaded = false;
+        dataService.dreamListLoaded = false;
 
-        dataService.topicList = [];
-        dataService.vendorList = [];
-        dataService.movieList = [];
-        dataService.playlist_ids = [];
+        dataService.dreamList = [];
         dataService.filteredMovies = [];
         dataService.payload = {};
 
@@ -81,6 +76,21 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
         dataService.getProfileId = function () {
             return dataService.profile_id;
         }
+
+        dataService.getDreams = function () {
+            var promise = $http.get('/api/json/get-all-dreams.json').then(function (response) {
+                dataService.dreamList = response.data.movies;
+                dataService.broadcastDreamListUpdate();
+                return dataService.dreamList;
+            });
+            return promise;
+        }
+
+        dataService.broadcastDreamListUpdate = function () {
+            dataService.dreamListLoaded = true;
+            $rootScope.$broadcast('dreamListUpdate');
+        };
+
 
         dataService.showSuggestionView = function (_showSuggestion) {
             dataService.showSuggestion = _showSuggestion;
@@ -577,6 +587,50 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
         }
 
     })
+    .controller("dreamsCtrl", ['$scope', '$window', 'dataService', function ($scope, $window, dataService) {
+
+        $scope.isUser = false;
+        $scope.profileId = -1;
+        $scope.showSuggestion = false;
+
+        $scope.setProfileData = function (profileId) {
+
+            var isUser = false;
+
+            if (profileId > 0) {
+                isUser = true;
+            }
+
+            $scope.isUser = isUser;
+            $scope.profileId = profileId;
+
+            dataService.isUser = isUser;
+            dataService.setProfileId(profileId);
+        }
+
+        $scope.getDreams = function (){
+
+        }
+
+        $scope.btnSubmitDream = function(name, email, dateOfDream, dream){
+            $http.post("/db/add-dream.php", {
+                name: name,
+                email: email,
+                date_of_dream: dateOfDream,
+                dream: dream
+                })
+                    .success(function (data, status, headers, config) {
+                        alert("Thank you for sharing your dream with us.");
+                        $scope.signMeUpEmail = "";
+                    }).error(function (data, status, headers, config) {
+
+                });
+
+        }
+
+
+
+    } ])
     .controller("flixRemixCtrl", ['$scope', '$state', '$stateParams', '$http', '$timeout', '$window', 'dataService', function ($scope, $state, $stateParams, $http, $timeout, $window, dataService) {
 
         var movie = $stateParams.movie;
@@ -1323,58 +1377,16 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
                 alert("invalid email");
             } else if ($scope.signMeUpEmail.length < 1) {
                 alert("invalid email");
-            } else {
-/*
-                        $http.post("/include/db_api.php?action=signUp&email=" + $scope.signMeUpEmail, {
-                                email: $scope.signMeUpEmail
-                            })
-                                .success(function (data, status, headers, config) {
-                                    alert("Thank you for signing up.  An email will be send to you soon.");
-                                    $scope.signMeUpEmail = "";
-                                }).error(function (data, status, headers, config) {
+            } else {                                
+                $http.post("/account/add-prospect.php", {
+                email: $scope.signMeUpEmail
+                })
+                .success(function (data, status, headers, config) {
+                    alert("Thank you for signing up.  An email will be send to you soon.");
+                    $scope.signMeUpEmail = "";
+                }).error(function (data, status, headers, config) {
 
-                                });*/
-                                
-                    $http.post("/account/add-prospect.php", {
-                    email: $scope.signMeUpEmail
-                    })
-                    .success(function (data, status, headers, config) {
-                        alert("Thank you for signing up.  An email will be send to you soon.");
-                        $scope.signMeUpEmail = "";
-                    }).error(function (data, status, headers, config) {
-
-                    });
-
-
-                /*
-                
-                $http.post("/include/db_api.php?action=signUp&email=" + $scope.signMeUpEmail)
-                    .success(function (data, status, headers, config) {
-                        var isMember = data.isMember;
-
-                        if (isMember) {
-                            alert("It appears you are already a member.  Please sign in to take full advantage of the features on our site.");
-                            //$window.open("/account/signin.php");
-                        } else {
-                            $http.post("/account/add-prospect.php", {
-                                email: $scope.signMeUpEmail
-                            })
-                                .success(function (data, status, headers, config) {
-                                    alert("Thank you for signing up.  An email will be send to you soon.");
-                                    $scope.signMeUpEmail = "";
-                                }).error(function (data, status, headers, config) {
-
-                                });
-
-                        }
-
-
-                    }).error(function (data, status, headers, config) {
-
-                    });
-                
-                */
-
+                });
             }
 
         }
@@ -1909,230 +1921,3 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
         }
 
     } ])
-    
-
-
-    /*
-
-    .controller("flixMovieViewCtrl", ['$scope', 'dataService', function ($scope, dataService) {
-
-        $scope.movie = {};
-        $scope.movie = dataService.getMovie();
-        $scope.feedback = '';
-        $scope.showFeedback = false;
-
-        $scope.$on('movieUpdate', function () {
-            $scope.movie = dataService.movie;
-        });
-
-
-        $scope.submitRemix = function (movie) {
-            dataService.submitRemix(movie);
-        }
-
-        $scope.addMovieToPlaylist = function (movie) {
-            dataService.addMovieToPlaylist(movie);
-        }
-
-        $scope.rateMovie = function (rating, movie) {
-            dataService.rateMovie(rating, movie);
-        }
-
-        $scope.btnSendFeeback = function (feedback) {
-            var feedbackPosted = dataService.sendFeedback($scope.movie.product_id,
-                $scope.feedbackType,
-                feedback);
-
-
-            $scope.showFeedback = false;
-            $scope.feedback = "";
-
-        }
-
-        $scope.openRemix = function (movie) {
-            dataService.openRemix(movie, $scope.selectedTopCategory, -1);
-        }
-
-    } ])
-
-        // FLIX MOVIE SUBMISSION PAGE =====================================================
-        .state('flix_main_submit_movie', {
-            url: '/flix_main_submit_movie',
-            templateUrl: '/flix/flix_main_submit_movie.html'
-        })
-
-
-        // FLIX MOVIE SUBMISSION PAGE =====================================================
-        .state('flix_main_submit_topic', {
-            url: '/flix_main_submit_topic',
-            templateUrl: '/flix/flix_main_submit_topic.html'
-        })
-
-
-        // FLIX REMIX PAGE ================================================
-        .state('flix_remix', {
-            url: '/flix_remix_submission',
-            templateUrl: '/flix/flix_remix_submission.php',
-            controller: ''
-        })
-
-    
-    .controller("flixMiniMovieViewCtrl", ['$scope', 'dataService', function ($scope, dataService) {
-
-        $scope.showMovie = false;
-        $scope.movie = {};
-        $scope.position = {};
-        //$scope.movie = dataService.getMovie();
-
-        $scope.showView = function (show) {
-            dataService.showMovieView(show);
-        }
-
-        $scope.$on('movieUpdate', function () {
-            //dataService.showMovieView(false);
-            //$scope.movie = dataService.movie;
-            //dataService.showMovieView(true);
-            //$scope.getDescription($scope.movie);
-            //$scope.showMovie = dataService.showMovie;
-        });
-
-        $scope.$on('showMovieUpdate', function () {
-            $scope.movie = dataService.movie;
-            $scope.showMovie = dataService.showMovie;
-            $scope.position = {
-                "x": dataService.x,
-                "y": dataService.y
-            };
-        });
-
-        $scope.openMovie = function () {
-            dataService.setMovie($scope.movie);
-            //$state.go('flix_main_movie');
-            //dataService.showMovieView(true);
-        };
-
-        $scope.getDescription = function (movie) {
-
-            var tooltipMsg = "";
-
-            if (movie.description != null && movie.description.length > 0) {
-
-                var words = movie.description.split(" ");
-                var wordCount = 0;
-                var sentence = "";
-                var maxWords = 20;
-
-                angular.forEach(words, function (word, index) {
-                    if (wordCount == 0) {
-                        sentence = word;
-                        wordCount = wordCount + 1;
-                    } else if (wordCount < maxWords) {
-                        sentence = sentence + " " + word;
-                        wordCount = wordCount + 1;
-                    }
-                })
-
-                tooltipMsg = sentence + "...";
-
-
-            }
-
-            return tooltipMsg;
-
-        };
-
-    } ])
-    
-    
-    
-
-        $scope.getFlixMovie = function (product_id) {
-            var url = "/api/flix/flix_academy_api.php?action=getFlixMovie&api_token=flixteam2014&product_id=" + product_id;
-
-            $http.get(url).then(function (data) {
-
-                //alert(data.data.movies[0].title);
-
-                var _movie = data.data.movies[0];
-
-                var tempMovie = {
-                    "Title": _movie.title,
-                    "Year": _movie.release_year,
-                    "Rated": _movie.rating,
-                    "Released": _movie.release_date,
-                    "Runtime": _movie.length,
-                    "Genre": '',
-                    "Director": _movie.director,
-                    "Writer": _movie.writer,
-                    "Actors": _movie.actors,
-                    "Plot": _movie.description,
-                    "Language": _movie.language,
-                    "Country": _movie.country,
-                    "Awards": _movie.awards,
-                    "Poster": _movie.product_image,
-                    "Metascore": '',
-                    "Imdbrating": '',
-                    "Imdbvotes": '',
-                    "imdbID": _movie.imdb_id,
-                    "Type": _movie.type,
-                    "isFlix": true,
-                    "product_id": _movie.product_id,
-                    "SuggestedBy": '',
-                    "suggestion_id": -1,
-                    "subjects": _movie.subjects,
-                    "vendors": _movie.vendors
-                };
-
-
-                $scope.loadMovie(tempMovie);
-
-            });
-        };
-
-        //from omdb or flix - may need to tweak
-        $scope.loadMovie = function (movie) {
-
-            $scope.movie = movie;
-
-            $scope.movieTitle = movie.Title;
-            $scope.movieYear = movie.Year;
-            $scope.movieRated = movie.Rated;
-            $scope.movieReleased = movie.Released;
-            $scope.movieRuntime = movie.Runtime;
-            $scope.movieGenre = movie.Genre;
-            $scope.movieDirector = movie.Director;
-            $scope.movieWriter = movie.Writer;
-            $scope.movieActors = movie.Actors;
-            $scope.moviePlot = movie.Plot;
-            $scope.movieLanguage = movie.Language;
-            $scope.movieCountry = movie.Country;
-            $scope.movieAwards = movie.Awards;
-            $scope.moviePoster = movie.Poster;
-            $scope.coverArt = movie.Poster;
-            $scope.movieMetascore = movie.Metascore;
-            $scope.movieimdbRating = movie.imdbRating;
-            $scope.movieImdbvotes = movie.imdbVotes;
-            $scope.movieimdbID = movie.imdbID;
-            $scope.movieType = movie.Type;
-            $scope.coverArtChecked = true;
-
-            $scope.movieSuggestionID = movie.suggestion_id;
-            $scope.movieSuggestedBy = movie.SuggestedBy;
-            $scope.movieflix_id = movie.product_id;
-
-
-            //$scope.googleSearch = movie.Title;
-            //$scope.getData();
-            //$scope.getData();
-
-
-        }
-
-        //flix movie     
-        $scope.$on('handleFlixMovieBroadcast', function () {
-            //$scope.getFlixMovie(mMessageService.product_id);
-        });
-
-    
-    
-    */
