@@ -593,6 +593,11 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
         $scope.dream_email = "";
         $scope.dream_date = "";
         $scope.dream_dream_desc = "";
+        alert("dreamsCtrl");
+        
+        $scope.btnSubmitDream = function(){
+            alert("btnSubmitDream");
+        }
 
 /*
         $scope.isUser = false;
@@ -617,7 +622,7 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
         $scope.getDreams = function (){
 
         }
-*/
+
         $scope.btnSubmitDream = function(){
             
             alert(scope.dream_user_name);
@@ -654,11 +659,11 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
                         alert(status);
                 });
                 
-                */
+                
                 
                 alert("finished");
 
-        }
+        }*/
 
 
 
