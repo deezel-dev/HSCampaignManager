@@ -596,10 +596,10 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
         //alert("dreamsCtrl");
         
         $scope.btnSubmitDream = function(){
-            var url = "/include/db_api.php?action=addDream" + 
+            var url = "http://propheticministries.azurewebsites.net/include/db_api.php?action=addDream" + 
             "&name=" + $scope.dream_user_name +
             "&email=" + $scope.dream_email +
-            "&dateOfDream=2016-04-01" + +
+            "&dateOfDream=2016-04-01" +
             "&dream=" + $scope.dream_dream_desc;
             
             //alert(url.replace(" ","%20"));
