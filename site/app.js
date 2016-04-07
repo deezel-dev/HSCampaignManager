@@ -619,11 +619,14 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
         }
 */
         $scope.btnSubmitDream = function(){
-            //alert($scope.dream_user_name);
-            //alert($scope.dream_email);
-            //alert($scope.dream_date);
-            //alert($scope.dream_dream_desc);
-            $http.post("/db/add-dream.php", {
+            
+            var url = "/include/db_api.php?action=addDream";
+            url+="&name=" + $scope.dream_user_name.replace(" ","%20");
+            url+="&email=" + $scope.dream_user_name.replace(" ","%20");
+            url+="&dateOfDream=" + $scope.dream_user_name.replace(" ","%20");
+            url+="&dream=" + $scope.dream_user_name.replace(" ","%20");
+            
+            $http.post(url, {
                 name: $scope.dream_user_name,
                 email: $scope.dream_email, 
                 date_of_dream: $scope.dream_date, 
@@ -635,6 +638,22 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
                     }).error(function (data, status, headers, config) {
                         alert(status);
                 });
+                /*
+                
+                $http.post("/db/add-dream.php", {
+                name: $scope.dream_user_name,
+                email: $scope.dream_email, 
+                date_of_dream: $scope.dream_date, 
+                dream: $scope.dream_dream_desc
+                })
+                    .success(function (data, status, headers, config) {
+                        alert("Thank you for sharing your dream with us.");
+                        
+                    }).error(function (data, status, headers, config) {
+                        alert(status);
+                });
+                
+                */
                 
                 alert("finished");
 
