@@ -597,10 +597,10 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
         
         $scope.btnSubmitDream = function(){
             var url = "/include/db_api.php?action=addDream" + 
-            "&name=" + $scope.dream_user_name.replace(" ","%20") +
-            "&email=" + $scope.dream_email.replace(" ","%20") +
-            "&dateOfDream=" + $scope.dream_date.replace(" ","%20")+
-            "&dream=" + $scope.dream_dream_desc.replace(" ","%20");
+            "&name=" + $scope.dream_user_name +
+            "&email=" + $scope.dream_email +
+            "&dateOfDream=" + $scope.dream_date+
+            "&dream=" + $scope.dream_dream_desc;
             
             alert(url);
             
