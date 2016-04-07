@@ -624,7 +624,7 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
                         alert("Thank you for sharing your dream with us.");
                         
                     }).error(function (data, status, headers, config) {
-
+                        alert(status);
                 });
 
         }
