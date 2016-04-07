@@ -619,10 +619,10 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
         }
 */
         $scope.btnSubmitDream = function(){
-            alert($scope.dream_user_name);
-            alert($scope.dream_email);
-            alert($scope.dream_date);
-            alert($scope.dream_dream_desc);
+            //alert($scope.dream_user_name);
+            //alert($scope.dream_email);
+            //alert($scope.dream_date);
+            //alert($scope.dream_dream_desc);
             $http.post("/db/add-dream.php", {
                 name: $scope.dream_user_name,
                 email: $scope.dream_email, 
