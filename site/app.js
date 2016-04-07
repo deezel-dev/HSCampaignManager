@@ -602,7 +602,14 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
             "&dateOfDream=" + $scope.dream_date+
             "&dream=" + $scope.dream_dream_desc;
             
-            alert(url.replace(" ","%20"));
+            //alert(url.replace(" ","%20"));
+            $http.post(url)
+                    .success(function (data, status, headers, config) {
+                        alert("Thank you for sharing your dream with us.");
+                        
+                    }).error(function (data, status, headers, config) {
+                        alert(status);
+                });
             
         }
 
