@@ -16,16 +16,6 @@ if($dreamOk){
 function addDream($name, $email, $date_of_dream, $dream) {
     
     $response = false;
-
-    if (!isset($_SERVER['REMOTE_ADDR']))
-            $qipAddress = "NULL";
-    else {
-        $qipAddress = $_SERVER['REMOTE_ADDR'];
-            
-        if (isset($_SERVER['HTTP_X_FORWARDED_FOR']))
-            $qipAddress .= "," . $_SERVER['HTTP_X_FORWARDED_FOR'];
-            
-    }
     
     $sql = "INSERT INTO dreams(name, email, date_of_dream, dream)
             VALUES ('" . padSql($name) ."','" . padSql($email) . "','" . $date_of_dream . "','" . padSql($dream) . "')";    
