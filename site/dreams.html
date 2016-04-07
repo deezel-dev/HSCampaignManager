@@ -2,30 +2,73 @@
    <div class="row">
        
       <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12" style="margin-top:-10px">         
-        <h1><b>About Us</b></h1>
-        <h5>
-        We are a company of people on the pursuit of God!!!  We believe that in order to live a successful Christian life, you must:
-        <br><br>
-        -Know how to hear the voice of God...<br>
-        -Live with an ear heaven-ward...<br>
-        -Understand 5-Fold Kingdom Government and how it functions...<br>
-        -Have a Kingdom mindset to see the region transormed for Jesus Christ...<br>
-        </h5>      
+        <div>
+          <h1><b>Dreams</b></h1>
+          <h3>What are Prophetic Dreams? Definition</h3>
+          <p><b>Definition: </b>
+          A Prophetic dream, also referred to as a precognitive dream, are dreams of events or incidents before they happen. A study showed that 42% of people felt they had had a dream about something that later came true. So despite what the sceptics may say many people have experienced prophetic dreams and believe that their dream can predict the future.</p>
+
+          <p><b>Prophetic Dreams in the Bible</b> </br>
+          People believe that Prophetic dreams or visions are messages from God about the future. There are many Prophetic Dreams and visions which are detailed in the Bible.
+
+          Joseph in the Bible saw eleven stars of the Zodiac bow to himself, the twelfth star
+          The famine of Egypt detailed in the Bible was revealed by a vision of fat and lean cattle
+          The parents of Christ were warned of the cruel edict of Herod, and fled with the baby Jesus into Egypt
+          In the Bible, Pilate's wife, through the influence of a dream, advised her husband to have nothing to do with the conviction of Christ. But the gross materialism of the day laughed at dreams, as it echoed the voice and verdict of the multitude, ``Crucify the Spirit, but let the flesh live.'' Barabbas, the robber, was set free</p>     
+        </div>
+
+      <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <input id="txtEmail" placeholder="Enter your email " type="email" ng-model="dreams_email" class="form-control" />
+                <input id="txtUserName" placeholder="Enter your name (only if you want to) " type="text" ng-model="dreams_user_naame" class="form-control" />
+                <input id="txtDateOfDream" placeholder="Enter the date of the dream" type="date" ng-model="dreams_date" class="form-control" />
+                <input id="txtDream" placeholder="Enter your email " type="email" ng-model="dreams_dream_desc" class="form-control" />
+
+                <button type="button"
+                  class="btn btn-primary btn-block"
+                  ng-click="btn-submit-a-dream()"
+                  id="btnSubmitDream">
+                  Submit
+                </button>
+
+            </div>
       </div>
 
       <div class="col-lg-3 col-md-3 visible-lg-block visible-md-block text-left">
         
-        <p><b>Quick Survey</b></p>
-        How do you like the new site?        
+        <p><b>Prophetic Dreas</b></p>
+        These are dreams submitted by fellow believers.  Let us know your dreams!       
         
         <br>
         <br>
         
-        <ul>
-          <li><a href="">Welcome</a></li>
-          <li><a href="">Statement of Faith</a></li>
-          <li><a href="">Staff</a></li>
-        </ul>
+        <div ng-repeat="dream in dreams">
+          <br><b>Dream1</b>
+          <br>I dreamed.....
+          <br>It means...
+          <br>
+          <br>
+          <br><b>Dream2</b>
+          <br>I dreamed.....
+          <br>It means...
+          <br>
+          <br>
+          <br><b>Dream3</b>
+          <br>I dreamed.....
+          <br>It means...
+          <br>
+          <br>
+          <br><b>Dream4</b>
+          <br>I dreamed.....
+          <br>It means...
+          <br>
+          <br>
+          <br><b>Dream5</b>
+          <br>I dreamed.....
+          <br>It means...
+          <br>
+          <br>
+        </div>
       </div>
 
 
