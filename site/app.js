@@ -613,7 +613,7 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
         }
 
         $scope.btnSubmitDream = function(){
-            
+            alert("start");
             $http.post("/db/add-dream.php", {
                 name: $scope.dream_user_name,
                 email: $scope.dream_email, 
