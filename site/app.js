@@ -625,6 +625,7 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
             url+="&email=" + $scope.dream_user_name.replace(" ","%20");
             url+="&dateOfDream=" + $scope.dream_user_name.replace(" ","%20");
             url+="&dream=" + $scope.dream_user_name.replace(" ","%20");
+            alert(url);
             
             $http.post(url, {
                 name: $scope.dream_user_name,
