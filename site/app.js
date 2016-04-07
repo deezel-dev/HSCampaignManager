@@ -596,7 +596,10 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
         alert("dreamsCtrl");
         
         $scope.btnSubmitDream = function(){
-            alert("btnSubmitDream");
+            alert(scope.dream_user_name);
+            alert($scope.dream_email);
+            alert($scope.dream_date);
+            alert($scope.dream_dream_desc);
         }
 
 /*
