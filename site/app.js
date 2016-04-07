@@ -590,7 +590,7 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
     .controller("dreamsCtrl", ['$scope', '$window', 'dataService', function ($scope, $window, dataService) {
 
         $scope.dream_user_name = "";
-        $scope.email = "";
+        $scope.dream_email = "";
         $scope.dream_date = "";
         $scope.dream_dream_desc = "";
 
