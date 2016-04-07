@@ -54,8 +54,12 @@ function addDream(){
     $email = $_GET["email"];
     $dateOfDream = $_GET["dateOfDream"];
     $dream = $_GET["dream"];
-    $sql = "INSERT INTO dreams(name, email, date_of_dream, dream)
-            VALUES ('" . $name . "','" . $email . "','" . $dateOfDream . "','" . $dream . "')";    
+    //$sql = "INSERT INTO dreams(name, email, date_of_dream, dream)
+            //VALUES ('" . $name . "','" . $email . "','" . $dateOfDream . "','" . $dream . "')";    
+      
+      $sql = "INSERT INTO dreams(name, email, date_of_dream, dream)
+            VALUES ('" . 'padSql($name)' . "','" . 'padSql($email)' . "','" . '2016-04-07'. "','" . 'padSql($dream)' . "')";    
+      
       
     $data = getDatabase();
     if ($data->open()) {
