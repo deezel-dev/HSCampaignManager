@@ -24,12 +24,17 @@ function addDream($name, $email, $date_of_dream, $dream) {
     $response = false;
     
     $sql = "INSERT INTO dreams(name, email, date_of_dream, dream)
-            VALUES ('" . 'padSql($name)' . "','" . 'padSql($email)' . "','" . '2016-04-07'. "','" . 'padSql($dream)' . "')";    
+            VALUES ('" . padSql($name) . "','" . padSql($email) . "','" .  padSql($date_of_dream) . "','" . padSql($dream) . "')";    
       
+    echo $sql;
+    
     $data = getDatabase();
+    echo 'db open1';
     
     if ($data->open()) {
+        echo 'db open2';
         if($data->insertData($sql)){
+            echo 'db insert ok';
             $response = true;
         }
     } 
