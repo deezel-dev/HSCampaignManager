@@ -9,7 +9,7 @@ header("Content-Type: text/json");
 //$dateOfDream = $_GET["dateOfDream"];
 //$dream = $_GET["dream"];
 
-//$dream = json_decode(file_get_contents("php://input"));
+$dream = json_decode(file_get_contents("php://input"));
 
 $dreamOk = addDream($dream->{"name"}, $dream->{"email"}, $dream->{"date_of_dream"}, $dream->{"dream"});
 //$dreamOk = addDream($name, $email,$dateOfDream,$dream);
