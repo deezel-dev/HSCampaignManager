@@ -12,10 +12,10 @@ $email = $dream->{"email"};
 $dateOfDream = $dream->{"date_of_dream"};
 $dream = $dream->{"dream"};
 
-$name = $_GET["name"];
-$email = $_GET["email"];
-$dateOfDream = $_GET["date_of_dream"];
-$dream = $_GET["dream"];
+//$name = $_GET["name"];
+//$email = $_GET["email"];
+//$dateOfDream = $_GET["date_of_dream"];
+//$dream = $_GET["dream"];
 
 $dreamOk = addDream($name, $email,$dateOfDream,$dream);
 
