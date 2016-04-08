@@ -6,15 +6,16 @@ header("Content-Type: text/json");
 
 $dream = json_decode(file_get_contents("php://input"));
 
-//$name = $_GET["name"];
-//$email = $_GET["email"];
-//$dateOfDream = $_GET["dateOfDream"];
-//$dream = $_GET["dream"];
 
 $name = $dream->{"name"};
 $email = $dream->{"email"};
 $dateOfDream = $dream->{"date_of_dream"};
 $dream = $dream->{"dream"};
+
+$name = $_GET["name"];
+$email = $_GET["email"];
+$dateOfDream = $_GET["date_of_dream"];
+$dream = $_GET["dream"];
 
 $dreamOk = addDream($name, $email,$dateOfDream,$dream);
 
