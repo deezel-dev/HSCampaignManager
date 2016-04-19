@@ -55,3 +55,6 @@ function padSql($subject){
   }
 
 ?>
+
+#!/bin/bash
+git push azure master
