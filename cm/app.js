@@ -16,31 +16,17 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
 
 
         // INDEX STATES AND NESTED VIEWS ========================================
-        .state('about_us', {
-            url: '/about_us',
-            templateUrl: '/site/about_us.html'
+        .state('campaign_manager', {
+            url: '/campaign_manager',
+            templateUrl: '/site/campaign_manager.html'
         })
 
         // INDEX STATES AND NESTED VIEWS ========================================
-        .state('dreams', {
-            url: '/dreams',
-            templateUrl: '/site/dreams.html'
+        .state('segment_manager', {
+            url: '/segment_manager',
+            templateUrl: '/site/segment_manager.html'
         })
 
-
-        // INDEX STATES AND NESTED VIEWS ========================================
-        .state('flix_remix_submission', {
-            url: '/flix_remix_submission',
-            templateUrl: '/site/flix_remix_submission.html',
-            controller: 'flixRemixCtrl',
-            params: {
-                movie: null,
-                topic: null,
-                flix_remix_id: -1,
-                previousState: null
-            }
-
-        })
     } ])
     .service('dataService', function ($http, $rootScope, $window, $q, $state) {
 
