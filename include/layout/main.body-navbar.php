@@ -6,7 +6,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/index.php"><img style="height: 100%;" src="/public/images/logo.png" alt="HectorSantosMinistries" /></a>
+            <a class="navbar-brand" href="/index.php"><img style="height: 100%;" src="/public/images/logo.png" alt="HS" /></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-left">
