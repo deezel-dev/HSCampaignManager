@@ -4,11 +4,6 @@
       <!--<?php //require $_SERVER['DOCUMENT_ROOT'] . "/site/flix_main_searchbar.html" ?> -->
    </div>
 
-  
-    <div ng-show="1">
-        <?php //require $_SERVER['DOCUMENT_ROOT'] . "/site/flix_main_gridview.html" ?>
-    </div>
-
    <div>
       <?php require $_SERVER['DOCUMENT_ROOT'] . "/site/prospect_page.html" ?>
    </div>
