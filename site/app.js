@@ -17,7 +17,8 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
         // INDEX STATES AND NESTED VIEWS ========================================
         .state('campaign_manager', {
             url: '/campaign_manager',
-            templateUrl: '/site/campaign_manager.html'
+            templateUrl: '/site/campaign_manager.html',
+            controller: 'campaignCntrl'
         })
 
         // INDEX STATES AND NESTED VIEWS ========================================
@@ -599,3 +600,30 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
 
 
     } ])
+    .controller("campaignCntrl", ['$scope', '$window', 'dataService', function ($scope, $window, dataService) {
+
+        $scope.campaign_name = "";
+        $scope.campaign_description = "";
+        $scope.campaign_manager = "";
+        $scope.start_date = "";
+        $scope.end_date = "";
+        
+        $scope.btnSaveCampaign = function(){
+
+            alert("Saving campaign " + $scope.campaign_name);
+
+            $http.post("/db/add-campaign.php", {
+                campaign_name: $scope.campaign_name,
+                campaign_description: $scope.campaign_description, 
+                campaign_manager: $scope.campaign_manager, 
+                start_date: $scope.start_date, 
+                end_date: $scope.end_date
+                })
+                    .success(function (data, status, headers, config) {
+                        alert("Campaign Added");
+                        
+                    }).error(function (data, status, headers, config) {
+                        alert(status);
+                });
+            
+        }

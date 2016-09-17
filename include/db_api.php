@@ -22,7 +22,7 @@ if (isset($_GET["action"]) && in_array($_GET["action"], $possible_url)){
 
   function getDatabase(){
     $serverName = "tcp:deezel-dev.cloudapp.net";
-    $connectionOptions = array("Database"=>'PropheticMinistries',
+    $connectionOptions = array("Database"=>'CampaignManager',
                                "UID"=>'web_user', "PWD"=>'p@$$w0rd');
     
     $data = new Database($serverName, $connectionOptions);
@@ -47,30 +47,6 @@ function signUp(){
     return $myArr;
 }
 
-
-function addDream(){
-
-    $name = $_GET["name"];
-    $email = $_GET["email"];
-    $dateOfDream = $_GET["dateOfDream"];
-    $dream = $_GET["dream"];
-    //$sql = "INSERT INTO dreams(name, email, date_of_dream, dream)
-            //VALUES ('" . $name . "','" . $email . "','" . $dateOfDream . "','" . $dream . "')";    
-      
-      $sql = "INSERT INTO dreams(name, email, date_of_dream, dream)
-            VALUES ('" . 'padSql($name)' . "','" . 'padSql($email)' . "','" . '2016-04-07'. "','" . 'padSql($dream)' . "')";    
-      
-      
-    $data = getDatabase();
-    if ($data->open()) {
-              if($data->insertData($sql)){
-             $myArr = array(
-                "postStatus"  => "success");
-        }
-    }
-    
-    return $myArr;
-}
 
 //return JSON array
 exit(json_encode($value));
