@@ -17,13 +17,13 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
         // INDEX STATES AND NESTED VIEWS ========================================
         .state('campaign_manager', {
             url: '/campaign_manager',
-            templateUrl: '/cm/campaign_manager.html'
+            templateUrl: '/site/campaign_manager.html'
         })
 
         // INDEX STATES AND NESTED VIEWS ========================================
         .state('segment_manager', {
             url: '/segment_manager',
-            templateUrl: '/cm/segment_manager.html'
+            templateUrl: '/site/segment_manager.html'
         })
 
     } ])
