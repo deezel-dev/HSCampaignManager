@@ -1,36 +1,27 @@
 <div class="container" data-ng-controller="campaign_manager_cntrl">
    	<div class="row">
-   		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-   			<label for="campaign_name">Name:</label>
+   		<div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+   			<label for="campaign_name"><b><u>Name:</u></b></label>
    			<input placeholder="Campaign Name" type="text" ng-model="campaign_name" id="campaign_name" class="form-control" style="padding: 8dp"/>
-   		</div>
-   		<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-   			<br>
-   			<div><b><u>Name:</u></b></div>
-   			<br>
-   			<div><b><u>Description:</u></b></div>
-   			<br>
-   			<div><b><u>Manager:</u></b></div>
-   			<br>
-   			<div><b><u>Start Sate:</u></b></div>
-   			<br>
-   			<div><b><u>End Date:</u></b></div>
-   			<br>
-   			<div><b><u>Score:</u></b></div>
-   		</div>
-   		<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
-   			<br>
-   			<div><input placeholder="Campaign Name" type="text" ng-model="campaign_name" id="campaign_name" class="form-control" style="padding: 8dp"/></div>
-   			<br>
-   			<div><input placeholder="Campaign Description" type="text" ng-model="campaign_description class="form-control" style="padding: 8dp"/></div>
-   			<br>
-   			<div><input placeholder="Campaign Manager" type="text" ng-model="campaign_manager" class="form-control" style="padding: 8dp"/></div>
-   			<br>
-   			<div><input placeholder="Start Date" type="text" ng-model="start_date" class="form-control" style="padding: 8dp"/></div>
-   			<br>
-   			<div><input placeholder="End Date" type="text" ng-model="end_date" class="form-control" style="padding: 8dp"/></div>
-   			<br>
-   			<div>100</div>
+
+
+   			<label for="campaign_description"><b><u>Description:</u></b></label>
+   			<input placeholder="Campaign Description" type="text" ng-model="campaign_description" id="campaign_description" class="form-control" style="padding: 8dp"/>
+
+
+   			<label for="campaign_manager"><b><u>Manager:</u></b></label>
+   			<input placeholder="Campaign Manager" type="text" ng-model="campaign_manager" id="campaign_manager" class="form-control" style="padding: 8dp"/>
+
+
+   			<label for="start_date"><b><u>Start Date:</u></b></label>
+   			<input placeholder="Start Date" type="text" ng-model="start_date" id="start_date" class="form-control" style="padding: 8dp"/>
+
+
+   			<label for="end_date"><b><u>End Date:</u></b></label>
+   			<input placeholder="End Date" type="text" ng-model="end_date" id="end_date" class="form-control" style="padding: 8dp"/>
+
+
+   			<label for="campaign_name"><b><u>Score:</u></b></label> 100
    		</div>
    	</div>
 </div>
