@@ -11,16 +11,17 @@
    }
    
    ?>
+
 <!DOCTYPE html>
 <html data-ng-app="app" lang="en">
    <head>
       <?php require $_SERVER['DOCUMENT_ROOT'] . "/include/layout/main.head.php" ?>
-       <link href="/public/css/style.css" rel="stylesheet">
+       <link href="/public/css/flix_remix.css" rel="stylesheet">
    </head>
-   <body>        
+   <body data-ng-controller="indexCtrl" ng-init="setProfileData(<?php echo($profileID) ?>)">        
      <?php require $_SERVER['DOCUMENT_ROOT'] . "/include/layout/main.body-navbar.php" ?>
      <form class="visible-md-block visible-lg-block visible-xs-block visible-sm-block" ui-view autoscroll="true"></form>
       <?php require $_SERVER['DOCUMENT_ROOT'] . "/include/layout/main.body-scripts.php" ?>
-      <script src="/cm/app.js"></script>
+      <script src="/site/app.js"></script>
    </body>
 </html>
