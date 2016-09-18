@@ -40,7 +40,7 @@ function addCampaign($campaign_name, $campaign_objective, $campaign_manager, $st
            "'" . $end_date ."'," .
            0 . ")"; 
 
-    echo $sql; 
+    
           
     $data = getDatabase();
     
