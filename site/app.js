@@ -28,24 +28,12 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
         })
 
     } ])
-    .service('dataService', function ($http, $rootScope, $window, $q, $state) {
-        var dataService = this;
-        dataService.rootPath = "";
-        dataService.profileId = -1;
-
-        dataService.isUser = false;
-        
-        dataService.setProfileId = function(profileId){
-            dataService.profileId = profileId;
-            dataService.isUser = true;
-        }
-    })
-    .controller("indexCtrl", ['$scope', '$window', 'dataService', function ($scope, $window, dataService) {
+    .controller("indexCtrl", ['$scope', '$window', function ($scope, $window) {
 
         $scope.isUser = false;
         $scope.profileId = -1;
         $scope.rootUrl = $window.location.protocol + "//" + $window.location.host;
-        dataService.rootPath = $scope.rootUrl;
+        //dataService.rootPath = $scope.rootUrl;
         $scope.showSuggestion = false;
 
 
@@ -60,8 +48,8 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
             $scope.isUser = isUser;
             $scope.profileId = profileId;
 
-            dataService.isUser = isUser;
-            dataService.setProfileId(profileId);
+            //dataService.isUser = isUser;
+            //dataService.setProfileId(profileId);
         }
 
 
@@ -78,7 +66,26 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
         $scope.btnSaveCampaign = function(){
 
             alert("Saving campaign " + $scope.campaign_name);
+            
+        }
 
+
+        $scope.btnSaveCampaign2 = function(){
+
+
+            $http.post("/db/add-campaign.php", {
+                campaign_name: $scope.campaign_name,
+                campaign_description: $scope.campaign_description, 
+                campaign_manager: $scope.campaign_manager, 
+                start_date: $scope.start_date, 
+                end_date: $scope.end_date
+                })
+                    .success(function (data, status, headers, config) {
+                        alert("Campaign Added");
+                        
+                    }).error(function (data, status, headers, config) {
+                        alert(status);
+                });
             
         }
 
