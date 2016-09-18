@@ -12,7 +12,9 @@ $campaign_manager = $campaign->{"campaign_manager"};
 $start_date = $campaign->{"start_date"};
 $end_date = $campaign->{"end_date"};
 
-$campaign_added = addCampaign($campaign_name, $campaign_description, $campaign_manager, $start_date, $end_date);
+echo "ok";
+
+//$campaign_added = addCampaign($campaign_name, $campaign_description, $campaign_manager, $start_date, $end_date);
 
 if($campaign_added){
     echo(json_encode($campaign_added));
