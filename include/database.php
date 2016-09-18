@@ -178,7 +178,7 @@ class Database {
 
   function getDatabase(){
     $serverName = "tcp:deezel-dev.cloudapp.net";
-    $connectionOptions = array("Database"=>'PropheticMinistries',
+    $connectionOptions = array("Database"=>'CampaignManager',
                                "UID"=>'web_user', "PWD"=>'p@$$w0rd');
     
     $data = new Database($serverName, $connectionOptions);
