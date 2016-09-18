@@ -4,7 +4,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/include/_init.php";
 require_once $_SERVER['DOCUMENT_ROOT'] . "/include/database.php";
 header("Content-Type: text/json");
 
-$campaign = json_decode(file_get_contents("php://input"));
+//$campaign = json_decode(file_get_contents("php://input"));
 
 echo "ok1";
 //$campaign_name = $campaign->{"campaign_name"};
@@ -17,7 +17,7 @@ echo "ok";
 
 //$campaign_added = addCampaign($campaign_name, $campaign_description, $campaign_manager, $start_date, $end_date);
 
-if($campaign_added){
+if(false){//$campaign_added
     echo(json_encode($campaign_added));
 }
 
