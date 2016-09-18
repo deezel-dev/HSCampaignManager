@@ -30,6 +30,14 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
     } ])
     .service('dataService', function ($http, $rootScope, $window, $q, $state) {
         var dataService = this;
+        dataService.rootPath = "";
+        dataService.profileId = -1;
+
+        dataService.isUser = false;
+        dataService.setProfileId = function(profileId){
+            dataService.profileId = profileId;
+            dataService.isUser = true;
+        }
     })
     .controller("indexCtrl", ['$scope', '$window', 'dataService', function ($scope, $window, dataService) {
 
