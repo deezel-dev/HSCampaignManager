@@ -4,7 +4,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/include/_init.php";
 require_once $_SERVER['DOCUMENT_ROOT'] . "/include/database.php";
 header("Content-Type: text/json");
 
-//$campaign = json_decode(file_get_contents("php://input"));
+$campaign = json_decode(file_get_contents("php://input"));
 
 $campaign_name = $campaign->{"campaign_name"};
 $campaign_description = $campaign->{"campaign_description"};
