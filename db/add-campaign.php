@@ -29,14 +29,16 @@ function addCampaign($campaign_name, $campaign_objective, $campaign_manager, $st
            campaign_manager,
            date_added,
            start_date,
-           end_date)
+           end_date,
+           campaign_score)
      VALUES (" .
            "'" . padSql($campaign_name) . "'," .
            "'" . padSql($campaign_objective). "'," .
            "'" . padSql($campaign_manager) . "'," .
            "" . "GETDATE()" . "," .
            "'" . $start_date . "'," .
-           "'" . $end_date ."')"; 
+           "'" . $end_date ."'," .
+           0 . ")"; 
 
     echo $sql; 
           
