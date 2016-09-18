@@ -63,14 +63,14 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
         $scope.start_date = "";
         $scope.end_date = "";
         
-        $scope.btnSaveCampaign = function(){
+        $scope.btnSaveCampaign2 = function(){
 
             alert("Saving campaign " + $scope.campaign_name);
             
         }
 
 
-        $scope.btnSaveCampaign2 = function(){
+        $scope.btnSaveCampaign = function(){
 
 
             $http.post("/db/add-campaign.php", {
