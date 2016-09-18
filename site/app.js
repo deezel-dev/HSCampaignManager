@@ -55,7 +55,7 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
 
 
     } ])
-    .controller("campaignCntrl", ['$scope', '$http.', function ($scope, $http) {
+    .controller("campaignCntrl", ['$scope', '$http', function ($scope, $http) {
 
         $scope.campaign_name = "";
         $scope.campaign_description = "";
