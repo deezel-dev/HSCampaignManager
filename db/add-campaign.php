@@ -12,12 +12,11 @@ $campaign_manager = $campaign->{"campaign_manager"};
 $start_date = $campaign->{"start_date"};
 $end_date = $campaign->{"end_date"};
 
-echo $campaign_name;
+$campaign_added = addCampaign($campaign_name, $campaign_description, $campaign_manager, $start_date, $end_date);
 
-//$campaign_added = addCampaign($campaign_name, $campaign_description, $campaign_manager, $start_date, $end_date);
-
-if(false){//$campaign_added
-    echo(json_encode($campaign_added));
+if($campaign_added){//$campaign_added
+    //echo(json_encode($campaign_added));
+    echo($campaign_added);
 }
 
 function addCampaign($campaign_name, $campaign_objective, $campaign_manager, $start_date, $end_date) {
