@@ -6,14 +6,13 @@ header("Content-Type: text/json");
 
 //$campaign = json_decode(file_get_contents("php://input"));
 
-echo "ok1";
-//$campaign_name = $campaign->{"campaign_name"};
-//$campaign_description = $campaign->{"campaign_description"};
-//$campaign_manager = $campaign->{"campaign_manager"};
-//$start_date = $campaign->{"start_date"};
-//$end_date = $campaign->{"end_date"};
+$campaign_name = $campaign->{"campaign_name"};
+$campaign_description = $campaign->{"campaign_description"};
+$campaign_manager = $campaign->{"campaign_manager"};
+$start_date = $campaign->{"start_date"};
+$end_date = $campaign->{"end_date"};
 
-echo "ok";
+echo $campaign_name;
 
 //$campaign_added = addCampaign($campaign_name, $campaign_description, $campaign_manager, $start_date, $end_date);
 
