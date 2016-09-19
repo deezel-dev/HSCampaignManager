@@ -55,7 +55,17 @@
             </select>
 
             <label for="segments"><b><u>Segments:</u></b></label>
-               <div style="display:inline" ng-repeat="segment in selected_segments | orderBy:'name' track by $index">{{segment.name}}</div>
+            <div style="display:inline; padding:8px;" ng-repeat="segment in selected_segments | orderBy:'name' track by $index">{{segment.name}}</div>
+
+            <div class="row">
+               <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" style="display:inline; padding:8px;" ng-repeat="segment in selected_segments | orderBy:'name' track by $index">          
+                  <button type="button"
+                     class="btn btn-primary btn-block"
+                     ng-click="">
+                     {{segment.name}}
+                  </button>
+               </div>
+            </div>
             <br>
 
 
