@@ -50,7 +50,7 @@
 
             <label for="segment_selected"><b><u>Select Segment:</u></b></label>  
 
-            <select class="form-control" ng-model="selectedSegment" ng-change="segmentSelected(selectedSegment)">
+            <select class="form-control" ng-model="selectedSegment" ng-change="segmentSelected({{selectedSegment}})">
                <option ng-repeat="selected_segment in segments | orderBy:'selected_segment.name'">{{selected_segment.name}}</option>
             </select>
 
