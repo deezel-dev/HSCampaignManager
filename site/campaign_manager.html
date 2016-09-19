@@ -32,7 +32,7 @@
    		</div>
    		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
             <label for="output_channel"><b><u>Channel:</u></b></label>
-            <select class="form-control" ng-model="channel.name" ng-options="channel in channels | orderBy:'name' track by $index" ng-selected="outputChannelSelected(channel)"></select>
+            <select class="form-control" ng-model="channel.name" ng-options="channel.name for channel in channels | orderBy:'name' track by $index" ng-selected="outputChannelSelected(channel)"></select>
             <br>
 
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" align="left">
