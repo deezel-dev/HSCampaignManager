@@ -32,9 +32,7 @@
    		</div>
    		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
             <label for="output_channel"><b><u>Channel:</u></b></label>
-            <select class="form-control" ng-model="output_channel">
-               <option ng-repeat="channel in channels | orderBy:'name' track by $index" value="{{channel.name}}" ng-selected="outputChannelSelected(channel)">{{channel.name}}</option>
-            </select>
+            <select class="form-control" ng-model="channel.name_" ng-options="channel.name_ as channel.name in channels | orderBy:'name' track by $index" ng-selected="outputChannelSelected(channel)"></select>
             <br>
 
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" align="left">
@@ -50,15 +48,12 @@
             </div>
 
             <label for="selected_segment"><b><u>Select Segment:</u></b></label>
-            <select class="form-control" ng-model="selected_segment">
-               <option ng-repeat="selected_segment in segments | orderBy:'name' track by $index" value="{{selected_segment.name}}" ng-selected="segmentSelected(selected_segment)">{{selected_segment.name}}</option>
-            </select>
+            <select class="form-control" ng-model="selected_segment.name_" ng-options="selected_segment.name_ as selected_segment.name in segments | orderBy:'name' track by $index" ng-selected="segmentSelected(selected_segment)"></select>
             <br>
 
             <label for="segments"><b><u>Segments:</u></b></label>
                <div class="form-control" ng-repeat="segment in selected_segments | orderBy:'name' track by $index">{{segment.name}}</div>
             <br>
-            <div ng-show="0" ng-init="init()">test</div>
 
 
 
