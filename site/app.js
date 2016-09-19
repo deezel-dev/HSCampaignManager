@@ -96,8 +96,13 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
         $scope.outputChannelSelected = function (){            
         }
 
-        $scope.segmentSelected = function (){
-            $scope.selected_segments.push({id:0,name:$scope.selectedSegment});
+        $scope.segmentSelected = function (segment){
+            $scope.selected_segments.push(segment);
+        }
+
+        $scope.removeSegment = function (segment){
+            var index = $scope.bdays.indexOf(segment);
+            $scope.selected_segments.splice(index, 1); 
         }
 
 
