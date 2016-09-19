@@ -57,7 +57,7 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
     } ])
     .controller("campaignCntrl", ['$scope', '$http', function ($scope, $http) {
 
-        $scope.init = false;
+        $scope.loaded = false;
         $scope.campaign_name = "";
         $scope.campaign_description = "";
         $scope.campaign_manager = "";
@@ -87,6 +87,11 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
             {id:7,name:"LOSS"}
         ];
 
+        $scope.init = function(){
+            $scope.loaded = true;
+            alert("true");
+        }
+
         $scope.outputChannelSelected = function (channel){
             //$scope.output_channel = channel.name;
             //alert($scope.output_channel);
@@ -94,7 +99,7 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
 
         $scope.segmentSelected = function (segment){
             //$scope.selected_segment = segment.name;
-            if($scope.init){$scope.selected_segments.push(segment);}
+            if($scope.loaded){$scope.selected_segments.push(segment);}
             
             //alert($scope.selected_segment);
         }

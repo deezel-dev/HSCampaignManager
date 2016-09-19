@@ -58,7 +58,7 @@
             <label for="segments"><b><u>Segments:</u></b></label>
                <div class="form-control" ng-repeat="segment in selected_segments | orderBy:'name' track by $index">{{segment.name}}</div>
             <br>
-            <div ng-show="0" ng-init="{{init}}=true"></div>
+            <div ng-show="0" ng-init="init()">test</div>
 
 
 
