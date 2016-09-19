@@ -101,7 +101,7 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
         }
 
         $scope.removeSegment = function (segment){
-            var index = $scope.bdays.indexOf(segment);
+            var index = $scope.selected_segments.indexOf(segment);
             $scope.selected_segments.splice(index, 1); 
         }
 
