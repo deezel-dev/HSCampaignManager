@@ -33,7 +33,7 @@
    		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
             <label for="output_channel"><b><u>Channel:</u></b></label>
 
-            <select ng-model="" ng-change="alert(channel.id);">
+            <select class="form-control" ng-model="" ng-change="alert(channel.id);">
                <option ng-repeat="channel in channels | orderBy:'name' track by $index" value="{{channel.name}}">{{channel.name}}</option>
             </select>
             <br>
