@@ -89,7 +89,6 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
 
         $scope.init = function(){
             $scope.loaded = true;
-            alert("true");
         }
 
         $scope.outputChannelSelected = function (channel){
@@ -99,7 +98,9 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
 
         $scope.segmentSelected = function (segment){
             //$scope.selected_segment = segment.name;
-            if($scope.loaded){$scope.selected_segments.push(segment);}
+            //if($scope.loaded){
+                $scope.selected_segments.push(segment);
+            //}
             
             //alert($scope.selected_segment);
         }
