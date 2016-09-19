@@ -33,7 +33,7 @@
    		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
             <label for="output_channel"><b><u>Channel:</u></b></label>
             <select class="form-control" ng-model="output_channel">
-               <option ng-repeat="channel in channels | orderBy:'name' track by $index" value="{{channel.name}}" ng-selected="output_channel=channel.id;alert(channel.id);">{{channel.name}}</option>
+               <option ng-repeat="channel in channels | orderBy:'name' track by $index" value="{{channel.name}}" ng-selected="outputChannelSelected(channel)">{{channel.name}}</option>
             </select>
             <br>
 
@@ -50,8 +50,8 @@
             </div>
 
             <label for="segments"><b><u>Segments:</u></b></label>
-            <select class="form-control" ng-model="" ng-change="alert(channel.id);">
-               <option ng-repeat="channel in channels | orderBy:'name' track by $index" value="{{channel.name}}">{{channel.name}}</option>
+            <select class="form-control" ng-model="selected_segment">
+               <option ng-repeat="segment in segments | orderBy:'name' track by $index" value="{{segment.name}}" ng-selected="segmentSelected(segment)">{{segment.name}}</option>
             </select>
             <br>
 

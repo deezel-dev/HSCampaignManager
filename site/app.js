@@ -63,6 +63,7 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
         $scope.start_date = "";
         $scope.end_date = "";
         $scope.output_channel = "";
+        $scope.selected_segment = "";
 
         $scope.channels = [
             {id:1,name:"EMAIL"},
@@ -74,10 +75,27 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
             {id:7,name:"ROAD REPS"}
         ];
 
+        $scope.segments = [
+            {id:1,name:"PROFGROWER"},
+            {id:2,name:"HOMEGARDEN"},
+            {id:3,name:"SOUTHERN GROWER"},
+            {id:4,name:"NEW CUSTOMER"},
+            {id:5,name:"REACTIVATE"},
+            {id:6,name:"SLEEPER"},
+            {id:7,name:"LOSS"}
+        ];
+
         $scope.outputChannelSelected = function (channel){
             $scope.output_channel = channel.name;
             alert($scope.output_channel);
         }
+
+        $scope.segmentSelected = function (segment){
+            $scope.selected_segment = segment.name;
+            alert($scope.selected_segment);
+        }
+
+
 
         $scope.btnSaveCampaign = function(){
 
