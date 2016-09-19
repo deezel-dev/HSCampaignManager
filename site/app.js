@@ -65,6 +65,7 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
         $scope.end_date = "";
         $scope.output_channel = "";
         $scope.selected_segment = "";
+        $scope.channel = {};
         $scope.selected_segments = [];
 
         $scope.channels = [
@@ -91,8 +92,9 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
             $scope.loaded = true;
         }
 
-        $scope.outputChannelSelected = function (channel){
-            alert(channel.name);
+        $scope.outputChannelSelected = function (index){
+            $scope.channel = $scope.channels[index]; 
+            alert($scope.channel.name);
             //alert($scope.output_channel);
         }
 
