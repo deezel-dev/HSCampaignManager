@@ -47,7 +47,7 @@
             </div>
 
             <label for="segment_selected"><b><u>Select Segment:</u></b></label>            
-            <select class="form-control" ng-model="selectedSegment" ng-options="selected_segment as selected_segment.name for selected_segment in segments | orderBy:'selected_segment.name' track by $index" ng-selected="segmentSelected(selected_segment)"></select>
+            <select class="form-control" ng-model="selectedSegment" ng-options="selected_segment as selected_segment.name for selected_segment in segments" ng-selected="segmentSelected(selected_segment)"></select>
             <br>
 
             <label for="segments"><b><u>Segments:</u></b></label>
