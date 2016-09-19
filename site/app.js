@@ -92,7 +92,7 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
         }
 
         $scope.outputChannelSelected = function (channel){
-            //$scope.output_channel = channel.name;
+            $scope.output_channel = channel.name;
             //alert($scope.output_channel);
         }
 
