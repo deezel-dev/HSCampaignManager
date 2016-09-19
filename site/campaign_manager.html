@@ -28,6 +28,17 @@
    			<label for="campaign_score"><b><u>Score:</u></b></label> 100
    		</div>
    		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <label for="output_channel"><b><u>Channel:</u></b></label>
+            <select class="form-control" name="output_channel" ng-model="output_channel" ng-change="" ng-init="output_channel=1">
+                     <option value="1">EMAIL</option>
+                     <option value="2">OUTBOUND CALL</option>
+                     <option value="3">MAIL PIECE</option>
+                     <option value="4">ORDER INSERT</option>
+                     <option value="5">CATALOG</option>
+                     <option value="6">SOCIAL MEDIA</option>
+                     <option value="7">ROAD REPS</option>
+                  </select>
+            <br>
    			
    		</div>
    	</div>
