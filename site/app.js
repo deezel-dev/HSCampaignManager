@@ -91,8 +91,8 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
             $scope.loaded = true;
         }
 
-        $scope.outputChannelSelected = function (channel){
-            $scope.output_channel = channel.name;
+        $scope.outputChannelSelected = function (){
+            alert($scope.output_channel);
             //alert($scope.output_channel);
         }
 
