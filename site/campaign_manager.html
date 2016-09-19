@@ -32,8 +32,8 @@
    		</div>
    		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
             <label for="selectedChannel"><b><u>Channel:</u></b></label>
-            <select class="form-control" ng-model="selectedChannel" >
-               <option ng-selected="outputChannelSelected()" ng-repeat="channel in channels | orderBy:'selected_segment.name' track by $index" ng-bind="$index">{{channel.name}}</option>
+            <select class="form-control" ng-model="selectedChannel" ng-selected="outputChannelSelected()" >
+               <option ng-repeat="channel in channels | orderBy:'channel.name' track by $index" ng-bind="$index">{{channel.name}}</option>
             </select>
 
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" align="left">
