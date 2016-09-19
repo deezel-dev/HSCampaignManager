@@ -63,12 +63,16 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
         $scope.start_date = "";
         $scope.end_date = "";
         
-        $scope.btnSaveCampaign2 = function(){
 
-            alert("Saving campaign " + $scope.campaign_name);
-            
-        }
-
+        $scope.channels [] = {
+            {id:1,name:"EMAIL"},
+            {id:2,name:"OUTBOUND CALL"},
+            {id:3,name:"MAIL PIECE"},
+            {id:4,name:"ORDER INSERT"},
+            {id:5,name:"CATALOG"},
+            {id:6,name:"SOCIAL MEDIA"},
+            {id:7,name:"ROAD REPS"}
+        };
 
         $scope.btnSaveCampaign = function(){
 
