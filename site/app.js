@@ -57,6 +57,7 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
     } ])
     .controller("campaignCntrl", ['$scope', '$http', function ($scope, $http) {
 
+        $scope.init = false;
         $scope.campaign_name = "";
         $scope.campaign_description = "";
         $scope.campaign_manager = "";
@@ -93,7 +94,8 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
 
         $scope.segmentSelected = function (segment){
             //$scope.selected_segment = segment.name;
-            $scope.selected_segments.push(segment);
+            if($scope.init){$scope.selected_segments.push(segment);}
+            
             //alert($scope.selected_segment);
         }
 
@@ -117,6 +119,8 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
                 });
             
         }
+
+        $scope.init = true;
 
     } ])
         
