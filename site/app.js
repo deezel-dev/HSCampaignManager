@@ -92,22 +92,11 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
             $scope.loaded = true;
         }
 
-        $scope.outputChannelSelected = function (){
-            //if($scope.channel!=channel){
-                alert($scope.selectedChannel);
-            //}
-            //$scope.channel = $scope.channels[index]; 
-            //alert(index);
-            
+        $scope.outputChannelSelected = function (){            
         }
 
-        $scope.segmentSelected = function (segment){
-            //$scope.selected_segment = segment.name;
-            //if($scope.loaded){
-                $scope.selected_segments.push(segment);
-            //}
-            
-            //alert($scope.selected_segment);
+        $scope.segmentSelected = function (){
+            scope.selected_segments.push($scope.selectedSegment);
         }
 
 
