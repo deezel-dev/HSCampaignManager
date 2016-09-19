@@ -32,7 +32,7 @@
    		</div>
    		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
             <label for="selectedChannel"><b><u>Channel:</u></b></label>
-            <select class="form-control" ng-model="selectedChannel" ng-selected="outputChannelSelected()" >
+            <select class="form-control" ng-model="selectedChannel" ng-change="outputChannelSelected(channel)" >
                <option ng-repeat="channel in channels | orderBy:'channel.name'">{{channel.name}}</option>
             </select>
 
