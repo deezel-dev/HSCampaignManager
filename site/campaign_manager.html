@@ -49,10 +49,14 @@
                <br>
             </div>
 
-            <label for="segments"><b><u>Segments:</u></b></label>
+            <label for="selected_segment"><b><u>Select Segment:</u></b></label>
             <select class="form-control" ng-model="selected_segment">
-               <option ng-repeat="segment in segments | orderBy:'name' track by $index" value="{{segment.name}}" ng-selected="segmentSelected(segment)">{{segment.name}}</option>
+               <option ng-repeat="selected_segment in segments | orderBy:'name' track by $index" value="{{selected_segment.name}}" ng-selected="segmentSelected(selected_segment)">{{selected_segment.name}}</option>
             </select>
+            <br>
+
+            <label for="segments"><b><u>Segments:</u></b></label>
+               <div class="form-control" ng-repeat="segment in selected_segments | orderBy:'name' track by $index" ng-model="segment">{{segment.name}}</div>
             <br>
 
 
