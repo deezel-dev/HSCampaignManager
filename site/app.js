@@ -64,6 +64,7 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
         $scope.end_date = "";
         $scope.output_channel = "";
         $scope.selected_segment = "";
+        $scope.selected_segments = [];
 
         $scope.channels = [
             {id:1,name:"EMAIL"},
@@ -86,12 +87,13 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
         ];
 
         $scope.outputChannelSelected = function (channel){
-            $scope.output_channel = channel.name;
+            //$scope.output_channel = channel.name;
             //alert($scope.output_channel);
         }
 
         $scope.segmentSelected = function (segment){
-            $scope.selected_segment = segment.name;
+            //$scope.selected_segment = segment.name;
+            $scope.selected_segments.push(segment);
             //alert($scope.selected_segment);
         }
 
