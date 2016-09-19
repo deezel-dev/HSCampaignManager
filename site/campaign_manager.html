@@ -32,12 +32,11 @@
    		</div>
    		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
             <label for="output_channel"><b><u>Channel:</u></b></label>
-            <div>               
-               <select class="form-control" ng-repeat="channel in channels | orderBy:'name' track by $index" ng-model="output_channel" ng-change="alert(channel.id);" ng-init="output_channel=1">
-                        <option>{{channel.name}}</option>
-                     </select>
-               <br>
-            </div>
+
+            <select ng-model="" ng-change="alert(channel.id);">
+               <option ng-repeat="channel in channels | orderBy:'name' track by $index" value="{{channel.name}}">{{channel.name}}</option>
+            </select>
+            <br>
 
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" align="left">
                <label for="start_date"><b><u>Start Date:</u></b></label>
