@@ -59,7 +59,7 @@
                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" style="display:inline; padding:8px;" ng-repeat="segment in selected_segments | orderBy:'name' track by $index">          
                   <button type="button"
                      class="btn btn-primary btn-block"
-                     ng-click="">
+                     ng-click="removeSegment(segment)">
                      {{segment.name}}
                   </button>
                </div>
