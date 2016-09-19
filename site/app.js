@@ -62,9 +62,8 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
         $scope.campaign_manager = "";
         $scope.start_date = "";
         $scope.end_date = "";
-        
 
-        $scope.channels [] = {
+        $scope.channels = [
             {id:1,name:"EMAIL"},
             {id:2,name:"OUTBOUND CALL"},
             {id:3,name:"MAIL PIECE"},
@@ -72,7 +71,7 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
             {id:5,name:"CATALOG"},
             {id:6,name:"SOCIAL MEDIA"},
             {id:7,name:"ROAD REPS"}
-        };
+        ];
 
         $scope.btnSaveCampaign = function(){
 
