@@ -1,7 +1,7 @@
 var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
     .config(['$urlRouterProvider', '$stateProvider', function ($urlRouterProvider, $stateProvider) {
 
-        $urlRouterProvider.otherwise('/segment_manager');
+        $urlRouterProvider.otherwise('/main');
 
         $stateProvider
 
