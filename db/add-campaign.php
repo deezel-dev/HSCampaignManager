@@ -29,7 +29,7 @@ function addCampaign($campaign_name, $campaign_description, $campaign_manager, $
 
     $response = false;
 
-    $sql = "INSERT INTO HSCampaignManager_hdr(
+    $sql = "INSERT INTO schema_CampaignManager.HSCampaignManager_hdr(
            campaign_name,
            campaign_description,
            campaign_manager,

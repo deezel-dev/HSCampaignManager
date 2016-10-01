@@ -23,7 +23,7 @@ function addCampaign($segment_name, $segment_description, $segment_active, $segm
 
     $response = false;
 
-    $sql = "INSERT INTO HSSegmentManager(
+    $sql = "INSERT INTO schema_CampaignManager.HSSegmentManager(
         segment_name,
         segment_description,
         segment_active,
