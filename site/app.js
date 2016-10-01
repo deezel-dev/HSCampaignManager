@@ -128,6 +128,7 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
       $scope.segment_retag = false;
       $scope.segment_limit = 0;
       $scope.object_type_id =  {};
+      $scope.object_type = {};
 
       $scope.object_types = [
           {id:1,name:"CUSTOMER"},
@@ -138,7 +139,7 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
       $scope.init = function(){
           $scope.loaded = true;
       }
-      
+
       $scope.objectTypeSelected = function (){
       }
 
