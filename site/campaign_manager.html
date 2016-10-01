@@ -44,45 +44,50 @@
 
 
    		<div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
+
+          <div class="row">
             <label for="show_segment_selection"><b><u>Select Segments:</u></b></label>
             <input type="checkbox" ng-model="segment_selector">
-
-        <div ng-show="segment_selector">
-
-          <label for="selectedChannel"><b><u>Channel:</u></b></label>
-          <select class="form-control" ng-model="selectedChannel" ng-change="outputChannelSelected()" >
-             <option ng-repeat="channel in channels | orderBy:'channel.name'">{{channel.name}}</option>
-          </select>
-
-          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" align="left">
-             <label for="start_date"><b><u>Start Date:</u></b></label>
-             <input placeholder="Start Date" type="text" ng-model="start_date" id="start_date" class="form-control" style="padding: 8dp"/>
-             <br>
           </div>
 
-          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" align="left">
-             <label for="end_date"><b><u>End Date:</u></b></label>
-             <input placeholder="End Date" type="text" ng-model="end_date" id="end_date" class="form-control" style="padding: 8dp"/>
-             <br>
-          </div>
+            <div ng-show="segment_selector">
 
-          <label for="segment_selected"><b><u>Select Segment:</u></b></label>
-
-          <select class="form-control" ng-int="selectedSegment={};" ng-model="selectedSegment" ng-change="segmentSelected()">
-             <option ng-repeat="selected_segment in segments | orderBy:'selected_segment.name' track by $index">{{selected_segment.name}}</option>
-          </select>
-
-          <label for="segments"><b><u>Segments:</u></b></label>
           <div class="row">
-             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" style="display:inline; padding:8px;" ng-repeat="segment in selected_segments">
-                <button type="button"
-                   class="btn btn-default btn-block"
-                   ng-click="removeSegment(segment)">
-                   {{segment.name}}
-                </button>
-             </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+              <label for="selectedChannel"><b><u>Channel:</u></b></label>
+              <select class="form-control" ng-model="selectedChannel" ng-change="outputChannelSelected()" >
+                 <option ng-repeat="channel in channels | orderBy:'channel.name'">{{channel.name}}</option>
+              </select>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+               <label for="start_date"><b><u>Start Date:</u></b></label>
+               <input placeholder="Start Date" type="text" ng-model="start_date" id="start_date" class="form-control" style="padding: 8dp"/>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+               <label for="end_date"><b><u>End Date:</u></b></label>
+               <input placeholder="End Date" type="text" ng-model="end_date" id="end_date" class="form-control" style="padding: 8dp"/>
+            </div>
           </div>
-          <br>
+          <div class="row">
+              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <label for="segment_selected"><b><u>Select Segment:</u></b></label>
+                <select class="form-control" ng-int="selectedSegment={};" ng-model="selectedSegment" ng-change="segmentSelected()">
+                   <option ng-repeat="selected_segment in segments | orderBy:'selected_segment.name' track by $index">{{selected_segment.name}}</option>
+                </select>
+              </div>
+              <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                <label for="segments"><b><u>Segments:</u></b></label>
+                <div class="row">
+                   <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" style="display:inline; padding:8px;" ng-repeat="segment in selected_segments">
+                      <button type="button"
+                         class="btn btn-default btn-block"
+                         ng-click="removeSegment(segment)">
+                         {{segment.name}}
+                      </button>
+                   </div>
+                </div>
+              </div>
+          </div>
 
 
         </div>
