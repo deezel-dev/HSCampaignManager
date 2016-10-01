@@ -19,13 +19,13 @@ if($campaign_added){//$campaign_added
     echo($campaign_added);
 }
 
-function addCampaign($campaign_name, $campaign_objective, $campaign_manager, $start_date, $end_date) {
-    
+function addCampaign($campaign_name, $campaign_description, $campaign_manager, $start_date, $end_date) {
+
     $response = false;
-    
+
     $sql = "INSERT INTO HSCampaignManager_hdr(
            campaign_name,
-           campaign_objective,
+           campaign_description,
            campaign_manager,
            date_added,
            start_date,
@@ -33,26 +33,26 @@ function addCampaign($campaign_name, $campaign_objective, $campaign_manager, $st
            campaign_score)
      VALUES (" .
            "'" . padSql($campaign_name) . "'," .
-           "'" . padSql($campaign_objective). "'," .
+           "'" . padSql($campaign_description). "'," .
            "'" . padSql($campaign_manager) . "'," .
            "" . "GETDATE()" . "," .
            "'" . $start_date . "'," .
            "'" . $end_date ."'," .
-           0 . ")"; 
+           0 . ")";
 
-    
-          
+
+
     $data = getDatabase();
-    
+
     if ($data->open()) {
         if($data->insertData($sql)){
             echo 'db insert ok';
             $response = true;
         }
-    } 
+    }
 
     return $response;
-    
+
 }
 
 function padSql($subject){
@@ -60,4 +60,3 @@ function padSql($subject){
   }
 
 ?>
-
