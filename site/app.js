@@ -120,7 +120,7 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
 
     } ])
     .controller("segmentCntrl", ['$scope', '$http', function ($scope, $http) {
-/*
+
         $scope.loaded = false;
         $scope.segment_name = "";
         $scope.segment_description = "";
@@ -163,6 +163,6 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
                 });
 
         }
-        */
+        
 
     } ])
