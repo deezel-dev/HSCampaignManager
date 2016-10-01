@@ -37,7 +37,7 @@ function addCampaign($campaign_name, $campaign_description, $campaign_manager, $
            "'" . padSql($campaign_manager) . "'," .
            "'" . $start_date . "'," .
            "'" . $end_date ."'," .
-           0 . "," 
+           0 . ","
            "" . "GETDATE()" .")";
 
 
