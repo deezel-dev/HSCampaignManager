@@ -34,9 +34,7 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
         $scope.isUser = false;
         $scope.profileId = -1;
         $scope.rootUrl = $window.location.protocol + "//" + $window.location.host;
-        //dataService.rootPath = $scope.rootUrl;
         $scope.showSuggestion = false;
-
 
         $scope.setProfileData = function (profileId) {
 
@@ -50,8 +48,6 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
             $scope.profileId = profileId;
 
         }
-
-
 
     } ])
     .controller("campaignCntrl", ['$scope', '$http', function ($scope, $http) {
@@ -104,10 +100,7 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
             $scope.selected_segments.splice(index, 1);
         }
 
-
-
         $scope.btnSaveCampaign = function(){
-
 
             $http.post("/db/add-campaign.php", {
                 campaign_name: $scope.campaign_name,
@@ -135,7 +128,6 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
         $scope.segment_retag = false;
         $scope.segment_limit = 0;
         $scope.object_type_id = 1;
-
         $scope.object_type = {};
 
         $scope.object_types = [

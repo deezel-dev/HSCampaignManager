@@ -1,5 +1,5 @@
 <?php
-$GLOBALS["IsDevelopment"] = ($_SERVER['HTTP_HOST'] == "flixacademy.cloudapp.net") || ($_SERVER['HTTP_HOST'] == "flixacademy-dev-danny.azurewebsites.net") ? 1 : 0;
+$GLOBALS["IsDevelopment"] =1;
 
 if ($GLOBALS["IsDevelopment"] == 1) {
     ini_set('display_errors',1);
