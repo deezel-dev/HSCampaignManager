@@ -135,6 +135,7 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
           {id:3,name:"PRODUCT"}
       ];
 
+/*
       $scope.init = function(){
           $scope.loaded = true;
       }
@@ -161,7 +162,7 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
                       alert(status);
               });
 
-      }
+      }*/
 
 /*
 
