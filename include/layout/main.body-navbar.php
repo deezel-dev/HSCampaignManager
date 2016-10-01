@@ -10,10 +10,10 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-left">
-                <li><a ui-sref="campaign_manager">Campaigns</a></li> 
                 <li><a ui-sref="segment_manager">Segments</a></li> 
+                <li><a ui-sref="campaign_manager">Campaigns</a></li>
             </ul>
-                        
+
         </div>
     </div>
 </header>

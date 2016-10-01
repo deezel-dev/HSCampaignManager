@@ -41,8 +41,6 @@ function addCampaign($segment_name, $segment_description, $segment_active, $segm
            "" . $segment_object_type_id . "," .
            "" . "GETDATE()" . ")";
 
-
-
     $data = getDatabase();
 
     if ($data->open()) {
