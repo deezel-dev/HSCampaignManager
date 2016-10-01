@@ -143,6 +143,11 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
       $scope.objectTypeSelected = function (){
       }
 
+      $scope.btnSaveSegment = function(){
+
+
+      }
+
 
 /*
 
