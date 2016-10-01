@@ -1,7 +1,7 @@
 var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
     .config(['$urlRouterProvider', '$stateProvider', function ($urlRouterProvider, $stateProvider) {
 
-        $urlRouterProvider.otherwise('/main');
+        $urlRouterProvider.otherwise('/campaign_manager');
 
         $stateProvider
 
@@ -93,7 +93,7 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
             $scope.loaded = true;
         }
 
-        $scope.outputChannelSelected = function (){            
+        $scope.outputChannelSelected = function (){
         }
 
         $scope.segmentSelected = function (){
@@ -102,7 +102,7 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
 
         $scope.removeSegment = function (segment){
             var index = $scope.selected_segments.indexOf(segment);
-            $scope.selected_segments.splice(index, 1); 
+            $scope.selected_segments.splice(index, 1);
         }
 
 
@@ -112,19 +112,18 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
 
             $http.post("/db/add-campaign.php", {
                 campaign_name: $scope.campaign_name,
-                campaign_description: $scope.campaign_description, 
-                campaign_manager: $scope.campaign_manager, 
-                start_date: $scope.start_date, 
+                campaign_description: $scope.campaign_description,
+                campaign_manager: $scope.campaign_manager,
+                start_date: $scope.start_date,
                 end_date: $scope.end_date
                 })
                     .success(function (data, status, headers, config) {
                         alert("Campaign Added");
-                        
+
                     }).error(function (data, status, headers, config) {
                         alert(status);
                 });
-            
+
         }
 
     } ])
-        
