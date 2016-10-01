@@ -25,6 +25,7 @@
           <select class="form-control" ng-model="object_type_id" ng-change="objectTypeSelected()" >
              <option ng-repeat="object_type in object_types | orderBy:'object_type.name'">{{object_type.name}}</option>
           </select>
+          <br>
 
           <label for="segment_retag"><b><u>ReTag:</u></b></label>
           <input type="checkbox" ng-model="segment_retag">
