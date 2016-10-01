@@ -1,7 +1,32 @@
 var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
     .config(['$urlRouterProvider', '$stateProvider', function ($urlRouterProvider, $stateProvider) {
 
-      
+        $urlRouterProvider.otherwise('/segment_manager');
+
+        $stateProvider
+
+        // INDEX STATES AND NESTED VIEWS ========================================
+            .state('main', {
+                url: '/main',
+                templateUrl: '/site/main.php',
+                params: {
+                    mode: 1
+                }
+            })
+
+            // INDEX STATES AND NESTED VIEWS ========================================
+            .state('segment_manager', {
+                url: '/segment_manager',
+                templateUrl: '/site/segment_manager.html',
+                controller: 'segmentCntrl'
+            })
+
+        // INDEX STATES AND NESTED VIEWS ========================================
+        .state('campaign_manager', {
+            url: '/campaign_manager',
+            templateUrl: '/site/campaign_manager.html',
+            controller: 'campaignCntrl'
+        })
 
     } ])
     .controller("indexCtrl", ['$scope', '$window', function ($scope, $window) {
