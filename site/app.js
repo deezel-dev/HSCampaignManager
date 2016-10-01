@@ -28,7 +28,7 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
             controller: 'campaignCntrl'
         })
 
-    } ])
+    }])
     .controller("indexCtrl", ['$scope', '$window', function ($scope, $window) {
 
         $scope.isUser = false;
@@ -49,9 +49,9 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
 
         }
 
-    } ])
+    }])
     .controller("campaignCntrl", ['$scope', '$http', function ($scope, $http) {
-
+/*
         $scope.loaded = false;
         $scope.campaign_name = "";
         $scope.campaign_description = "";
@@ -117,10 +117,10 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
                 });
 
         }
-
+*/
     } ])
     .controller("segmentCntrl", ['$scope', '$http', function ($scope, $http) {
-
+/*
         $scope.loaded = false;
         $scope.segment_name = "";
         $scope.segment_description = "";
@@ -163,5 +163,6 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
                 });
 
         }
+        */
 
     } ])
