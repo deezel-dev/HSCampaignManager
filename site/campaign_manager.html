@@ -74,11 +74,20 @@
                 <select class="form-control" ng-int="selectedSegment={};" ng-model="selectedSegment" ng-change="segmentSelected()">
                    <option ng-repeat="selected_segment in segments | orderBy:'selected_segment.name' track by $index">{{selected_segment.name}}</option>
                 </select>
+                <div class="row">
+               		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <button type="button"
+                          class="btn btn-primary btn-block"
+                          ng-click="">
+                          SAVE CAMPAIGN CHANNEL
+                        </button>
+               		</div>
+               	</div>
               </div>
               <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
                 <label for="segments"><b><u>Segments:</u></b></label>
                 <div class="row">
-                   <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" style="display:inline; padding:8px;" ng-repeat="segment in selected_segments">
+                   <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12" style="display:inline; padding:8px;" ng-repeat="segment in selected_segments">
                       <button type="button"
                          class="btn btn-default btn-block"
                          ng-click="removeSegment(segment)">
