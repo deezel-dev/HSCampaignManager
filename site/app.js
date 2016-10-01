@@ -121,14 +121,7 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
     } ])
     .controller("segmentCntrl", ['$scope', '$http', function ($scope, $http) {
 
-        $scope.loaded = false;
-        $scope.segment_name = "";
-        $scope.segment_description = "";
-        $scope.segment_active = 0;
-        $scope.segment_retag = 0;
-        $scope.segment_limit = 0;
-        $scope.object_type_id =  {};
-        $scope.object_type = {};
+
 
         $scope.object_types = [
             {id:1,name:"CUSTOMER"},
