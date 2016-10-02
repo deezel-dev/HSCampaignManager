@@ -40,7 +40,7 @@ function addSegment($segment_name, $segment_description, $segment_active, $segme
            "" . $segment_object_type_id . "," .
            "" . "GETDATE()" . ")";
 
-    echo $sql;
+    //echo $sql;
 
     $data = getDatabase();
 
