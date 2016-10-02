@@ -19,7 +19,7 @@ if($segment_added){
     echo($segment_added);
 }
 
-function addCampaign($segment_name, $segment_description, $segment_active, $segment_limit, $segment_retag, $segment_object_type_id) {
+function addSegment($segment_name, $segment_description, $segment_active, $segment_limit, $segment_retag, $segment_object_type_id) {
 
     $response = false;
 
