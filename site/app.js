@@ -145,13 +145,13 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
 
       $scope.btnSaveSegment = function(){
 
-        alert("$scope.segment_name: " + $scope.segment_name);
-        alert("$scope.segment_description: " + $scope.segment_description);
-        alert("$scope.segment_active: " + $scope.segment_active,);
-        alert("$scope.segment_limit: " + $scope.segment_limit);
-        alert("$scope.segment_retag: " + $scope.segment_retag);
-        alert("$scope.segment_retag: " + $scope.segment_retag,);
-        alert("$scope.segment_object_type_id: " + $scope.segment_object_type_id);
+        alert("scope.segment_name: " + $scope.segment_name);
+        alert("scope.segment_description: " + $scope.segment_description);
+        alert("scope.segment_active: " + $scope.segment_active,);
+        alert("scope.segment_limit: " + $scope.segment_limit);
+        alert("scope.segment_retag: " + $scope.segment_retag);
+        alert("scope.segment_retag: " + $scope.segment_retag,);
+        alert("scope.segment_object_type_id: " + $scope.segment_object_type_id);
 
           $http.post("/db/add-segment.php", {
               segment_name: $scope.segment_name,
