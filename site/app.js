@@ -151,7 +151,7 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
         alert("scope.segment_limit: " + $scope.segment_limit);
         alert("scope.segment_retag: " + $scope.segment_retag);
         alert("scope.segment_retag: " + $scope.segment_retag,);
-        alert("scope.segment_object_type_id: " + $scope.segment_object_type_id);
+        alert("scope.segment_object_type_id: " + $scope.segment_object_type_id.id);
 
           $http.post("/db/add-segment.php", {
               segment_name: $scope.segment_name,
@@ -159,7 +159,7 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
               segment_active: $scope.segment_active,
               segment_limit: $scope.segment_limit,
               segment_retag: $scope.segment_retag,
-              segment_object_type_id: $scope.segment_object_type_id
+              segment_object_type_id: $scope.segment_object_type_id.id
               })
                   .success(function (data, status, headers, config) {
                       alert("Segment Added");
