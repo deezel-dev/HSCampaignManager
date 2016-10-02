@@ -23,7 +23,7 @@ function addSegment($segment_name, $segment_description, $segment_active, $segme
 
     $response = false;
 
-    $sql = "INSERT INTO schema_CampaignManager.HSSegmentManager(
+    $sql = "INSERT INTO schema_CampaignManager.HSSegmentManager (
         segment_name,
         segment_description,
         segment_active,
@@ -31,8 +31,7 @@ function addSegment($segment_name, $segment_description, $segment_active, $segme
         segment_retag,
         object_type_id,
         date_added
-      )
-     VALUES (" .
+      ) VALUES (" .
            "'" . padSql($segment_name) . "'," .
            "'" . padSql($segment_description). "'," .
            "" . $segment_active . "," .
@@ -40,6 +39,8 @@ function addSegment($segment_name, $segment_description, $segment_active, $segme
            "" . $segment_retag . "," .
            "" . $segment_object_type_id . "," .
            "" . "GETDATE()" . ")";
+
+    echo $sql;
 
     $data = getDatabase();
 
