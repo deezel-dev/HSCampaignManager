@@ -6,7 +6,6 @@ header("Content-Type: text/json");
 
 $segment= json_decode(file_get_contents("php://input"));
 
-echo $segment->{"segment_name"};
 
 $segment_name = $segment->{"segment_name"};
 $segment_description = $segment->{"segment_description"};
