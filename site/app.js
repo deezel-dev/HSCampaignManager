@@ -141,7 +141,7 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
       }
 
       $scope.objectTypeSelected = function (){
-        alert("scope.segment_object_type_id: " + $scope.segment_object_type_id);
+        alert("scope.segment_object_type_id: " + $scope.segment_object_type_id.id);
       }
 
       $scope.btnSaveSegment = function(){
