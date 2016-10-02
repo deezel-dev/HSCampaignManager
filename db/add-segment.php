@@ -7,14 +7,6 @@ header("Content-Type: text/json");
 $segment= json_decode(file_get_contents("php://input"));
 
 
-$segment_name = $segment->{"segment_name"};
-$segment_description = $segment->{"segment_description"};
-$segment_active = $segment->{"segment_active"};
-$segment_limit = $segment->{"segment_limit"};
-$segment_retag = $segment->{"segment_retag"};
-$segment_object_type_id = $segment->{"object_type_id"};
-
-$segment_added = addSegment($segment_name, $segment_description, $segment_active, $segment_limit, $segment_retag, $segment_object_type_id);
 
 if($segment_added){
     echo($segment_added);
