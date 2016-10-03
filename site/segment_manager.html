@@ -4,15 +4,15 @@
 
        <label for="segment_name"><b><u>Name:</u></b></label>
        <!--<input placeholder="Segment Name" type="text" ng-model="segment_name" id="segment_name" class="form-control" style="padding: 8dp"/>
-       --><br>
+       -->
 
        <label for="segment_description"><b><u>Description:</u></b></label>
-       <input placeholder="Segment Description" type="text" ng-model="segment_description" id="segment_description" class="form-control" style="padding: 8dp"/>
-       <br>
+       <!--<input placeholder="Segment Description" type="text" ng-model="segment_description" id="segment_description" class="form-control" style="padding: 8dp"/>
+       -->
 
        <label for="segment_active"><b><u>Active:</u></b></label>
-       <input type="checkbox" ng-model="segment_active">
-       <br>
+       <!--<input type="checkbox" ng-model="segment_active">
+       -->
 
       </div>
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -44,7 +44,19 @@
    </div>
    <div class="row">
     <div class="container">
-      <h2><input placeholder="Segment Name" type="text" ng-model="segment_name" id="segment_name" class="form-control" style="padding: 8dp"/></h2>
+      <h2>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+          <input placeholder="Segment Name" type="text" ng-model="segment_name" id="segment_name" class="form-control" style="padding: 8dp"/>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+          <input placeholder="Segment Description" type="text" ng-model="segment_description" id="segment_description" class="form-control" style="padding: 8dp"/>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+          <input type="checkbox" ng-model="segment_active">
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+        </div>
+      </h2>
       <div class="panel panel-default">
         <div class="panel-body">A Basic Panel</div>
       </div>
