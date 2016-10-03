@@ -45,7 +45,7 @@
       <div class="panel panel-default" ng-repeat="sub_criteria in sub_criterias">
         <div class="panel-body">
           <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-            <select ng-model="table_list" class="form-control" ng-click="selectTable()"
+            <select data-ng-model="selectedTable" class="form-control" ng-click="selectTable()"
                 ng-options="table as table.name for table in tables | orderBy:'table.name'">
             </select>
           </div>

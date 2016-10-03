@@ -127,6 +127,7 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
       $scope.segment_limit = 0;
       $scope.segment_retag = 0;
       $scope.sub_criteria_id = 0;
+      $scope.selectedTable = {};
       $scope.filterByTable = "RM00101";
 
       $scope.object_types = [
@@ -140,6 +141,8 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
           {id:2,name:"HSSalesRecapHdr"}
       ];
 
+      $scope.selectedTable = $scope.tables[0];
+
       $scope.fields = [
           {id:1,table: "RM00101",name:"PRICELEVEL"},
           {id:2,table: "RM00101",name:"CITY"},
@@ -150,8 +153,8 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
       ];
 
       $scope.selectTable = function(){
-        alert($scope.table_list.name);
-        $scope.filterByTable = $scope.table_list.name;
+        alert($scope.selectedTable.name);
+        $scope.filterByTable = $scope.selectedTable.name;
       }
 
       $scope.sub_criterias = [{id:$scope.sub_criteria_id, sub_group_name:"", table:"", field:"", operator:"", criteria:"", data_type:""}];
