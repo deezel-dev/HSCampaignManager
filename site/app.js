@@ -135,6 +135,10 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
 
       $scope.sub_criterias = [{id:0, sub_group_name:"", table:"", field:"", operator:"", criteria:"", data_type:""}];
 
+      $scope.btnAddCiteria = function(){
+        $scope.sub_criterias.push({id:0, sub_group_name:"", table:"", field:"", operator:"", criteria:"", data_type:""});
+      }
+
       $scope.init = function(){
           $scope.loaded = true;
       }
