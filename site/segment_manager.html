@@ -22,8 +22,14 @@
           <br>
 
           <label for=""><b><u>Object Type:</u></b></label>
-          <select class="form-control" ng-change="objectTypeSelected()" >
-             <option ng-model="segment_object_type" ng-repeat="object_type in object_types | orderBy:'object_type.name'">{{object_type.name}}</option>
+
+          <select ng-model="object_type_list" class="form-control" ng-change="objectTypeSelected()"
+              ng-options="object_type as object_type.name for  object_type in object_types | orderBy:'object_type.name'">
+                     <!--
+                     <select class="form-control" ng-change="objectTypeSelected()" >
+                        <option ng-model="segment_object_type" ng-repeat="object_type in object_types | orderBy:'object_type.name'">{{object_type.name}}</option>
+                     </select>
+                       ng-options="product as product.label for product in products"> -->
           </select>
           <br>
 
