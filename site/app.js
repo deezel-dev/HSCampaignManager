@@ -134,6 +134,20 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
           {id:3,name:"PRODUCT"}
       ];
 
+      $scope.tables = [
+          {id:1,name:"RM00101"},
+          {id:2,name:"HSSalesRecapHdr"}
+      ];
+
+      $scope.fields = [
+          {id:1,table: "RM00101",name:"PRICELEVEL"},
+          {id:2,table: "RM00101",name:"CITY"},
+          {id:2,table: "RM00101",name:"STATE"},
+          {id:2,table: "RM00101",name:"ZIP"},
+          {id:2,table: "HSSalesRecapHdr",name:"DOCDATE"},
+          {id:2,table: "HSSalesRecapHdr",name:"SUBTOTAL"}
+      ];
+
       $scope.sub_criterias = [{id:$scope.sub_criteria_id, sub_group_name:"", table:"", field:"", operator:"", criteria:"", data_type:""}];
 
       $scope.btnAddCiteria = function(){
