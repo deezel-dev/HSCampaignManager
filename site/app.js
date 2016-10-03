@@ -150,6 +150,7 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
       ];
 
       $scope.selectTable = function(){
+        alert($scope.table_list.name);
         $scope.filterByTable = $scope.table_list.name;
       }
 
