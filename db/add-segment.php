@@ -4,6 +4,8 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/include/_init.php";
 require_once $_SERVER['DOCUMENT_ROOT'] . "/include/database.php";
 header("Content-Type: text/json");
 
+$sql = "";
+
 $segment= json_decode(file_get_contents("php://input"));
 
 $segment_name = $segment->{"segment_name"};
@@ -16,7 +18,7 @@ $segment_object_type_id = $segment->{"segment_object_type_id"};
 $segment_added = addSegment($segment_name, $segment_description, $segment_active, $segment_limit, $segment_retag, $segment_object_type_id);
 
 if($segment_added){
-    echo($segment_added);
+    echo($sql);
 }
 
 function addSegment($segment_name, $segment_description, $segment_active, $segment_limit, $segment_retag, $segment_object_type_id) {
@@ -39,8 +41,6 @@ function addSegment($segment_name, $segment_description, $segment_active, $segme
            "" . $segment_retag . "," .
            "" . $segment_object_type_id . "," .
            "" . "GETDATE()" . ")";
-
-    //echo $sql;
 
     $data = getDatabase();
 
