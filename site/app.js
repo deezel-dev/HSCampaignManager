@@ -152,7 +152,8 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
           {id:6,table: "HSSalesRecapHdr",name:"SUBTOTAL"}
       ];
 
-      $scope.selectTable = function(){
+      $scope.selectTable = function(index){
+        $scope.selectedTable = $scope.tables[index];
         alert($scope.selectedTable.name);
         $scope.filterByTable = $scope.selectedTable.name;
       }
