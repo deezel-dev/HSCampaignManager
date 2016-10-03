@@ -153,6 +153,7 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
       ];
 
       $scope.selectTable = function(index){
+        alert("index = " + index);
         $scope.selectedTable = $scope.tables[index];
         alert($scope.selectedTable.name);
         $scope.filterByTable = $scope.selectedTable.name;
