@@ -149,7 +149,6 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
         alert("scope.segment_active: " + $scope.segment_active);
         alert("scope.segment_limit: " + $scope.segment_limit);
         alert("scope.segment_retag: " + $scope.segment_retag);
-        alert("scope.segment_retag: " + $scope.segment_retag);
         alert("scope.segment_object_type_id: " + $scope.object_type_list.id;
 
 
