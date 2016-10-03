@@ -44,11 +44,20 @@
 
       <div class="panel panel-default" ng-repeat="sub_criteria in sub_criterias">
         <div class="panel-body">
-          <button type="button"
+          <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+            <button type="button"
             class="btn btn-primary btn-block btn-xs"
             ng-click="btnAddCiteria()">
-            SAVE
+            ADD
           </button>
+        </div>
+          <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+            <button type="button"
+            class="btn btn-danger btn-block btn-xs"
+            ng-click="btnRemoveCiteria(2)">
+            REMOVE
+          </button>
+        </div>
         </div>
       </div>
 

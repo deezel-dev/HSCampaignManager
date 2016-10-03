@@ -139,6 +139,10 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
         $scope.sub_criterias.push({id:0, sub_group_name:"", table:"", field:"", operator:"", criteria:"", data_type:""});
       }
 
+      $scope.btnRemoveCiteria = function(index){
+        $scope.sub_criterias.splice(index,1);
+      }
+
       $scope.init = function(){
           $scope.loaded = true;
       }
