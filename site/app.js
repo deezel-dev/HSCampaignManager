@@ -126,6 +126,7 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
       $scope.segment_active = 0;
       $scope.segment_limit = 0;
       $scope.segment_retag = 0;
+      $scope.sub_criteria_id = 0;
 
       $scope.object_types = [
           {id:1,name:"CUSTOMER"},
@@ -133,10 +134,11 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
           {id:3,name:"PRODUCT"}
       ];
 
-      $scope.sub_criterias = [{id:0, sub_group_name:"", table:"", field:"", operator:"", criteria:"", data_type:""}];
+      $scope.sub_criterias = [{id:$scope.sub_criteria_id, sub_group_name:"", table:"", field:"", operator:"", criteria:"", data_type:""}];
 
       $scope.btnAddCiteria = function(){
-        $scope.sub_criterias.push({id:0, sub_group_name:"", table:"", field:"", operator:"", criteria:"", data_type:""});
+        $scope.sub_criteria_id = $scope.sub_criteria_id + 1;
+        $scope.sub_criterias.push({id:$scope.sub_criteria_id, sub_group_name:"", table:"", field:"", operator:"", criteria:"", data_type:""});
       }
 
       $scope.btnRemoveCiteria = function(index){
