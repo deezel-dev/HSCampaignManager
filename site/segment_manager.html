@@ -49,20 +49,21 @@
           <input placeholder="Segment Name" type="text" ng-model="segment_name" id="segment_name" class="form-control" style="padding: 8dp"/>
         </div>
         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-          <input placeholder="Segment Description" type="text" ng-model="segment_description" id="segment_description" class="form-control" style="padding: 8dp"/>
-        </div>
-        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
           <input type="checkbox" ng-model="segment_active">
         </div>
         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
           <input type="checkbox" ng-model="segment_retag">
         </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+          <input placeholder="Segment Limit" type="text" ng-model="segment_limit" id="segment_limit" class="form-control" style="padding: 8dp"/>
+        </div>
       <!--</h2>-->
     </div>
+    <br>
       <div class="row">
       <!--<h2>-->
         <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-          <input placeholder="Segment Limit" type="text" ng-model="segment_limit" id="segment_limit" class="form-control" style="padding: 8dp"/>
+          <input placeholder="Segment Description" type="text" ng-model="segment_description" id="segment_description" class="form-control" style="padding: 8dp"/>
         </div>
         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
           <select ng-model="object_type_list" class="form-control"
