@@ -21,9 +21,9 @@
           <input placeholder="Segment Limit" type="text" ng-model="segment_limit" id="segment_limit" class="form-control" style="padding: 8dp"/>
           <br>
 
-          <label for="object_type_id"><b><u>Object Type:</u></b></label>
-          <select class="form-control" ng-model="object_type_id" ng-change="objectTypeSelected()" >
-             <option ng-repeat="object_type in object_types | orderBy:'object_type.name'">{{object_type.name}}</option>
+          <label for=""><b><u>Object Type:</u></b></label>
+          <select class="form-control" ng-change="objectTypeSelected()" >
+             <option ng-model="segment_object_type" ng-repeat="object_type in object_types | orderBy:'object_type.name'">{{object_type.name}}</option>
           </select>
           <br>
 
