@@ -1,37 +1,4 @@
 <div class="container">
-   <!--<div class="row">
-     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-
-       <label for="segment_name"><b><u>Name:</u></b></label>
-       <input placeholder="Segment Name" type="text" ng-model="segment_name" id="segment_name" class="form-control" style="padding: 8dp"/>
-       <br>
-
-       <label for="segment_description"><b><u>Description:</u></b></label>
-       <input placeholder="Segment Description" type="text" ng-model="segment_description" id="segment_description" class="form-control" style="padding: 8dp"/>
-       <br>
-
-       <label for="segment_active"><b><u>Active:</u></b></label>
-       <input type="checkbox" ng-model="segment_active">
-
-      </div>
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-
-          <label for="segment_limit"><b><u>Limit:</u></b></label>
-          <input placeholder="Segment Limit" type="text" ng-model="segment_limit" id="segment_limit" class="form-control" style="padding: 8dp"/>
-          <br>
-
-          <label for="object_type_list"><b><u>Object Type:</u></b></label>
-          <select ng-model="object_type_list" class="form-control"
-              ng-options="object_type as object_type.name for object_type in object_types | orderBy:'object_type.name'">
-          </select>
-          <br>
-
-          <label for="segment_retag"><b><u>ReTag:</u></b></label>
-          <input type="checkbox" ng-model="segment_retag">
-          <br>
-
-         </div>
-   </div>-->
    <div class="row">
     <div class="container">
       <div class="row">
@@ -44,7 +11,8 @@
               ng-options="object_type as object_type.name for object_type in object_types | orderBy:'object_type.name'">
           </select>
         </div>
-        <div class="col-lg-2 col-md-2 col-sm-6 col-xs-12">
+        <div class="col-lg-2 col-md-2 col-sm-6 col-xs-12" style="display:inline">
+          <label for="segment_limit"><b><u>Limit:</u></b></label>
           <input placeholder="Segment Limit" type="text" ng-model="segment_limit" id="segment_limit" class="form-control" style="padding: 8dp"/>
         </div>
         <div class="col-lg-2 col-md-2 col-sm-6 col-xs-12">
