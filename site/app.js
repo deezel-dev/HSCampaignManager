@@ -142,7 +142,7 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
       }
 
       $scope.btnRemoveCiteria = function(index){
-        $scope.sub_criterias.splice(index,1);
+        $scope.sub_criterias.splice(1,1);
       }
 
       $scope.init = function(){
