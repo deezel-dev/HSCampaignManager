@@ -138,7 +138,6 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
           $scope.loaded = true;
       }
 
-
       $scope.btnSaveSegment = function(){
 
         alert("scope.segment_name: " + $scope.segment_name);
