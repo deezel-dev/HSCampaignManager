@@ -59,7 +59,6 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
         $scope.start_date = "";
         $scope.end_date = "";
         $scope.output_channel = "";
-        //$scope.selected_segment = {};
         $scope.selectedSegment={};
         $scope.channel = {};
         $scope.selected_segments = [];
