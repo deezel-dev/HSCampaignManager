@@ -21,27 +21,25 @@
           <br>
           <label for="segment_active"><b><u>Active:</u></b></label>
           <input type="checkbox" ng-model="segment_active">
+            <br>
+            <label for="segment_retag"><b><u>Retag:</u></b></label>
+            <input type="checkbox" ng-model="segment_retag">
         </div>
         <div class="col-lg-2 col-md-2 col-sm-6 col-xs-12">
-          <br>
-          <label for="segment_retag"><b><u>Retag:</u></b></label>
-          <input type="checkbox" ng-model="segment_retag">
+          <button type="button"
+            class="btn btn-primary btn-block"
+            ng-click="btnSaveSegment()">
+            SAVE
+          </button>
         </div>
       <!--</h2>-->
     </div>
     <br>
       <div class="row">
       <!--<h2>-->
-        <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
           <input placeholder="Segment Description" type="text" ng-model="segment_description" id="segment_description" class="form-control" style="padding: 8dp"/>
         </div>
-          <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                <button type="button"
-                  class="btn btn-primary btn-block"
-                  ng-click="btnSaveSegment()">
-                  SAVE
-                </button>
-          </div>
       <!--</h2>-->
     </div>
 
