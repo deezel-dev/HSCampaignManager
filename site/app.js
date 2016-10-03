@@ -133,6 +133,8 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
           {id:3,name:"PRODUCT"}
       ];
 
+      $scope.sub_criterias = [{id:0, sub_group_name:"", table:"", field:"", operator:"", criteria:"", data_type:""}];
+
       $scope.init = function(){
           $scope.loaded = true;
       }
