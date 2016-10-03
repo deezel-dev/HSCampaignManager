@@ -139,7 +139,7 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
       }
 
       $scope.objectTypeSelected = function (){
-        alert("scope.object_type_list: " + $scope.object_type_list.id);
+        //alert("scope.object_type_list: " + $scope.object_type_list.id);
       }
 
       $scope.btnSaveSegment = function(){
@@ -150,7 +150,7 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
         alert("scope.segment_limit: " + $scope.segment_limit);
         alert("scope.segment_retag: " + $scope.segment_retag);
         alert("scope.segment_retag: " + $scope.segment_retag);
-        alert("scope.segment_object_type_id: " + $scope.segment_object_type_id.id);
+        alert("scope.segment_object_type_id: " + $scope.object_type_list.id;
 
 
           $http.post("/db/add-segment.php", {
