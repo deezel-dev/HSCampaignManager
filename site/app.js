@@ -180,21 +180,13 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
 
       $scope.btnAddCiteria = function(_id, _sub_group_name, _table, _field, _operator, _criteria, _data_type){
 
-        //var _id = 0;
-        //var _sub_group_name = "";
-        //var _table = "";
-        //var _field = "";
-        //var _operator = "";
-        //var _criteria = "";
-        //var _data_type = "";
-
-        alert(_id);
-        alert(_sub_group_name);
-        alert(_table);
-        alert(_field);
-        alert(_operator);
-        alert(_criteria);
-        alert(_data_type);
+        //alert(_id);
+        //alert(_sub_group_name);
+        //alert(_table);
+        //alert(_field);
+        //alert(_operator);
+        //alert(_criteria);
+        //alert(_data_type);
 
         var criteria = {
            id:_id,
@@ -207,7 +199,7 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
        };
 
         //$scope.sub_criteria_id = $scope.sub_criteria_id + 1;
-        //$scope.sub_criterias.push(criteria);
+        $scope.sub_criterias.push(criteria);
       }
 
       $scope.btnRemoveCiteria = function(index){
