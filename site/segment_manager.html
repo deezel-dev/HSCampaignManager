@@ -61,22 +61,22 @@
             <div ng-show="$index>0" align="center" style="padding-bottom: 20px;">AND</div>
       <div class="">
         <div class="panel-body">
-          <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+          <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12" style="padding:5px;">
             <select data-ng-model="selectedTable" class="form-control"
                 ng-options="table as table.name for table in tables | orderBy:'table.name'">
             </select>
           </div>
-            <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+            <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12" style="padding:5px;">
               <select ng-model="field_list" class="form-control"
                   ng-options="field as field.name for field in fields | orderBy:'field.name' | filter:{table: selectedTable.name}">
               </select>
             </div>
-              <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+              <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12" style="padding:5px;">
                 <select ng-model="operator_list" class="form-control"
                     ng-options="operator as operator.name for operator in operators | orderBy:'operator.name'">
                 </select>
               </div>
-                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12" style="padding:5px;">
                     <input placeholder="Criteria" type="text" ng-model="criteria" id="criteria" class="form-control" style="padding: 8dp"/>
                 </div>
           <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
