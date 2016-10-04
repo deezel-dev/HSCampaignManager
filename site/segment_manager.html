@@ -76,7 +76,7 @@
                     ng-options="operator as operator.name for operator in operators | orderBy:'operator.name'">
                 </select>
               </div>
-                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">{{$index}}
                     <input  style="padding:5px;" placeholder="Criteria" type="text" ng-model="criteria" id="criteria" class="form-control" style="padding: 8dp"/>
                 </div>
           <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
