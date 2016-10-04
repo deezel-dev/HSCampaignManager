@@ -161,7 +161,7 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
 
       $scope.sub_criterias = [
           {
-             id:$scope.sub_criteria_id,
+             id:-1,
              sub_group_name:"",
              table:"",
              field:"",
@@ -180,7 +180,7 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
 
       $scope.btnAddCiteria = function(_id, _sub_group_name, _table, _field, _operator, _criteria, _data_type){
 
-        //alert(_id);
+        alert(_id);
         //alert(_sub_group_name);
         //alert(_table);
         //alert(_field);
