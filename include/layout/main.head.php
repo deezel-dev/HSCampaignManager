@@ -10,6 +10,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link href="/public/css/bootstrap.min.css" rel='stylesheet' type='text/css' />
 <link href="/public/css/bootstrap-bootswatch-yeti.min.css" rel='stylesheet' type='text/css' />
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link href="/public/css/site.css" rel='stylesheet' type="text/css" />
 <link href='//fonts.googleapis.com/css?family=Montserrat:400,700&subset=latin,latin-ext' rel='stylesheet' type='text/css' />
 <link href='//fonts.googleapis.com/css?family=Montserrat+Alternates:400,700&subset=latin,latin-ext' rel='stylesheet' type='text/css' />
