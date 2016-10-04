@@ -151,7 +151,7 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
 
       $scope.selectTable = function(){
         alert('hello');
-        //alert($scope.selectedTable.name);
+        alert($scope.selectedTable);
         //$scope.filterByTable = $scope.selectedTable.name;
       }
 
