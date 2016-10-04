@@ -35,19 +35,19 @@
                      <input placeholder="Segment Description" type="text" ng-model="segment_description" id="segment_description" class="form-control" style="padding: 8dp"/>
                   </div>
                   <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                      <button type="button"
-                         class="btn btn-primary btn-block"
-                         ng-click="btnSaveSegment()">
-                      <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true" align="center"></span>
-                      </button>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                      <button type="button" class="btn btn-warning btn-block" ng-click="">-</button>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                      <button type="button" class="btn btn-danger btn-block" ng-click="">+</button>
-                    </div>
+                     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <button type="button"
+                           class="btn btn-primary btn-block"
+                           ng-click="btnSaveSegment()">
+                        <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true" align="center"></span>
+                        </button>
+                     </div>
+                     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <button type="button" class="btn btn-warning btn-block" ng-click="">-</button>
+                     </div>
+                     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <button type="button" class="btn btn-danger btn-block" ng-click="">+</button>
+                     </div>
                   </div>
                </div>
             </div>
@@ -63,48 +63,46 @@
          </div>
          <div ng-repeat="sub_criteria in sub_criterias track by $index" style="padding: 10px;">
             <div ng-show="$index>0" align="center" style="padding-bottom: 20px;">AND</div>
-            <div class="">
-               <div class="panel-body">
-                  <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
-                     <select  style="padding:5px;" data-ng-model="selectedTable" class="form-control"
-                        ng-options="table as table.name for table in tables | orderBy:'table.name'">
-                     </select>
+            <div class="panel-body">
+               <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                  <select  style="padding:5px;" data-ng-model="selectedTable" class="form-control"
+                     ng-options="table as table.name for table in tables | orderBy:'table.name'">
+                  </select>
+               </div>
+               <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                  <select  style="padding:5px;" ng-model="field_list" class="form-control"
+                     ng-options="field as field.name for field in fields | orderBy:'field.name' | filter:{table: selectedTable.name}">
+                  </select>
+               </div>
+               <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                  <select  style="padding:5px;" ng-model="operator_list" class="form-control"
+                     ng-options="operator as operator.name for operator in operators | orderBy:'operator.name'">
+                  </select>
+               </div>
+               <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                  <input  style="padding:5px;" placeholder="Criteria" type="text" ng-model="criteria" id="criteria" class="form-control" style="padding: 8dp"/>
+               </div>
+               <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                     <button type="button" style="color: #ffffff; background-color: #777; border-color: #777"
+                        class="btn btn-warning btn-block"
+                        ng-click="btnAddCiteria($index, sub_group_name, selectedTable.name, field_list.name, operator_list.name, criteria, field_list.data_type)">
+                     <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true" align="center"></span>
+                     </button>
                   </div>
-                  <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
-                     <select  style="padding:5px;" ng-model="field_list" class="form-control"
-                        ng-options="field as field.name for field in fields | orderBy:'field.name' | filter:{table: selectedTable.name}">
-                     </select>
+                  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                     <button type="button"
+                        class="btn btn-primary btn-block"
+                        ng-click="btnAddCiteria($index, sub_group_name, selectedTable.name, field_list.name, operator_list.name, criteria, field_list.data_type)">
+                     <span class="glyphicon glyphicon-edit" aria-hidden="true" align="center"></span>
+                     </button>
                   </div>
-                  <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
-                     <select  style="padding:5px;" ng-model="operator_list" class="form-control"
-                        ng-options="operator as operator.name for operator in operators | orderBy:'operator.name'">
-                     </select>
-                  </div>
-                  <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                     <input  style="padding:5px;" placeholder="Criteria" type="text" ng-model="criteria" id="criteria" class="form-control" style="padding: 8dp"/>
-                  </div>
-                  <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                        <button type="button" style="color: #ffffff; background-color: #777; border-color: #777"
-                           class="btn btn-warning btn-block"
-                           ng-click="btnAddCiteria($index, sub_group_name, selectedTable.name, field_list.name, operator_list.name, criteria, field_list.data_type)">
-                        <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true" align="center"></span>
-                        </button>
-                     </div>
-                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                        <button type="button"
-                           class="btn btn-primary btn-block"
-                           ng-click="btnAddCiteria($index, sub_group_name, selectedTable.name, field_list.name, operator_list.name, criteria, field_list.data_type)">
-                        <span class="glyphicon glyphicon-edit" aria-hidden="true" align="center"></span>
-                        </button>
-                     </div>
-                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                        <button type="button"
-                           class="btn btn-danger btn-block"
-                           ng-click="btnRemoveCiteria($index)">
-                        <span class="glyphicon glyphicon-remove" aria-hidden="true" align="center"></span>
-                        </button>
-                     </div>
+                  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                     <button type="button"
+                        class="btn btn-danger btn-block"
+                        ng-click="btnRemoveCiteria($index)">
+                     <span class="glyphicon glyphicon-remove" aria-hidden="true" align="center"></span>
+                     </button>
                   </div>
                </div>
             </div>
