@@ -2,55 +2,61 @@
    <div class="panel with-nav-tabs panel-default">
       <div class="panel-heading">
          <div class="row">
-            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-               <label for="segment_name"><b><u>Segment Name:</u></b></label>
-               <input placeholder="Segment Name" type="text" ng-model="segment_name" id="segment_name" class="form-control" style="padding: 8dp"/>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-               <label for="object_type_list"><b><u>Subject:</u></b></label>
-               <select ng-model="object_type_list" class="form-control"
-                  ng-options="object_type as object_type.name for object_type in object_types | orderBy:'object_type.name'">
-               </select>
-            </div>
-            <div class="col-lg-2 col-md-2 col-sm-6 col-xs-12">
-               <label for="segment_limit"><b><u>Limit:</u></b></label>
-               <input placeholder="Segment Limit" type="text" ng-model="segment_limit" id="segment_limit" class="form-control" style="padding: 8dp"/>
-            </div>
-            <div class="col-lg-1 col-md-1 col-sm-6 col-xs-12">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+               <div class="row">
+                  <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                     <label for="segment_name"><b><u>Segment Name:</u></b></label>
+                     <input placeholder="Segment Name" type="text" ng-model="segment_name" id="segment_name" class="form-control" style="padding: 8dp"/>
+                  </div>
+                  <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                     <label for="object_type_list"><b><u>Subject:</u></b></label>
+                     <select ng-model="object_type_list" class="form-control"
+                        ng-options="object_type as object_type.name for object_type in object_types | orderBy:'object_type.name'">
+                     </select>
+                  </div>
+                  <div class="col-lg-2 col-md-2 col-sm-6 col-xs-12">
+                     <label for="segment_limit"><b><u>Limit:</u></b></label>
+                     <input placeholder="Segment Limit" type="text" ng-model="segment_limit" id="segment_limit" class="form-control" style="padding: 8dp"/>
+                  </div>
+                  <div class="col-lg-1 col-md-1 col-sm-6 col-xs-12">
+                     <br>
+                     <label for="segment_active"><b><u>Active:</u></b></label>
+                     <input type="checkbox" ng-model="segment_active">
+                     <br>
+                     <label for="segment_retag"><b><u>Retag:</u></b></label>
+                     <input type="checkbox" ng-model="segment_retag">
+                  </div>
+                  <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                     <br>
+                     <button type="button"
+                        class="btn btn-primary btn-block"
+                        ng-click="btnSaveSegment()">
+                     SAVE
+                     </button>
+                  </div>
+               </div>
                <br>
-               <label for="segment_active"><b><u>Active:</u></b></label>
-               <input type="checkbox" ng-model="segment_active">
-               <br>
-               <label for="segment_retag"><b><u>Retag:</u></b></label>
-               <input type="checkbox" ng-model="segment_retag">
+               <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                     <input placeholder="Segment Description" type="text" ng-model="segment_description" id="segment_description" class="form-control" style="padding: 8dp"/>
+                  </div>
+               </div>
             </div>
-            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-               <br>
-               <button type="button"
-                  class="btn btn-primary btn-block"
-                  ng-click="btnSaveSegment()">
-               SAVE
-               </button>
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+               <ul class="nav nav-tabs pull-right">
+                  <li style="padding: 8px;">
+                     <button type="button" class="btn btn-primary btn-block" ng-click="">1</button>
+                  </li>
+                  <li style="padding: 8px;">
+                     <button type="button" class="btn btn-primary btn-block" ng-click="">2</button>
+                  </li>
+                  <li style="padding: 8px;">
+                     <button type="button" class="btn btn-primary btn-block" ng-click="">3</button>
+                  </li>
+               </ul>
             </div>
+            <!-- BUTTONS  <hr style="height:3px;border:none;color:#555;background-color:#555;" /> -->
          </div>
-         <br>
-         <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-               <input placeholder="Segment Description" type="text" ng-model="segment_description" id="segment_description" class="form-control" style="padding: 8dp"/>
-            </div>
-         </div>
-         <!-- BUTTONS  <hr style="height:3px;border:none;color:#555;background-color:#555;" /> -->
-         <ul class="nav nav-tabs pull-right">
-            <li style="padding: 8px;">
-               <button type="button" class="btn btn-primary btn-block" ng-click="">1</button>
-            </li>
-            <li style="padding: 8px;">
-               <button type="button" class="btn btn-primary btn-block" ng-click="">2</button>
-            </li>
-            <li style="padding: 8px;">
-               <button type="button" class="btn btn-primary btn-block" ng-click="">3</button>
-            </li>
-         </ul>
       </div>
       <div class="panel panel-default" ng-repeat="sub_criteria_group in sub_criteria_groups" style="background-color: #eee; border-color: #eee">
          <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
