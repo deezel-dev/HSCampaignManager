@@ -149,6 +149,16 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
           {id:6,table: "HSSalesRecapHdr",name:"SUBTOTAL"}
       ];
 
+      $scope.operators = [
+          {id:1,name:"="},
+          {id:2,name:"LIKE"},
+          {id:3,name:"IN"},
+          {id:4,name:">"},
+          {id:5,name:"<"},
+          {id:6,name:"<>"},
+          {id:7,name:"NOT LIKE"}
+      ];
+
       $scope.selectTable = function(){
         alert('hello');
         alert($scope.selectedTable);
