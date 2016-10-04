@@ -26,14 +26,14 @@
                      <label for="segment_retag"><b><u>Retag:</u></b></label>
                      <input type="checkbox" ng-model="segment_retag">
                   </div>
-                  <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                  <!-- <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                      <br>
                      <button type="button"
                         class="btn btn-primary btn-block"
                         ng-click="btnSaveSegment()">
                      SAVE
                      </button>
-                  </div>
+                  </div> -->
                </div>
                <br>
                <div class="row">
@@ -44,8 +44,13 @@
             </div>
             <div class="col-lg-1 col-md-3 col-sm-12 col-xs-12">
                <ul class="nav nav-tabs pull-right">
+
                   <li style="padding: 8px;">
-                     <button type="button" class="btn btn-primary btn-block" ng-click="">1</button>
+                  <button type="button"
+                     class="btn btn-primary btn-block"
+                     ng-click="btnSaveSegment()">
+                  <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true" align="center"></span>
+                  </button>
                   </li>
                   <li style="padding: 8px;">
                      <button type="button" class="btn btn-primary btn-block" ng-click="">2</button>
