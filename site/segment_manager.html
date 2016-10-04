@@ -2,7 +2,7 @@
    <div class="panel with-nav-tabs panel-default">
       <div class="panel-heading">
          <div class="row">
-            <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                <div class="row">
                   <div class="col-lg-4 col-md-3 col-sm-6 col-xs-12">
                      <label for="segment_name"><b><u>Segment Name:</u></b></label>
@@ -31,24 +31,24 @@
                </div>
                <br>
                <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                  <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
                      <input placeholder="Segment Description" type="text" ng-model="segment_description" id="segment_description" class="form-control" style="padding: 8dp"/>
                   </div>
+                  <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                     <ul class="nav nav-tabs pull-right">
+                        <li style="padding: 8px;">
+                        <button type="button"
+                           class="btn btn-primary btn-block"
+                           ng-click="btnSaveSegment()">
+                        <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true" align="center"></span>
+                        </button>
+                        </li>
+                        <li style="padding: 8px;">
+                           <button type="button" class="btn btn-primary btn-block" ng-click="">2</button>
+                        </li>
+                     </ul>
+                  </div>
                </div>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-               <ul class="nav nav-tabs pull-right">
-                  <li style="padding: 8px;">
-                  <button type="button"
-                     class="btn btn-primary btn-block"
-                     ng-click="btnSaveSegment()">
-                  <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true" align="center"></span>
-                  </button>
-                  </li>
-                  <li style="padding: 8px;">
-                     <button type="button" class="btn btn-primary btn-block" ng-click="">2</button>
-                  </li>
-               </ul>
             </div>
             <!-- BUTTONS  <hr style="height:3px;border:none;color:#555;background-color:#555;" /> -->
          </div>
