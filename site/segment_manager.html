@@ -4,11 +4,11 @@
          <div class="row">
             <div class="col-lg-11 col-md-9 col-sm-12 col-xs-12">
                <div class="row">
-                  <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                  <div class="col-lg-4 col-md-3 col-sm-6 col-xs-12">
                      <label for="segment_name"><b><u>Segment Name:</u></b></label>
                      <input placeholder="Segment Name" type="text" ng-model="segment_name" id="segment_name" class="form-control" style="padding: 8dp"/>
                   </div>
-                  <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                  <div class="col-lg-4 col-md-3 col-sm-6 col-xs-12">
                      <label for="object_type_list"><b><u>Subject:</u></b></label>
                      <select ng-model="object_type_list" class="form-control"
                         ng-options="object_type as object_type.name for object_type in object_types | orderBy:'object_type.name'">
@@ -22,18 +22,12 @@
                      <br>
                      <label for="segment_active"><b><u>Active:</u></b></label>
                      <input type="checkbox" ng-model="segment_active">
+                  </div>
+                  <div class="col-lg-1 col-md-1 col-sm-6 col-xs-12">
                      <br>
                      <label for="segment_retag"><b><u>Retag:</u></b></label>
                      <input type="checkbox" ng-model="segment_retag">
                   </div>
-                  <!-- <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                     <br>
-                     <button type="button"
-                        class="btn btn-primary btn-block"
-                        ng-click="btnSaveSegment()">
-                     SAVE
-                     </button>
-                  </div> -->
                </div>
                <br>
                <div class="row">
