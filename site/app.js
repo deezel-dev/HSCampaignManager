@@ -128,7 +128,6 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
       $scope.segment_retag = 0;
       $scope.sub_criteria_id = 0;
       $scope.filterByTable = "RM00101";
-      $scope.selectedTable = {};
 
       $scope.object_types = [
           {id:1,name:"CUSTOMER"},
