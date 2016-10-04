@@ -50,6 +50,7 @@
               </hs>
           </div>
       <div class="panel panel-default" ng-repeat="sub_criteria in sub_criterias track by $index">
+        <div ng-show="$index>0" align="center">OR</div>
         <div class="panel-body">
           <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
             <select data-ng-model="selectedTable" class="form-control"
