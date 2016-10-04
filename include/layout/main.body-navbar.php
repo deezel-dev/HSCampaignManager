@@ -1,4 +1,4 @@
-<header class="navbar navbar-default navbar-static-top" id="top">
+<header class="navbar navbar-inverse navbar-static-top" id="top">
     <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
