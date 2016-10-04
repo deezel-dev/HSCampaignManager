@@ -173,7 +173,7 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
 
       $scope.btnAddCiteria = function(){
 
-        var _id = 0,
+        var _id = 0;
         var _sub_group_name = "";
         var _table = "";
         var _field = "";
