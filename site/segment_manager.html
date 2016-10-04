@@ -42,13 +42,14 @@
 
 <hr style="height:3px;border:none;color:#555;background-color:#555;" />
 
-      <div class="" ng-repeat="sub_criteria_group in sub_criteria_groups track by sub_criteria_groups_index">
+      <div class="" ng-repeat="sub_criteria_group in sub_criteria_groups">
           <div class="row">
               <h2>
-                <input placeholder="Group Name" type="text" ng-model="sub_group_name" id="sub_group_name" class="form-control" style="padding: 8dp"/>
+                <input placeholder="Group Name" type="text" ng-model="sub_group_name" id="sub_group_name"
+                class="form-control" style="padding: 8dp"/>
               </hs>
           </div>
-      <div class="panel panel-default" ng-repeat="sub_criteria in sub_criterias">
+      <div class="panel panel-default" ng-repeat="sub_criteria in sub_criterias track by $index">
         <div class="panel-body">
           <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
             <select data-ng-model="selectedTable" class="form-control"
@@ -71,7 +72,7 @@
           <div ng-show="1" class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
             <button type="button"
             class="btn btn-primary btn-block btn-xs"
-            ng-click="btnAddCiteria(sub_criteria_groups_index, sub_group_name, selectedTable.name, field_list.name, operator_list.name, criteria, field_list.data_type)">
+            ng-click="btnAddCiteria($index, sub_group_name, selectedTable.name, field_list.name, operator_list.name, criteria, field_list.data_type)">
             SAVE/ADD
           </button>
         </div>
