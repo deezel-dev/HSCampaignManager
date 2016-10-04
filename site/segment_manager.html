@@ -42,12 +42,13 @@
 
 <hr style="height:3px;border:none;color:#555;background-color:#555;" />
 
-      <div class="panel panel-default" ng-repeat="sub_criteria in sub_criterias">
+      <div class="" ng-repeat="sub_criteria_group in sub_criterias_groups">
           <div class="row">
               <h2>
                 <input placeholder="Criteria" type="text" ng-model="criteria" id="criteria" class="form-control" style="padding: 8dp"/>
               </hs>
           </div>
+      <div class="panel panel-default" ng-repeat="sub_criteria in sub_criterias">
         <div class="panel-body">
           <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
             <select data-ng-model="selectedTable" class="form-control"
@@ -83,6 +84,7 @@
         </div>
         </div>
       </div>
+    </div>
 
     </div>
    </div>

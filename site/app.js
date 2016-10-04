@@ -171,6 +171,13 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
          }
        ];
 
+       $scope.sub_criteria_groups = [
+           {
+              id:0,
+              name:""
+          }
+        ];
+
       $scope.btnAddCiteria = function(){
 
         var _id = 0;
