@@ -141,12 +141,12 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
       ];
 
       $scope.fields = [
-          {id:1,table: "RM00101",name:"PRICELEVEL"},
-          {id:2,table: "RM00101",name:"CITY"},
-          {id:3,table: "RM00101",name:"STATE"},
-          {id:4,table: "RM00101",name:"ZIP"},
-          {id:5,table: "HSSalesRecapHdr",name:"DOCDATE"},
-          {id:6,table: "HSSalesRecapHdr",name:"SUBTOTAL"}
+          {id:1,table: "RM00101",name:"PRICELEVEL", data_type: "string"},
+          {id:2,table: "RM00101",name:"CITY", data_type: "string"},
+          {id:3,table: "RM00101",name:"STATE", data_type: "string"},
+          {id:4,table: "RM00101",name:"ZIP", data_type: "string"},
+          {id:5,table: "HSSalesRecapHdr",name:"DOCDATE", data_type: "date"},
+          {id:6,table: "HSSalesRecapHdr",name:"SUBTOTAL", data_type: "int"}
       ];
 
       $scope.operators = [
@@ -159,17 +159,40 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
           {id:7,name:"NOT LIKE"}
       ];
 
-      $scope.selectTable = function(){
-        alert('hello');
-        alert($scope.selectedTable);
-        //$scope.filterByTable = $scope.selectedTable.name;
-      }
-
-      $scope.sub_criterias = [{id:$scope.sub_criteria_id, sub_group_name:"", table:"", field:"", operator:"", criteria:"", data_type:""}];
+      $scope.sub_criterias = [
+          {
+             id:$scope.sub_criteria_id,
+             sub_group_name:"",
+             table:"",
+             field:"",
+             operator:"",
+             criteria:"",
+             data_type:""
+         }
+       ];
 
       $scope.btnAddCiteria = function(){
-        $scope.sub_criteria_id = $scope.sub_criteria_id + 1;
-        $scope.sub_criterias.push({id:$scope.sub_criteria_id, sub_group_name:"", table:"", field:"", operator:"", criteria:"", data_type:""});
+
+        var _id = 0,
+        var _sub_group_name = "";
+        var _table = "";
+        var _field = "";
+        var _operator = "";
+        var _criteria = "";
+        var _data_type = "";
+
+        var criteria = {
+           id:_id,
+           sub_group_name:_sub_group_name,
+           table:_table,
+           field:_field,
+           operator:_operator,
+           criteria:_criteria,
+           data_type:_data_type
+       };
+
+        //$scope.sub_criteria_id = $scope.sub_criteria_id + 1;
+        //$scope.sub_criterias.push(criteria);
       }
 
       $scope.btnRemoveCiteria = function(index){
