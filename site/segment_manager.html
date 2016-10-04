@@ -50,8 +50,9 @@
 
     <div class="panel-group" ng-repeat="sub_criteria in sub_criterias track by $index" >
             <div ng-show="$index>0" align="center" style="padding: 10px;">AND</div>
-      <div class="panel panel-default" style="padding: 10px;">
+      <div class="panel panel-default">
         <div class="panel-body">
+          <div class="container">
           <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
             <select data-ng-model="selectedTable" class="form-control"
                 ng-options="table as table.name for table in tables | orderBy:'table.name'">
@@ -83,6 +84,7 @@
             ng-click="btnRemoveCiteria($index)">
             X
           </button>
+        </div>
         </div>
         </div>
       </div>
