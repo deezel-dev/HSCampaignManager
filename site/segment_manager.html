@@ -46,13 +46,12 @@
         <div class="panel-body">
           <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
             <select data-ng-model="selectedTable" class="form-control"
-                ng-options="table as table.name for table in tables | orderBy:'table.name'"
-                ng-change="selectTable()">
+                ng-options="table as table.name for table in tables | orderBy:'table.name'">
             </select>
           </div>
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
               <select ng-model="field_list" class="form-control"
-                  ng-options="field as field.name for field in fields | orderBy:'field.name' | filter:{table: filterByTable}">
+                  ng-options="field as field.name for field in fields | orderBy:'field.name' | filter:{table: selectedTable.name}">
               </select>
             </div>
           <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3">
