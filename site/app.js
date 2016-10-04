@@ -150,8 +150,9 @@ var app = angular.module('app', ['ui.router', 'ui.bootstrap'])
       ];
 
       $scope.selectTable = function(){
-        alert($scope.selectedTable.name);
-        $scope.filterByTable = $scope.selectedTable.name;
+        alert('hello');
+        //alert($scope.selectedTable.name);
+        //$scope.filterByTable = $scope.selectedTable.name;
       }
 
       $scope.sub_criterias = [{id:$scope.sub_criteria_id, sub_group_name:"", table:"", field:"", operator:"", criteria:"", data_type:""}];
