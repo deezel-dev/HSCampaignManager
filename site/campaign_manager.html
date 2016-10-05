@@ -42,10 +42,9 @@
    <div class="panel panel-default" style="background-color: #eee; border-color: #eee">
       <div class="panel-body">
          <div style="padding-left:20px;padding-right:20px;padding-top:10px;">
-            <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
-               <div ng-show="1">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                   <div class="row">
-                     <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                         <label for="selectedChannel"><b><u>Channel:</u></b></label>
                         <select class="form-control" ng-model="selectedChannel" ng-change="outputChannelSelected()" >
                            <option ng-repeat="channel in channels | orderBy:'channel.name'">{{channel.name}}</option>
@@ -53,7 +52,7 @@
                      </div>
 
 
-                     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                     <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                         <div class="row">
                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" align="left">
                              <label for="start_date"><b><u>Start Date:</u></b></label>
@@ -73,20 +72,9 @@
                            </select>
                         </div>
 
-
-                             <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
-                                <button type="button"
-                                   class="btn btn-primary btn-block"
-                                   ng-click="">
-                                <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true" align="center"></span>
-                                </button>
-                             </div>
-
                   </div>
-
                   <div class="row">
                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-
                           <label for="segments"><b><u>Segments:</u></b></label>
                           <div class="row">
                              <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12" style="display:inline; padding:8px;" ng-repeat="segment in selected_segments">
@@ -99,8 +87,6 @@
                           </div>
                       </div>
                      </div>
-
-                  </div>
                </div>
             </div>
          </div>
