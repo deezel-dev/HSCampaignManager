@@ -19,7 +19,7 @@ try {
   $client->__setSoapHeaders(array($session_header));
  
   $filter = array('name' => array('operator' => 'Contains',
-                  'value' => 'newsletter')
+                  'value' => 'OB_WEEKLY')
           );
  
   print "reading all matching messages\n";
