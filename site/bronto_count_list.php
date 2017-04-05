@@ -23,7 +23,7 @@ try {
  
   $filter = array();
  
-  print "reading all lists\n";
+  //print "reading all lists\n";
   $lists = $client->readLists(array('pageNumber' => 1,
                     'filter' => $filter))->return;
  
