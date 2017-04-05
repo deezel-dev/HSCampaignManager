@@ -71,12 +71,15 @@ try {
      $json.="<td>" . $delivery->numConversions . "</td>";
      $json.="<td>" . $delivery->revenue . "</td>";
      //$json.="<td>" . "" . "</td>";
+    $json.="</tr>";
    
     //print "Message: \"" . $message->name . "\" sent at: " . $startString . "\n";
     //print "\tSent: " . $delivery->numSends . "\n\tDelivered: " . $delivery->numDeliveries . " (" .
       //number_format((($delivery->numDeliveries / $delivery->numSends) * 100), 0, '.', ',') . "%)\n";
     //print "\tOpens: " . $delivery->numOpens . "\n\tClicks: " . $delivery->numClicks . "\n";
   }
+ $json.="<table>";
+ print $json;
  
 } catch (Exception $e) {
   print "uncaught exception\n";
