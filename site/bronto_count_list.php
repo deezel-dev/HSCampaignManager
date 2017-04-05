@@ -4,6 +4,9 @@
  * print each list's name; the number of active contacts on the list; and the list id.
  */
  
+
+$json = "";
+
 $client = new SoapClient('https://api.bronto.com/v4?wsdl', array('trace' => 1, 
                                  'features' => SOAP_SINGLE_ELEMENT_ARRAYS));
  
@@ -24,10 +27,14 @@ try {
   $lists = $client->readLists(array('pageNumber' => 1,
                     'filter' => $filter))->return;
  
+ $json.= "<table>";
   // print matching list names, number of contacts on the list, and ids
   foreach ($lists as $list) {
-    print "Name: " . $list->name . "; contacts: " . $list->activeCount . "; id: " . $list->id . "\n";
+    //print "Name: " . $list->name . "; contacts: " . $list->activeCount . "; id: " . $list->id . "\n";
+    $json.= "<tr><td>" . $list->name . "</td><td>" . $list->activeCount . "</td></tr>";
   }
+ $json.= "<table>";
+ print $json
  
 } catch (Exception $e) {
   print "uncaught exception\n";
