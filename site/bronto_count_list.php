@@ -34,7 +34,7 @@ try {
     $json.= "<tr><td>" . $list->name . "</td><td>" . $list->activeCount . "</td></tr>";
   }
  $json.= "<table>";
- print $json
+ print $json;
  
 } catch (Exception $e) {
   print "uncaught exception\n";
