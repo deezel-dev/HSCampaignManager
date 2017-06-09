@@ -17,13 +17,13 @@ function addCustomer($customer){
            ,tax_exempt
            ,total_spent
            ,updated_at
-           ,verified_email)*/
+           ,verified_email)
+           ,accepts_marketing*/
     
     $response = false;
     $sql = "INSERT INTO dbo.customer_created
            (channel_customer_id
-           ,email
-           ,accepts_marketing
+           ,email           
            ,created_at
            ,first_name
            ,last_name
@@ -35,7 +35,7 @@ function addCustomer($customer){
            (" .
                 "'" . padSql( $customer->{"id"}) . "'," .
                 "'" . padSql( $customer->{"email"}) . "'," .
-                "" . padSql( $customer->{"accepts_marketing"}) . "," .
+               // "" . padSql( $customer->{"accepts_marketing"}) . "," .
                 "'" . padSql( $customer->{"created_at"}) . "'," .
                 "'" . padSql( $customer->{"first_name"}) . "'," .
                 "'" . padSql( $customer->{"last_name"}) . "'," .
