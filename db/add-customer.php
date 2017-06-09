@@ -38,25 +38,27 @@ function addCustomer($customer){
     $sql = "INSERT INTO dbo.customer_created
            (channel_customer_id
            ,email
-           ,accepts_marketing
-           ,created_at
-           ,first_name
-           ,last_name
-           ,last_order_id
-           ,last_order_name
-           ,note
-           ,orders_count
-           ,state
-           ,tax_exempt
-           ,total_spent
-           ,updated_at
-           ,verified_email)
-
      VALUES
            (" .
+           //,accepts_marketing
+           //,created_at
+           //,first_name
+           //,last_name
+           //,last_order_id
+           //,last_order_name
+           //,note
+           //,orders_count
+           //,state
+           //,tax_exempt
+           //,total_spent
+           //,updated_at
+           //,verified_email)
+
+     //VALUES
+           //(" .
                 "" . padSql( $customer->{"id"}) . "," .
-                "'" . padSql( $customer->{"email"}) . "'," .
-                "" . padSql( $customer->{"accepts_marketing"}) . "," .
+                "'" . padSql( $customer->{"email"}) . "'" .
+              /*  "" . padSql( $customer->{"accepts_marketing"}) . "," .
                 "'" . padSql( $customer->{"created_at"}) . "'," .
                 "'" . padSql( $customer->{"first_name"}) . "'," .
                 "'" . padSql( $customer->{"last_name"}) . "'," .
@@ -68,7 +70,7 @@ function addCustomer($customer){
                 "" . padSql( $customer->{"tax_exempt"}) . "," .
                 "" . padSql( $customer->{"total_spent"}) . "," .
                 "'" . padSql( $customer->{"updated_at"}) . "'," .
-                "" . padSql( $customer->{"verified_email"}) . ""
+                "" . padSql( $customer->{"verified_email"}) . "" */
                 //"'" . padSql( $customer->{"multipass_identifier"}) . "'," .
                 //"'" . padSql( $customer->{"phone"}) . "'," .
                 //"'" . padSql( $customer->{"tags"}) . "'," .
