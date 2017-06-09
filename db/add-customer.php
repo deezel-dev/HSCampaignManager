@@ -76,34 +76,6 @@ function addCustomer($customer){
             ")";
     
     $data = getDatabase();
-        if ($data->open()) {
-            if($data->insertData($sql)){
-                echo 'db insert ok';
-                $response = true;
-            }
-        }
-        return $response;
-}
-
-function addCampaign($campaign_name, $campaign_description, $campaign_manager, $start_date, $end_date) {
-    $response = false;
-    $sql = "INSERT INTO schema_CampaignManager.HSCampaignManager_hdr(
-           campaign_name,
-           campaign_description,
-           campaign_manager,
-           start_date,
-           end_date,
-           campaign_score,
-           date_added)
-     VALUES (" .
-           "'" . padSql($campaign_name) . "'," .
-           "'" . padSql($campaign_description). "'," .
-           "'" . padSql($campaign_manager) . "'," .
-           "'" . $start_date . "'," .
-           "'" . $end_date ."'," .
-           0 . "," .
-           "" . "GETDATE()" .")";
-    $data = getDatabase();
     if ($data->open()) {
         if($data->insertData($sql)){
             echo 'db insert ok';
