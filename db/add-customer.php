@@ -50,17 +50,14 @@ function addCustomer($customer){
            ,tax_exempt
            ,total_spent
            ,updated_at
-           ,verified_email
-           ,update_hs
-           ,update_channel)
+           ,verified_email)
 
      VALUES
-           (1,''," .
+           (" .
                 "" . padSql( $customer->{"id"}) . "," .
                 "'" . padSql( $customer->{"email"}) . "'," .
                 "" . padSql( $customer->{"accepts_marketing"}) . "," .
                 "'" . padSql( $customer->{"created_at"}) . "'," .
-                //"'" . padSql( $customer->{"updated_at"}) . "'," .
                 "'" . padSql( $customer->{"first_name"}) . "'," .
                 "'" . padSql( $customer->{"last_name"}) . "'," .
                 "'" . padSql( $customer->{"last_order_id"}) . "'," .
@@ -68,13 +65,14 @@ function addCustomer($customer){
                 "'" . padSql( $customer->{"note"}) . "'," .
                 "" . padSql( $customer->{"orders_count"}) . "," .
                 "'" . padSql( $customer->{"state"}) . "'," .
-                "" . padSql( $customer->{"total_spent"}) . "," .
-                "" . padSql( $customer->{"verified_email"}) . "," .
-                "'" . padSql( $customer->{"multipass_identifier"}) . "'," .
                 "" . padSql( $customer->{"tax_exempt"}) . "," .
-                "'" . padSql( $customer->{"phone"}) . "'," .
-                "'" . padSql( $customer->{"tags"}) . "'," .
-                "'" . padSql( $customer->{"addresses"}) . "'" .    
+                "" . padSql( $customer->{"total_spent"}) . "," .
+                "'" . padSql( $customer->{"updated_at"}) . "'," .
+                "" . padSql( $customer->{"verified_email"}) . ""
+                //"'" . padSql( $customer->{"multipass_identifier"}) . "'," .
+                //"'" . padSql( $customer->{"phone"}) . "'," .
+                //"'" . padSql( $customer->{"tags"}) . "'," .
+                //"'" . padSql( $customer->{"addresses"}) . "'" .    
             ")";
     
     $data = getDatabase();
