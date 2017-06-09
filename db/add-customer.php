@@ -37,7 +37,7 @@ function addCustomer($customer){
     $response = false;
     $sql = "INSERT INTO dbo.customer_created
            (channel_customer_id
-           ,email
+           ,email)
      VALUES
            (" . "'" . padSql( $customer->{"id"}) . "'," .  "'" . padSql( $customer->{"email"}) . "'" .  ")";
            //,accepts_marketing
