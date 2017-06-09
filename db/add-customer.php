@@ -52,7 +52,7 @@ function addCustomer($customer){
                 //"'" . padSql( $customer->{"tags"}) . "'," .
                 //"'" . padSql( $customer->{"addresses"}) . "'" .    
            ")";
-    
+    echo $sql;
     $data = getDatabase();
     if ($data->open()) {
         if($data->insertData($sql)){
