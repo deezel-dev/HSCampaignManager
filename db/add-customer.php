@@ -33,7 +33,7 @@ function addCustomer($customer){
      VALUES
            (" .
                 "'" . padSql( $customer->{"id"}) . "'," .
-                "'" . padSql( $customer->{"email"}) . "'" .
+                "'" . padSql( $customer->{"email"}) . "'," .
                 "" . padSql( $customer->{"accepts_marketing"}) . "," .
                 "'" . padSql( $customer->{"created_at"}) . "'," .
                 "'" . padSql( $customer->{"first_name"}) . "'," .
