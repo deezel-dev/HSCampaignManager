@@ -46,7 +46,7 @@ function addCustomer($customer){
                 "" . padSql( $customer->{"tax_exempt"}) . "," .
                 "" . padSql( $customer->{"total_spent"}) . "," .
                 "'" . padSql( $customer->{"updated_at"}) . "'," .
-                "" . padSql( $customer->{"verified_email"}) . "" 
+                "" . padSql( $customer->{"verified_email"}) . "" .
                 //"'" . padSql( $customer->{"multipass_identifier"}) . "'," .
                 //"'" . padSql( $customer->{"phone"}) . "'," .
                 //"'" . padSql( $customer->{"tags"}) . "'," .
