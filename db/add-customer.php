@@ -12,6 +12,13 @@ if($customer_added){
 
 function addCustomer($customer){
     
+          /* ,orders_count
+           ,state
+           ,tax_exempt
+           ,total_spent
+           ,updated_at
+           ,verified_email)*/
+    
     $response = false;
     $sql = "INSERT INTO dbo.customer_created
            (channel_customer_id
@@ -22,13 +29,7 @@ function addCustomer($customer){
            ,last_name
            ,last_order_id
            ,last_order_name
-           ,note
-           ,orders_count
-           ,state
-           ,tax_exempt
-           ,total_spent
-           ,updated_at
-           ,verified_email)
+           ,note)
 
      VALUES
            (" .
@@ -40,13 +41,13 @@ function addCustomer($customer){
                 "'" . padSql( $customer->{"last_name"}) . "'," .
                 "'" . padSql( $customer->{"last_order_id"}) . "'," .
                 "'" . padSql( $customer->{"last_order_name"}) . "'," .
-                "'" . padSql( $customer->{"note"}) . "'," .
-                "" . padSql( $customer->{"orders_count"}) . "," .
-                "'" . padSql( $customer->{"state"}) . "'," .
-                "" . padSql( $customer->{"tax_exempt"}) . "," .
-                "" . padSql( $customer->{"total_spent"}) . "," .
-                "'" . padSql( $customer->{"updated_at"}) . "'," .
-                "" . padSql( $customer->{"verified_email"}) . "" .
+                "'" . padSql( $customer->{"note"}) . "'" .
+                //"" . padSql( $customer->{"orders_count"}) . "," .
+                //"'" . padSql( $customer->{"state"}) . "'," .
+               // "" . padSql( $customer->{"tax_exempt"}) . "," .
+                //"" . padSql( $customer->{"total_spent"}) . "," .
+                //"'" . padSql( $customer->{"updated_at"}) . "'," .
+                //"" . padSql( $customer->{"verified_email"}) . "" .
                 //"'" . padSql( $customer->{"multipass_identifier"}) . "'," .
                 //"'" . padSql( $customer->{"phone"}) . "'," .
                 //"'" . padSql( $customer->{"tags"}) . "'," .
