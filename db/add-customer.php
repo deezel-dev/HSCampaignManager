@@ -39,7 +39,7 @@ function addCustomer($customer){
            (channel_customer_id
            ,email
      VALUES
-           (" .
+           (" . "'" . padSql( $customer->{"id"}) . "'," .  "'" . padSql( $customer->{"email"}) . "'" .  ")";
            //,accepts_marketing
            //,created_at
            //,first_name
@@ -56,8 +56,8 @@ function addCustomer($customer){
 
      //VALUES
            //(" .
-                "'" . padSql( $customer->{"id"}) . "'," .
-                "'" . padSql( $customer->{"email"}) . "'" .
+               // "'" . padSql( $customer->{"id"}) . "'," .
+               // "'" . padSql( $customer->{"email"}) . "'" .
               /*  "" . padSql( $customer->{"accepts_marketing"}) . "," .
                 "'" . padSql( $customer->{"created_at"}) . "'," .
                 "'" . padSql( $customer->{"first_name"}) . "'," .
@@ -75,7 +75,7 @@ function addCustomer($customer){
                 //"'" . padSql( $customer->{"phone"}) . "'," .
                 //"'" . padSql( $customer->{"tags"}) . "'," .
                 //"'" . padSql( $customer->{"addresses"}) . "'" .    
-            ")";
+           // ")";
     
     $data = getDatabase();
     if ($data->open()) {
