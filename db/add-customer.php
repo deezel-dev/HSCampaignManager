@@ -35,9 +35,9 @@ if($customer_added){
 function addCustomer($customer){
     
     $response = false;
-    $sql = "INSERT INTO customer_created
-           (channel_id
-           ,hs_customer_id
+    $sql = "INSERT INTO dbo.customer_created
+           (channel_customer_id
+           ,email
            ,accepts_marketing
            ,created_at
            ,first_name
@@ -55,25 +55,25 @@ function addCustomer($customer){
            ,update_channel)
 
      VALUES
-           (" .
+           (1,''," .
                 "" . padSql( $customer->{"id"}) . "," .
                 "'" . padSql( $customer->{"email"}) . "'," .
                 "" . padSql( $customer->{"accepts_marketing"}) . "," .
                 "'" . padSql( $customer->{"created_at"}) . "'," .
-                "'" . padSql( $customer->{"updated_at"}) . "'," .
+                //"'" . padSql( $customer->{"updated_at"}) . "'," .
                 "'" . padSql( $customer->{"first_name"}) . "'," .
                 "'" . padSql( $customer->{"last_name"}) . "'," .
+                "'" . padSql( $customer->{"last_order_id"}) . "'," .
+                "'" . padSql( $customer->{"last_order_name"}) . "'," .
+                "'" . padSql( $customer->{"note"}) . "'," .
                 "" . padSql( $customer->{"orders_count"}) . "," .
                 "'" . padSql( $customer->{"state"}) . "'," .
                 "" . padSql( $customer->{"total_spent"}) . "," .
-                "'" . padSql( $customer->{"last_order_id"}) . "'," .
-                "'" . padSql( $customer->{"note"}) . "'," .
                 "" . padSql( $customer->{"verified_email"}) . "," .
                 "'" . padSql( $customer->{"multipass_identifier"}) . "'," .
                 "" . padSql( $customer->{"tax_exempt"}) . "," .
                 "'" . padSql( $customer->{"phone"}) . "'," .
                 "'" . padSql( $customer->{"tags"}) . "'," .
-                "'" . padSql( $customer->{"last_order_name"}) . "'," .
                 "'" . padSql( $customer->{"addresses"}) . "'" .    
             ")";
     
