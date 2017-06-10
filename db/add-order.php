@@ -14,26 +14,11 @@ function addOrder($order){
     
     $response = false;
     $sql = "INSERT INTO dbo.order_created
-           (channel_customer_id
-           ,email           
-           ,created_at
-           ,first_name
-           ,last_name
-           ,last_order_id
-           ,last_order_name
-           ,note)
+           (shopifyid)
 
      VALUES
            (" .
-                "'" . padSql( $customer->{"id"}) . "'," .
-                "'" . padSql( $customer->{"email"}) . "'," .
-               // "" . padSql( $customer->{"accepts_marketing"}) . "," .
-                "'" . padSql( $customer->{"created_at"}) . "'," .
-                "'" . padSql( $customer->{"first_name"}) . "'," .
-                "'" . padSql( $customer->{"last_name"}) . "'," .
-                "'" . padSql( $customer->{"last_order_id"}) . "'," .
-                "'" . padSql( $customer->{"last_order_name"}) . "'," .
-                "'" . padSql( $customer->{"note"}) . "'" .
+                "'" . padSql( $order->{"id"}) . "'" .
                 //"" . padSql( $customer->{"orders_count"}) . "," .
                 //"'" . padSql( $customer->{"state"}) . "'," .
                // "" . padSql( $customer->{"tax_exempt"}) . "," .
