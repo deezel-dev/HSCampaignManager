@@ -1,6 +1,5 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . "/include/_init.php";
-//require_once $_SERVER['DOCUMENT_ROOT'] . "/include/lib/swiftmailer/swift_required.php";
 require_once $_SERVER['DOCUMENT_ROOT'] . "/include/database.php";
 header("Content-Type: text/json");
 $order = json_decode(file_get_contents("php://input"));
