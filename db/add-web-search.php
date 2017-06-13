@@ -4,7 +4,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/include/database.php";
 header("Content-Type: text/json");
 
 ini_set('display_errors', 1); error_reporting(E_ALL);
-require_once 'database.php';
+//require_once 'database.php';
 $json = json_decode(file_get_contents("php://input"));
 addSearch("DEEZEL", "12345");
 
